@@ -1,4 +1,4 @@
-import { CSSProperties } from 'styled-components'
+import { CSSProperties } from 'react'
 
 declare module '*.png' {
   const value: any
@@ -24,6 +24,14 @@ declare module 'styled-components' {
   export interface DefaultTheme {
     sheet: {
       margins: CSSProperties['margin']
+    }
+    breakpoints: {
+      xs: number
+      sm: number
+      md: number
+      lg: number
+      xl: number
+      xxl: number
     }
   }
 }

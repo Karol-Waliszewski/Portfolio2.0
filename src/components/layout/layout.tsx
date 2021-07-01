@@ -16,7 +16,7 @@ const Sheet = styled.div`
   overflow: hidden;
 
   box-shadow: 0px 5px 44px #0000001a;
-  border-radius: 13px;
+  border-radius: 8px;
 `
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
