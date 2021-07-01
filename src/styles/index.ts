@@ -7,3 +7,5 @@ export const GlobalStyles = createGlobalStyle`
     ${Normalize}
     ${Global} 
 `
+
+export { default as theme } from './theme'

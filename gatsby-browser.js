@@ -5,13 +5,16 @@
  */
 
 const React = require('react')
-const { GlobalStyles } = require('styles')
+const { GlobalStyles, theme } = require('styles')
+const { ThemeProvider } = require('styled-components')
 
 exports.wrapRootElement = ({ element }) => {
   return (
     <>
-      <GlobalStyles />
-      {element}
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        {element}
+      </ThemeProvider>
     </>
   )
 }

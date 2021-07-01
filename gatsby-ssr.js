@@ -4,14 +4,17 @@
  * See: https://www.gatsbyjs.com/docs/ssr-apis/
  */
 
-const React = require('react')
-const { GlobalStyles } = require('styles')
-
-exports.wrapRootElement = ({ element }) => {
-  return (
-    <>
-      <GlobalStyles />
-      {element}
-    </>
-  )
-}
+ const React = require('react')
+ const { GlobalStyles, theme } = require('styles')
+ const { ThemeProvider } = require('styled-components')
+ 
+ exports.wrapRootElement = ({ element }) => {
+   return (
+     <>
+       <ThemeProvider theme={theme}>
+         <GlobalStyles />
+         {element}
+       </ThemeProvider>
+     </>
+   )
+ }
