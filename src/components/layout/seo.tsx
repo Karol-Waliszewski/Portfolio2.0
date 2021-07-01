@@ -6,12 +6,24 @@
  */
 
 import * as React from 'react'
-import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
-function Seo({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
+type SeoProps = {
+  title: string
+  description?: string
+  meta: JSX.IntrinsicElements['meta'][]
+  lang: string
+}
+
+type SiteMetadata = {
+  site: { siteMetadata: { title: string; description: string; author: string } }
+}
+
+const Seo: React.FC<SeoProps> = ({ title, description, lang, meta }) => {
+  const {
+    site: { siteMetadata },
+  } = useStaticQuery<SiteMetadata>(
     graphql`
       query {
         site {
@@ -25,8 +37,8 @@ function Seo({ description, lang, meta, title }) {
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+  const defaultTitle = siteMetadata?.title
+  const metaDescription = description || siteMetadata.description
 
   return (
     <Helmet
@@ -34,7 +46,7 @@ function Seo({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      titleTemplate={`%s | ${defaultTitle}`}
       meta={[
         {
           name: `description`,
@@ -58,7 +70,7 @@ function Seo({ description, lang, meta, title }) {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata?.author || ``,
+          content: siteMetadata?.author || ``,
         },
         {
           name: `twitter:title`,
@@ -68,22 +80,15 @@ function Seo({ description, lang, meta, title }) {
           name: `twitter:description`,
           content: metaDescription,
         },
-      ].concat(meta)}
+        ...meta,
+      ]}
     />
   )
 }
 
 Seo.defaultProps = {
-  lang: `en`,
+  lang: `pl`,
   meta: [],
-  description: ``,
-}
-
-Seo.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
 }
 
 export default Seo
