@@ -39,13 +39,23 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-gatsby-cloud`,
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `karla\:400,500,600,700`,
+          `rubik\:400,500,600,700`
+        ],
+        display: 'swap'
+      }
+    },
+    `gatsby-plugin-netlify`,
     {
       resolve: `gatsby-plugin-typescript`,
       options: {
-        isTSX: true, // defaults to false
-        jsxPragma: `jsx`, // defaults to "React"
-        allExtensions: true, // defaults to false
+        isTSX: true, 
+        jsxPragma: `jsx`, 
+        allExtensions: true,
       },
     },
     {

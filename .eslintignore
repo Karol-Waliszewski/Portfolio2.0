@@ -4,4 +4,8 @@ package-lock.json
 public
 
 gatsby-browser.js
+gatsby-ssr.js
+gatsby-config.js
+gatsby-node.js
+
 custom.d.ts

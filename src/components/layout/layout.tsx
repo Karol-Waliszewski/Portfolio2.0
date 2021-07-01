@@ -1,8 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
-import GlobalStyles from 'styles/global'
-
 type LayoutProps = {
   children: React.ReactNode
 }
@@ -16,7 +14,6 @@ const Container = styled.div`
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
-      <GlobalStyles />
       <Container>
         <main>{children}</main>
         <footer

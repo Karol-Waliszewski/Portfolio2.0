@@ -4,4 +4,14 @@
  * See: https://www.gatsbyjs.com/docs/browser-apis/
  */
 
-// You can delete this file if you're not using it
+const React = require('react')
+const { GlobalStyles } = require('styles')
+
+exports.wrapRootElement = ({ element }) => {
+  return (
+    <>
+      <GlobalStyles />
+      {element}
+    </>
+  )
+}
