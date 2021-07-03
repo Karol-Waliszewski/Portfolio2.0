@@ -28,6 +28,9 @@ declare module 'styled-components' {
     grid: {
       gap: CSSProperties['margin']
     }
+    fonts: {
+      size: CSSProperties['fontSize']
+    }
     colors: {
       primary: CSSProperties['color']
       light: CSSProperties['color']

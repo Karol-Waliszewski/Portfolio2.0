@@ -6,6 +6,10 @@ const grid = {
   gap: '1rem',
 }
 
+export const fonts = {
+  size: '18px',
+}
+
 export type Breakpoints = {
   xs: number
   sm: number
@@ -40,6 +44,7 @@ const theme = {
   breakpoints,
   colors,
   grid,
+  fonts,
 }
 
 export default theme

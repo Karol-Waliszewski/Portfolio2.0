@@ -1,6 +1,10 @@
 import { css } from 'styled-components'
 
 export default css`
+  html {
+    font-size: ${({ theme }) => theme.fonts.size};
+  }
+
   body {
     font-family: Karla, sans-serif;
   }

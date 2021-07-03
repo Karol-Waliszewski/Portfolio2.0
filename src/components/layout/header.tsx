@@ -2,7 +2,7 @@ import * as React from 'react'
 import styled from 'styled-components'
 import Container from 'components/container'
 import { Grid, Row, Col } from 'components/grid'
-import media from 'styles/media'
+import { Heading } from 'components/typography'
 
 const HeaderWrapper = styled.header`
   height: ${({ theme }) => `calc(100vh - ${theme.sheet.margins})`};
@@ -10,12 +10,6 @@ const HeaderWrapper = styled.header`
 
 const HeaderContent = styled(Grid)`
   height: 100%;
-  ${media.md.max} {
-    background: red;
-  }
-  ${media.md.min} {
-    color: blue;
-  }
 `
 
 const Header: React.FC = () => {
@@ -23,11 +17,11 @@ const Header: React.FC = () => {
     <HeaderWrapper>
       <Container fullHeight>
         <HeaderContent>
-          <Row>
-            <Col xs={12} md={5}>
-              1
+          <Row fullHeight alignItems="center">
+            <Col xs={12} md={6}>
+              <Heading size={54}>Karol Waliszewski</Heading>
             </Col>
-            <Col xs={12} md={7}>
+            <Col xs={12} md={6}>
               2
             </Col>
           </Row>
