@@ -1,16 +1,21 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import Grid, { grid } from 'styled-components-grid'
 import Container from 'components/container'
+import { Grid, Row, Col } from 'components/grid'
+import media from 'styles/media'
 
 const HeaderWrapper = styled.header`
   height: ${({ theme }) => `calc(100vh - ${theme.sheet.margins})`};
 `
 
-const HeaderContent = styled.div`
-  ${grid({ valign: 'center' })}
-
+const HeaderContent = styled(Grid)`
   height: 100%;
+  ${media.md.max} {
+    background: red;
+  }
+  ${media.md.min} {
+    color: blue;
+  }
 `
 
 const Header: React.FC = () => {
@@ -18,8 +23,14 @@ const Header: React.FC = () => {
     <HeaderWrapper>
       <Container fullHeight>
         <HeaderContent>
-          <Grid.Unit size={5 / 12}>header</Grid.Unit>
-          <Grid.Unit size={7 / 12}>header</Grid.Unit>
+          <Row>
+            <Col xs={12} md={5}>
+              1
+            </Col>
+            <Col xs={12} md={7}>
+              2
+            </Col>
+          </Row>
         </HeaderContent>
       </Container>
     </HeaderWrapper>

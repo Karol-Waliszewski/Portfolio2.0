@@ -2,6 +2,10 @@ const sheetTheme = {
   margins: '4rem',
 }
 
+const grid = {
+  gap: '1rem',
+}
+
 export type Breakpoints = {
   xs: number
   sm: number
@@ -35,6 +39,7 @@ const theme = {
   sheet: sheetTheme,
   breakpoints,
   colors,
+  grid,
 }
 
 export default theme

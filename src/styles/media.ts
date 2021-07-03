@@ -9,7 +9,7 @@ type Media = {
 }
 
 const min = (minWidth: number) => `@media (min-width: ${minWidth}px)`
-const max = (maxWidth: number) => `@media (max-width: ${maxWidth}px)`
+const max = (maxWidth: number) => `@media (max-width: ${maxWidth - 1}px)`
 
 const generateMedia: () => Media = () => {
   return (Object.keys(breakpoints) as Array<keyof Breakpoints>).reduce(

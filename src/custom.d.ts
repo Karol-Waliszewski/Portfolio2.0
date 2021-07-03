@@ -25,6 +25,19 @@ declare module 'styled-components' {
     sheet: {
       margins: CSSProperties['margin']
     }
+    grid: {
+      gap: CSSProperties['margin']
+    }
+    colors: {
+      primary: CSSProperties['color']
+      light: CSSProperties['color']
+      dark: CSSProperties['color']
+      text: CSSProperties['color']
+      white: CSSProperties['color']
+      black: CSSProperties['color']
+      gray: CSSProperties['color']
+      lightgray: CSSProperties['color']
+    }
     breakpoints: {
       xs: number
       sm: number
