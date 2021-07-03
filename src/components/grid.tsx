@@ -2,6 +2,10 @@ import styled, { css, CSSProperties } from 'styled-components'
 import { Breakpoints } from 'styles/theme'
 import media from 'styles/media'
 
+type GridProps = {
+  fullHeight?: boolean
+}
+
 type RowProps = {
   fullHeight?: boolean
 
@@ -15,9 +19,15 @@ type ColProps = {
   [key in keyof Breakpoints]?: ColSize
 }
 
-export const Grid = styled.div`
+export const Grid = styled.div<GridProps>`
   padding-left: calc(${({ theme }) => theme.grid.gap} / 2);
   padding-right: calc(${({ theme }) => theme.grid.gap} / 2);
+
+  ${({ fullHeight }) =>
+    fullHeight &&
+    css`
+      height: 100%;
+    `};
 `
 
 export const Row = styled.div<RowProps>`
