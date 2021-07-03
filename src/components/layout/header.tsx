@@ -2,7 +2,7 @@ import * as React from 'react'
 import styled from 'styled-components'
 import Container from 'components/container'
 import { Grid, Row, Col } from 'components/grid'
-import { Heading } from 'components/typography'
+import { Heading, Text, Bold } from 'components/typography'
 
 const HeaderWrapper = styled.header`
   height: ${({ theme }) => `calc(100vh - ${theme.sheet.margins})`};
@@ -19,7 +19,12 @@ const Header: React.FC = () => {
         <HeaderContent>
           <Row fullHeight alignItems="center">
             <Col xs={12} md={6}>
+              <Text>Cześć! Nazywam się</Text>
               <Heading size={54}>Karol Waliszewski</Heading>
+              <Text>
+                Zajmuje się tworzeniem <Bold>stron internetowych</Bold> i{' '}
+                <Bold>aplikacji webowych</Bold>.
+              </Text>
             </Col>
             <Col xs={12} md={6}>
               2
