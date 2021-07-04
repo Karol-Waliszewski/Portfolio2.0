@@ -16,8 +16,11 @@ type RowProps = {
 type ColSize = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
 
 type ColProps = {
-  [key in keyof Breakpoints]?: ColSize
-}
+  [breakpoint in keyof Breakpoints]?: ColSize
+} &
+  {
+    [breakpoint in keyof Breakpoints as `offset-${breakpoint}`]?: ColSize
+  }
 
 export const Grid = styled.div<GridProps>`
   padding-left: calc(${({ theme }) => theme.grid.gap} / 2);
@@ -63,6 +66,18 @@ export const Col = styled.div<ColProps>`
               flex-basis: ${(100 / 12) * props[breakpoint]}%;
               max-width: ${(100 / 12) * props[breakpoint]}%;
               display: block;
+            }
+          `
+      )}
+
+  ${(props) =>
+    (Object.keys(props.theme.breakpoints) as Array<keyof Breakpoints>)
+      .filter((breakpoint) => `offset-${breakpoint}` in props)
+      .map(
+        (breakpoint) =>
+          css`
+            ${media[breakpoint].min} {
+              margin-left: ${(100 / 12) * props[`offset-${breakpoint}`]}%;
             }
           `
       )}
