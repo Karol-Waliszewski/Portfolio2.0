@@ -21,9 +21,28 @@ export const Heading = styled.h1<HeadingProps>`
   color: ${({ theme }) => theme.colors.dark};
 
   position: relative;
-  width: ${({ align }) => (align !== 'left' ? 'auto' : 'max-content')};
+  width: max-content;
+  transform-style: preserve-3d;
 
   margin-bottom: 1.5rem;
+
+  ${({ align }) => {
+    switch (align) {
+      case 'right':
+        return css`
+          margin-left: auto;
+        `
+
+      case 'center':
+        return css`
+          margin-left: auto;
+          margin-right: auto;
+        `
+
+      default:
+        return css``
+    }
+  }}
 
   ${({ background }) =>
     background &&
@@ -33,7 +52,7 @@ export const Heading = styled.h1<HeadingProps>`
         position: absolute;
         left: -2px;
         top: 45%;
-        z-index: -1;
+        transform: translate3d(0, 0, -1px);
 
         height: 50%;
         width: 45%;
