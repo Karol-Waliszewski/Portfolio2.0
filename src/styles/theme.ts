@@ -7,7 +7,7 @@ const grid = {
 }
 
 export const fonts = {
-  size: '18px',
+  size: '16px',
 }
 
 export type Breakpoints = {
@@ -32,7 +32,7 @@ export const colors = {
   primary: '#FECE47',
   light: '#FEF6E2',
   dark: '#242424',
-  text: '#555555',
+  text: '#444444',
   white: '#FFFFFF',
   black: '#000000',
   gray: '#E8E7E7',

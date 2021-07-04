@@ -23,7 +23,7 @@ export const Heading = styled.h1<HeadingProps>`
   position: relative;
   width: ${({ align }) => (align !== 'left' ? 'auto' : 'max-content')};
 
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
 
   ${({ background }) =>
     background &&
@@ -66,7 +66,7 @@ export const Text = styled.p<TextProps>`
   text-align: ${({ align }) => align ?? 'left'};
   color: ${({ theme }) => theme.colors.text};
 
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 `
 
 export const Bold = styled.span`
