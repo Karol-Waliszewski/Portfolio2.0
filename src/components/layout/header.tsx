@@ -1,5 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
+import media from 'styles/media'
 import Container from 'components/container'
 import { Grid, Row, Col } from 'components/grid'
 import { Heading, Text, Bold } from 'components/typography'
@@ -15,10 +16,22 @@ const HeaderWrapper = styled.header`
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top right;
+
+  ${media.xxl.min} {
+    background-size: auto 85%;
+  }
 `
 
 const HeaderContent = styled(Grid)`
   height: 100%;
+`
+
+const HeaderButtons = styled.div`
+  margin-top: 1.5rem;
+`
+
+const FirstButton = styled(Button)`
+  margin-right: 0.25rem;
 `
 
 const Header: React.FC = () => {
@@ -34,10 +47,10 @@ const Header: React.FC = () => {
                 Zajmuje się tworzeniem <Bold>stron internetowych</Bold> i{' '}
                 <Bold>aplikacji webowych</Bold>.
               </Text>
-              <div>
-                <Button>Github</Button>
+              <HeaderButtons>
+                <FirstButton>Github</FirstButton>
                 <Button>CV</Button>
-              </div>
+              </HeaderButtons>
             </Col>
             <Col xs={12} md={6}>
               <Image

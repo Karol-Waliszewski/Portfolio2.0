@@ -23,6 +23,8 @@ export const Heading = styled.h1<HeadingProps>`
   position: relative;
   width: ${({ align }) => (align !== 'left' ? 'auto' : 'max-content')};
 
+  margin-bottom: 0.75rem;
+
   ${({ background }) =>
     background &&
     css`

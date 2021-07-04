@@ -16,7 +16,7 @@ const Sheet = styled.div`
   overflow: hidden;
 
   box-shadow: 0px 5px 44px #0000001a;
-  border-radius: 8px;
+  border-radius: 10px;
 
   ${media.lg.min} {
     width: 85%;
