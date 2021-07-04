@@ -23,6 +23,7 @@ const Button = styled.button<ButtonProps>`
 
   font-size: ${pxToRem(16)}rem;
   font-weight: 500;
+  text-decoration: none;
 
   cursor: pointer;
   transition: color 100ms ease, background-color 100ms ease,
