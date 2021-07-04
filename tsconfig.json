@@ -8,6 +8,7 @@
     "noEmit": true,
     "isolatedModules": true,
     "esModuleInterop": true,
+    "traceResolutions": true,
     "baseUrl": "src"
   },
   "include": ["src"],

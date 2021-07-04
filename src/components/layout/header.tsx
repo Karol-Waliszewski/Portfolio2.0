@@ -31,7 +31,7 @@ const HeaderButtons = styled.div`
 `
 
 const FirstButton = styled(Button)`
-  margin-right: 0.25rem;
+  margin-right: 0.35rem;
 `
 
 const Header: React.FC = () => {

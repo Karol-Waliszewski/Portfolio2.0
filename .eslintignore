@@ -8,4 +8,5 @@ gatsby-ssr.js
 gatsby-config.js
 gatsby-node.js
 
-custom.d.ts
+theme.d.ts
+images.d.ts
