@@ -1,5 +1,5 @@
 const sheetTheme = {
-  margins: '4rem',
+  margins: '3.5rem',
 }
 
 const grid = {
@@ -32,7 +32,7 @@ export const colors = {
   primary: '#FECE47',
   light: '#FEF6E2',
   dark: '#242424',
-  text: '#444444',
+  text: '#555555',
   white: '#FFFFFF',
   black: '#000000',
   gray: '#E8E7E7',

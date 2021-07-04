@@ -12,8 +12,8 @@ import { useStaticQuery, graphql } from 'gatsby'
 type SeoProps = {
   title: string
   description?: string
-  meta: JSX.IntrinsicElements['meta'][]
-  lang: string
+  meta?: JSX.IntrinsicElements['meta'][]
+  lang?: string
 }
 
 type SiteMetadata = {
@@ -39,6 +39,44 @@ const Seo: React.FC<SeoProps> = ({ title, description, lang, meta }) => {
 
   const defaultTitle = siteMetadata?.title
   const metaDescription = description || siteMetadata.description
+  let seoMeta: JSX.IntrinsicElements['meta'][] = [
+    {
+      name: `description`,
+      content: metaDescription,
+    },
+    {
+      property: `og:title`,
+      content: title,
+    },
+    {
+      property: `og:description`,
+      content: metaDescription,
+    },
+    {
+      property: `og:type`,
+      content: `website`,
+    },
+    {
+      name: `twitter:card`,
+      content: `summary`,
+    },
+    {
+      name: `twitter:creator`,
+      content: siteMetadata?.author || ``,
+    },
+    {
+      name: `twitter:title`,
+      content: title,
+    },
+    {
+      name: `twitter:description`,
+      content: metaDescription,
+    },
+  ]
+
+  if (meta) {
+    seoMeta = [...seoMeta, ...meta]
+  }
 
   return (
     <Helmet
@@ -47,41 +85,7 @@ const Seo: React.FC<SeoProps> = ({ title, description, lang, meta }) => {
       }}
       title={title}
       titleTemplate={`%s | ${defaultTitle}`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: siteMetadata?.author || ``,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-        ...meta,
-      ]}
+      meta={seoMeta}
     />
   )
 }

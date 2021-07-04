@@ -1,7 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
-import Header from './header'
 import Contact from './contact'
 
 type LayoutProps = {
@@ -11,7 +10,7 @@ type LayoutProps = {
 const Sheet = styled.div`
   margin: ${({ theme }) =>
     `${theme.sheet.margins} auto ${theme.sheet.margins} auto`};
-  width: 90%;
+  width: 80%;
   max-width: 1200px;
   overflow: hidden;
 
@@ -23,7 +22,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <Sheet>
-        <Header />
         <main>{children}</main>
         <Contact />
       </Sheet>

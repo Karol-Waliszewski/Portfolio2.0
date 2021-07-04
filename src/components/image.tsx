@@ -12,6 +12,8 @@ type NormalImageWrapperProps = {
 }
 
 const ImageInner = styled.img<NormalImageProps>`
+  display: block;
+  margin: 0;
   max-width: 100%;
   width: ${(props) => (props.width ? `${props.width}px` : '100%')};
   max-height: ${(props) => (props.height ? `${props.height}px` : '100%')};

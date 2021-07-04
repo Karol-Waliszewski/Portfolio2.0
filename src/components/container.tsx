@@ -11,8 +11,8 @@ const Container = styled.div<ContainerProps>`
 
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 
   ${({ fullWidth }) =>
     fullWidth &&

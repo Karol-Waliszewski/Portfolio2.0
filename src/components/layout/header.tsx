@@ -3,9 +3,18 @@ import styled from 'styled-components'
 import Container from 'components/container'
 import { Grid, Row, Col } from 'components/grid'
 import { Heading, Text, Bold } from 'components/typography'
+import Image from 'components/image'
+import Button from 'components/button'
+
+import personImage from 'assets/images/header-image.svg'
+import backgroundHeader from 'assets/images/header-background.svg'
 
 const HeaderWrapper = styled.header`
   height: ${({ theme }) => `calc(100vh - ${theme.sheet.margins})`};
+  background-image: url(${backgroundHeader});
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top right;
 `
 
 const HeaderContent = styled(Grid)`
@@ -25,9 +34,19 @@ const Header: React.FC = () => {
                 Zajmuje się tworzeniem <Bold>stron internetowych</Bold> i{' '}
                 <Bold>aplikacji webowych</Bold>.
               </Text>
+              <div>
+                <Button>Github</Button>
+                <Button>CV</Button>
+              </div>
             </Col>
             <Col xs={12} md={6}>
-              2
+              <Image
+                height={600}
+                src={personImage}
+                alt="Person coding on a laptop"
+                objectFit="contain"
+                objectPosition="right"
+              />
             </Col>
           </Row>
         </HeaderContent>

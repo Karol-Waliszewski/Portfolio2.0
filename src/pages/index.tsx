@@ -3,11 +3,12 @@ import { Link, PageProps, graphql } from 'gatsby'
 import { ImageDataLike } from 'gatsby-plugin-image'
 
 import Layout from 'components/layout/layout'
+import Header from 'components/layout/header'
 import Seo from 'components/layout/seo'
 import Image from 'components/image'
 import LazyImage from 'components/lazyImage'
 
-import astronautImage from 'images/gatsby-astronaut.png'
+import astronautImage from 'assets/images/gatsby-astronaut.png'
 
 type DataProps = {
   site: {
@@ -20,6 +21,7 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data, path }) => {
   return (
     <Layout>
       <Seo title="Home" />
+      <Header />
       <h1>Hi people</h1>
       <p>Welcome to your new Gatsby site.</p>
       <p>Now go build something great.</p>
@@ -59,7 +61,7 @@ export const query = graphql`
     site {
       buildTime(formatString: "YYYY-MM-DD hh:mm a")
     }
-    astronaut: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+    astronaut: file(relativePath: { eq: "images/gatsby-astronaut.png" }) {
       childImageSharp {
         gatsbyImageData(width: 1000)
       }
