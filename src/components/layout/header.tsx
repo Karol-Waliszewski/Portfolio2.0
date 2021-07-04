@@ -34,6 +34,14 @@ const FirstButton = styled(Button)`
   margin-right: 0.35rem;
 `
 
+const HeaderHeading = styled(Heading)`
+  margin-bottom: 0.75rem;
+`
+
+const HeaderText = styled(Text)`
+  margin-bottom: 0.5rem;
+`
+
 const Header: React.FC = () => {
   return (
     <HeaderWrapper>
@@ -41,14 +49,21 @@ const Header: React.FC = () => {
         <HeaderContent>
           <Row fullHeight alignItems="center">
             <Col xs={12} md={6}>
-              <Text>Cześć! Nazywam się</Text>
-              <Heading size={54}>Karol Waliszewski</Heading>
-              <Text>
+              <HeaderText>Cześć! Nazywam się</HeaderText>
+              <HeaderHeading size={54}>Karol Waliszewski</HeaderHeading>
+              <HeaderText>
                 Zajmuje się tworzeniem <Bold>stron internetowych</Bold> i{' '}
                 <Bold>aplikacji webowych</Bold>.
-              </Text>
+              </HeaderText>
               <HeaderButtons>
-                <FirstButton>Github</FirstButton>
+                <FirstButton
+                  as="a"
+                  href="https://github.com/Karol-Waliszewski"
+                  target="_blank"
+                  rel="nofollow"
+                >
+                  Github
+                </FirstButton>
                 <Button>CV</Button>
               </HeaderButtons>
             </Col>

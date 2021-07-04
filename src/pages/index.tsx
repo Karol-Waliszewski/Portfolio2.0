@@ -5,48 +5,19 @@ import { ImageDataLike } from 'gatsby-plugin-image'
 import Layout from 'components/layout/layout'
 import Header from 'components/layout/header'
 import Seo from 'components/layout/seo'
-import Image from 'components/image'
-import LazyImage from 'components/lazyImage'
-
-import astronautImage from 'assets/images/gatsby-astronaut.png'
+import About from 'components/sections/about'
 
 type DataProps = {
-  site: {
-    buildTime: string
-  }
-  astronaut: ImageDataLike
+  about: ImageDataLike
 }
 
-const IndexPage: React.FC<PageProps<DataProps>> = ({ data, path }) => {
+const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => {
   return (
     <Layout>
       <Seo title="Home" />
       <Header />
-      <h1>Hi people</h1>
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
-      <h2>Standard image</h2>
-      <Image
-        src={astronautImage}
-        alt="A Gatsby astronaut"
-        width={500}
-        height={300}
-        objectFit="contain"
-        objectPosition="center"
-      />
-      <h2>Lazy image</h2>
-      <LazyImage
-        src={data.astronaut}
-        alt="A Gatsby astronaut"
-        objectFit="contain"
-        width={500}
-        height={300}
-        objectPosition="center"
-      />
-      <p>
-        You're currently on the page "{path}" which was built on{' '}
-        {data?.site.buildTime}.
-      </p>
+      <About image={data.about} />
+
       <p>
         <Link to="/page-2/">Go to page 2</Link>
       </p>
@@ -58,12 +29,9 @@ export default IndexPage
 
 export const query = graphql`
   {
-    site {
-      buildTime(formatString: "YYYY-MM-DD hh:mm a")
-    }
-    astronaut: file(relativePath: { eq: "images/gatsby-astronaut.png" }) {
+    about: file(relativePath: { eq: "images/about.png" }) {
       childImageSharp {
-        gatsbyImageData(width: 1000)
+        gatsbyImageData(width: 700)
       }
     }
   }
