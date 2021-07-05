@@ -7,8 +7,8 @@ type NormalImageProps = {
 }
 
 type NormalImageWrapperProps = {
-  width?: React.CSSProperties['width']
-  height?: React.CSSProperties['height']
+  width?: number
+  height?: number
 }
 
 const ImageInner = styled.img<NormalImageProps>`
@@ -32,6 +32,8 @@ type ImageProps = {
   height?: number
   objectFit?: React.CSSProperties['objectFit']
   objectPosition?: React.CSSProperties['objectPosition']
+
+  className?: string
 }
 
 const Image: React.FC<ImageProps> = ({
@@ -41,9 +43,10 @@ const Image: React.FC<ImageProps> = ({
   height,
   objectFit,
   objectPosition,
+  className,
 }) => {
   return (
-    <ImageWrapper width={width} height={height}>
+    <ImageWrapper width={width} height={height} className={className}>
       <ImageInner
         src={src}
         alt={alt}
