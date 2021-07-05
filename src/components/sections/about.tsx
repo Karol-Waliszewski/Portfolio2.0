@@ -10,7 +10,9 @@ type AboutProps = {
   image: ImageDataLike
 }
 
-const AboutWrapper = styled.section``
+const AboutWrapper = styled.section`
+  padding: 4rem 0;
+`
 
 const About: React.FC<AboutProps> = ({ image }) => {
   return (
