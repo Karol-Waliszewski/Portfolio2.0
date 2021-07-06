@@ -23,6 +23,12 @@ const TechnologyWrapper = styled.section`
 const TechnologySwiperWrapper = styled.div`
   margin-top: 3rem;
   margin-bottom: 2rem;
+  margin-left: -2rem;
+  margin-right: -2rem;
+
+  .swiper-wrapper {
+    transition-timing-function: linear;
+  }
 `
 
 const Technology: React.FC<TechnologyProps> = ({ technologies }) => {
@@ -36,20 +42,37 @@ const Technology: React.FC<TechnologyProps> = ({ technologies }) => {
     <TechnologyWrapper>
       <Container>
         <Heading align="center">To już znam</Heading>
-        <TechnologySwiperWrapper>
-          <Swiper
-            slidesPerView={5}
-            autoplay={{
-              delay: 2000,
-              disableOnInteraction: false,
-            }}
-            loop
-            grabCursor
-          >
-            {technologiesDOM}
-          </Swiper>
-        </TechnologySwiperWrapper>
       </Container>
+      <TechnologySwiperWrapper>
+        <Swiper
+          slidesPerView={6}
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: false,
+          }}
+          speed={3000}
+          freeMode
+          loop
+          grabCursor
+        >
+          {technologiesDOM}
+        </Swiper>
+      </TechnologySwiperWrapper>
+      <TechnologySwiperWrapper>
+        <Swiper
+          slidesPerView={6}
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: false,
+          }}
+          speed={3500}
+          freeMode
+          loop
+          grabCursor
+        >
+          {technologiesDOM}
+        </Swiper>
+      </TechnologySwiperWrapper>
     </TechnologyWrapper>
   )
 }

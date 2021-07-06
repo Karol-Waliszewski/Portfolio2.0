@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import Icon from 'components/icon'
-import { Text } from 'components/typography'
+import { Text, Bold } from 'components/typography'
 
 export type SingleTechnologyProps = {
   link: string
@@ -36,9 +36,11 @@ const SingleTechnology: React.FC<SingleTechnologyProps> = ({
   logo,
 }) => {
   return (
-    <Wrapper href={link} rel="nofollow">
-      <TechnologyIcon src={logo} size={90} />
-      <Text>{name}</Text>
+    <Wrapper href={link} rel="nofollow" target="_blank">
+      <TechnologyIcon src={logo} size={80} />
+      <Text>
+        <Bold>{name}</Bold>
+      </Text>
     </Wrapper>
   )
 }
