@@ -14,6 +14,7 @@ import VueLogo from 'assets/logos/vue.png'
 import GraphQLLogo from 'assets/logos/graphql.png'
 import GatsbyLogo from 'assets/logos/gatsby.svg'
 import NuxtLogo from 'assets/logos/nuxt.svg'
+import ReduxLogo from 'assets/logos/redux.png'
 
 type DataProps = {
   about: ImageDataLike
@@ -53,7 +54,7 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => {
     },
     {
       link: 'https://redux.js.org/',
-      logo: '',
+      logo: ReduxLogo,
       name: 'redux',
     },
     {

@@ -9,7 +9,15 @@ type IconProps = {
 }
 
 const Icon: React.FC<IconProps> = ({ src, size, className }) => (
-  <Image src={src} alt="" width={size} height={size} className={className} />
+  <Image
+    src={src}
+    alt=""
+    width={size}
+    height={size}
+    className={className}
+    objectFit="contain"
+    objectPosition="center"
+  />
 )
 
 export default Icon
