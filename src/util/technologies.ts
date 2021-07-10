@@ -10,11 +10,7 @@ import NodeLogo from 'assets/logos/node.svg'
 import SassLogo from 'assets/logos/sass.svg'
 import StyledLogo from 'assets/logos/styled.png'
 
-export type TechnologyProps = {
-  link: string
-  logo: string
-  name: string
-}
+import type TechnologyProps from 'typings/technologies'
 
 const technologies: TechnologyProps[] = [
   {
