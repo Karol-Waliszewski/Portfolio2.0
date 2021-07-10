@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import Container from 'components/container'
-import { Grid, Row, Col } from 'components/grid'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import { Heading } from 'components/typography'
 import Card from 'components/sections/projects/card'
 
@@ -13,11 +13,23 @@ type ProjectsProps = {
 
 const ProjectWrapper = styled.section`
   padding: 4rem 0;
+
+  .swiper-slide {
+    height: auto;
+  }
+
+  .swiper-slide-duplicate {
+    picture {
+      img {
+        opacity: 1 !important;
+      }
+    }
+  }
 `
 
 const Project: React.FC<ProjectsProps> = ({ projects }) => {
   const cards = projects.map((el) => (
-    <Col xs={12} lg={6} xl={4}>
+    <SwiperSlide>
       <Card
         name={el.frontmatter.name}
         slug={el.frontmatter.slug}
@@ -28,16 +40,16 @@ const Project: React.FC<ProjectsProps> = ({ projects }) => {
         alt={el.frontmatter.thumbnailAlt}
         excerpt={el.excerpt}
       />
-    </Col>
+    </SwiperSlide>
   ))
 
   return (
     <ProjectWrapper>
       <Container>
-        <Grid>
-          <Heading>Co udało mi się stworzyć</Heading>
-          <Row alignItems="stretch">{cards}</Row>
-        </Grid>
+        <Heading>Co udało mi się stworzyć</Heading>
+        <Swiper slidesPerView={3} spaceBetween={16} loop grabCursor>
+          {cards}
+        </Swiper>
       </Container>
     </ProjectWrapper>
   )

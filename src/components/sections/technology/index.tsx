@@ -1,14 +1,14 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import Swiper from 'react-id-swiper'
 import { Autoplay, Swiper as SwiperCore } from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 import 'swiper/swiper-bundle.css'
 
 import Container from 'components/container'
 import { Heading } from 'components/typography'
 import SingleTechnology from 'components/sections/technology/single'
-import type { TechnologyProps as SingleTechnologyProps } from 'util/technologies'
+import type SingleTechnologyProps from 'typings/technologies'
 
 SwiperCore.use([Autoplay])
 
@@ -34,9 +34,9 @@ const TechnologySwiperWrapper = styled.div`
 
 const Technology: React.FC<TechnologyProps> = ({ technologies }) => {
   const technologiesDOM = technologies.map((el) => (
-    <div key={el.name}>
+    <SwiperSlide key={el.name}>
       <SingleTechnology name={el.name} logo={el.logo} link={el.link} />
-    </div>
+    </SwiperSlide>
   ))
 
   return (
@@ -47,25 +47,26 @@ const Technology: React.FC<TechnologyProps> = ({ technologies }) => {
       <TechnologySwiperWrapper>
         <Swiper
           slidesPerView={6}
-          // autoplay={{
-          //   delay: 0,
-          //   disableOnInteraction: true,
-          // }}
-          on={{
-            transitionEnd: (swiper) => {
-              const speed = swiper.params.speed ?? 3000
-              swiper.slideTo(0, 0)
-              swiper.slideTo(
-                swiper.slides.length - 1,
-                swiper.slides.length * speed
-              )
-              // swiper.slideNext(swiper.params.speed)
-            },
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: true,
           }}
+          // on={{
+          //   transitionEnd: (swiper) => {
+          //     const speed = swiper.params.speed ?? 3000
+          //     swiper.slideTo(0, 0)
+          //     swiper.slideTo(
+          //       swiper.slides.length - 1,
+          //       swiper.slides.length * speed
+          //     )
+          //     // swiper.slideNext(swiper.params.speed)
+          //   },
+          // }}
           speed={2000}
           freeMode
           loop
           noSwiping
+          allowTouchMove={false}
         >
           {technologiesDOM}
         </Swiper>
