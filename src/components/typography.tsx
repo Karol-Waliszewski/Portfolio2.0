@@ -24,6 +24,7 @@ export const Heading = styled.h1<HeadingProps>`
   width: max-content;
   transform-style: preserve-3d;
 
+  max-width: 100%;
   margin-bottom: 1.5rem;
 
   ${({ align }) => {
@@ -69,10 +70,12 @@ Heading.defaultProps = {
   align: 'left',
 }
 
-export const Subheading = styled(Heading)``
+export const Subheading = styled(Heading)`
+  margin-bottom: 1rem;
+`
 
 Subheading.defaultProps = {
-  size: 34,
+  size: 24,
   background: false,
   align: 'left',
 }
@@ -86,6 +89,10 @@ export const Text = styled.p<TextProps>`
   color: ${({ theme }) => theme.colors.text};
 
   margin-bottom: 1rem;
+
+  a {
+    color: inherit;
+  }
 `
 
 export const Bold = styled.span`

@@ -36,6 +36,7 @@ const FirstButton = styled(Button)`
 
 const HeaderHeading = styled(Heading)`
   margin-bottom: 0.75rem;
+  max-width: initial;
 `
 
 const HeaderText = styled(Text)`

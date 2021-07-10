@@ -13,6 +13,8 @@ type LazyImageProps = {
   height?: number
   objectFit?: React.CSSProperties['objectFit']
   objectPosition?: React.CSSProperties['objectPosition']
+
+  className: string
 }
 
 const LazyImage: React.FC<LazyImageProps> = ({
@@ -22,6 +24,7 @@ const LazyImage: React.FC<LazyImageProps> = ({
   height,
   objectFit,
   objectPosition,
+  className,
 }) => {
   let image = getImage(src) as IGatsbyImageData
   if (width && height) {
@@ -38,6 +41,7 @@ const LazyImage: React.FC<LazyImageProps> = ({
       alt={alt}
       objectFit={objectFit}
       objectPosition={objectPosition}
+      className={className}
     />
   )
 }

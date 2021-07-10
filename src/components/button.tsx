@@ -15,7 +15,7 @@ const Button = styled.button<ButtonProps>`
   display: inline-block;
   position: relative;
 
-  padding: ${pxToRem(6)}rem ${pxToRem(14)}rem;
+  padding: ${pxToRem(6)}rem ${pxToRem(12)}rem;
 
   color: ${({ theme }) => theme.colors.dark};
   border-radius: 4px;
