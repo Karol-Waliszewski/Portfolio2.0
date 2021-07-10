@@ -7,24 +7,26 @@ import Header from 'components/layout/header'
 import Seo from 'components/layout/seo'
 import About from 'components/sections/about'
 import Technology from 'components/sections/technology/index'
-import Technologies from 'util/technologies'
+import TECHNOLOGIES from 'util/technologies'
+import Projects from 'components/sections/projects/index'
 
-import type { Project } from 'util/projects'
+import type { Project as ProjectType } from 'typings/projects'
 
 type DataProps = {
   about: ImageDataLike
-  projects: { edges: { node: Project }[] }
+  projects: { edges: { node: ProjectType }[] }
 }
 
 const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => {
-  console.log(data.projects.edges[0].node.frontmatter)
+  const projects = data.projects.edges.map(({ node }) => node)
 
   return (
     <Layout>
       <Seo title="Home" />
       <Header />
       <About image={data.about} />
-      <Technology technologies={Technologies} />
+      <Technology technologies={TECHNOLOGIES} />
+      <Projects projects={projects} />
       <p>
         <Link to="/page-2/">Go to page 2</Link>
       </p>
