@@ -2,12 +2,7 @@ import * as React from 'react'
 import styled from 'styled-components'
 import Icon from 'components/icon'
 import { Text, Bold } from 'components/typography'
-
-export type SingleTechnologyProps = {
-  link: string
-  logo: string
-  name: string
-}
+import type { TechnologyProps } from 'util/technologies'
 
 const Wrapper = styled.a`
   display: flex;
@@ -30,11 +25,7 @@ const TechnologyIcon = styled(Icon)`
   }
 `
 
-const SingleTechnology: React.FC<SingleTechnologyProps> = ({
-  link,
-  name,
-  logo,
-}) => {
+const SingleTechnology: React.FC<TechnologyProps> = ({ link, name, logo }) => {
   return (
     <Wrapper href={link} rel="nofollow" target="_blank">
       <TechnologyIcon src={logo} size={80} />

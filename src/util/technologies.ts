@@ -7,10 +7,16 @@ import NextLogo from 'assets/logos/next.svg'
 import ReduxLogo from 'assets/logos/redux.svg'
 import TypescriptLogo from 'assets/logos/typescript.svg'
 import NodeLogo from 'assets/logos/node.svg'
+import SassLogo from 'assets/logos/sass.svg'
+import StyledLogo from 'assets/logos/styled.png'
 
-import { SingleTechnologyProps } from 'components/sections/technology/single'
+export type TechnologyProps = {
+  link: string
+  logo: string
+  name: string
+}
 
-const technologies: SingleTechnologyProps[] = [
+const technologies: TechnologyProps[] = [
   {
     link: 'https://reactjs.org/',
     logo: ReactLogo,
@@ -52,19 +58,19 @@ const technologies: SingleTechnologyProps[] = [
     name: 'nuxt.js',
   },
   {
-    link: '',
-    logo: '',
+    link: 'https://styled-components.com/',
+    logo: StyledLogo,
     name: 'styled components',
+  },
+  {
+    link: 'https://sass-lang.com/',
+    logo: SassLogo,
+    name: 'sass',
   },
   {
     link: 'https://nodejs.org/',
     logo: NodeLogo,
     name: 'node',
-  },
-  {
-    link: '',
-    logo: '',
-    name: 'sass',
   },
 ]
 
