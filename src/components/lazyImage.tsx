@@ -14,7 +14,7 @@ type LazyImageProps = {
   objectFit?: React.CSSProperties['objectFit']
   objectPosition?: React.CSSProperties['objectPosition']
 
-  className: string
+  className?: string
 }
 
 const LazyImage: React.FC<LazyImageProps> = ({

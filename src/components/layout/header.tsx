@@ -30,10 +30,6 @@ const HeaderButtons = styled.div`
   margin-top: 1.5rem;
 `
 
-const FirstButton = styled(Button)`
-  margin-right: 0.35rem;
-`
-
 const HeaderHeading = styled(Heading)`
   margin-bottom: 0.75rem;
   max-width: initial;
@@ -57,14 +53,15 @@ const Header: React.FC = () => {
                 <Bold>aplikacji webowych</Bold>.
               </HeaderText>
               <HeaderButtons>
-                <FirstButton
+                <Button
+                  marginRight
                   as="a"
                   href="https://github.com/Karol-Waliszewski"
                   target="_blank"
                   rel="nofollow"
                 >
                   Github
-                </FirstButton>
+                </Button>
                 <Button>CV</Button>
               </HeaderButtons>
             </Col>

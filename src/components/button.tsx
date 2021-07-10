@@ -9,13 +9,16 @@ type ButtonProps = {
   dark?: boolean
   outline?: boolean
   loading?: boolean
+
+  marginRight?: boolean
+  marginLeft?: boolean
 }
 
 const Button = styled.button<ButtonProps>`
   display: inline-block;
   position: relative;
 
-  padding: ${pxToRem(6)}rem ${pxToRem(12)}rem;
+  padding: ${pxToRem(6)}em ${pxToRem(12)}em;
 
   color: ${({ theme }) => theme.colors.dark};
   border-radius: 4px;
@@ -28,6 +31,18 @@ const Button = styled.button<ButtonProps>`
   cursor: pointer;
   transition: color 100ms ease, background-color 100ms ease,
     border-color 100ms ease;
+
+  ${({ marginRight }) =>
+    marginRight &&
+    css`
+      margin-right: ${pxToRem(6)}em;
+    `}
+
+  ${({ marginLeft }) =>
+    marginLeft &&
+    css`
+      margin-left: ${pxToRem(6)}em;
+    `}
 
   ${({ primary }) =>
     primary &&

@@ -53,8 +53,7 @@ export const Row = styled.div<RowProps>`
 
 export const Col = styled.div<ColProps>`
   flex: 0 0 auto;
-  padding-left: calc(${({ theme }) => theme.grid.gap} / 2);
-  padding-right: calc(${({ theme }) => theme.grid.gap} / 2);
+  padding: calc(${({ theme }) => theme.grid.gap} / 2);
 
   ${(props) =>
     (Object.keys(props.theme.breakpoints) as Array<keyof Breakpoints>)
