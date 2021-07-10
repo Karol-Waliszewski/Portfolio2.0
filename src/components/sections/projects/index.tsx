@@ -1,5 +1,6 @@
-import * as React from 'react'
+import React, { useRef } from 'react'
 import styled from 'styled-components'
+import SwiperCore, { Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import Container from 'components/container'
 import { Heading } from 'components/typography'
@@ -9,6 +10,8 @@ import type { Project as ProjectType } from 'typings/projects'
 import Card from 'components/sections/projects/card'
 
 import leftIcon from 'assets/icons/arrow-down.svg'
+
+SwiperCore.use([Navigation])
 
 type ProjectsProps = {
   projects: ProjectType[]
@@ -49,6 +52,9 @@ const ProjectButtonRight = styled(ProjectButton)`
 `
 
 const Project: React.FC<ProjectsProps> = ({ projects }) => {
+  const prevRef = useRef<HTMLButtonElement>(null)
+  const nextRef = useRef<HTMLButtonElement>(null)
+
   const cards = projects.map((el) => (
     <SwiperSlide>
       <Card
@@ -67,14 +73,29 @@ const Project: React.FC<ProjectsProps> = ({ projects }) => {
   return (
     <ProjectWrapper>
       <ProjectContainer>
-        <ProjectButtonLeft outline square>
-          <Icon src={leftIcon} />
-        </ProjectButtonLeft>
         <Heading>Co udało mi się stworzyć</Heading>
-        <Swiper slidesPerView={3} spaceBetween={16} loop grabCursor>
+        <Swiper
+          slidesPerView={3}
+          spaceBetween={16}
+          loop
+          grabCursor
+          navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
+          onBeforeInit={(swiper) => {
+            if (typeof swiper.params.navigation !== 'boolean') {
+              const { navigation } = swiper.params
+              if (navigation) {
+                navigation.prevEl = prevRef.current
+                navigation.nextEl = nextRef.current
+              }
+            }
+          }}
+        >
           {cards}
         </Swiper>
-        <ProjectButtonRight outline square>
+        <ProjectButtonLeft outline square ref={prevRef}>
+          <Icon src={leftIcon} />
+        </ProjectButtonLeft>
+        <ProjectButtonRight outline square ref={nextRef}>
           <Icon src={leftIcon} />
         </ProjectButtonRight>
       </ProjectContainer>
