@@ -82,7 +82,7 @@ Subheading.defaultProps = {
 
 export const Text = styled.p<TextProps>`
   font-weight: 500;
-  line-height: 1rem;
+  line-height: 1.1em;
 
   font-size: ${({ size }) => (size ? `${pxToRem(size)}rem` : '1rem')};
   text-align: ${({ align }) => align ?? 'left'};
