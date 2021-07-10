@@ -3,7 +3,7 @@ slug: '/pictionary'
 name: 'Pictionary'
 thumbnail: '../assets/images/about.png'
 thumbnailAlt: 'Alt message'
-technology: ['Vue', 'Socket.io', 'Node.js', 'Express']
+technology: ['Vue', 'Socket.io', 'Node.js', 'Express', 'Bulma']
 live: 'https://karol-waliszewski.github.io/pictionary.io/'
 github: 'https://github.com/Karol-Waliszewski/pictionary.io'
 ---
