@@ -74,6 +74,12 @@ const Project: React.FC<ProjectsProps> = ({ projects }) => {
     <ProjectWrapper>
       <ProjectContainer>
         <Heading>Co udało mi się stworzyć</Heading>
+        <ProjectButtonLeft outline square ref={prevRef}>
+          <Icon src={leftIcon} />
+        </ProjectButtonLeft>
+        <ProjectButtonRight outline square ref={nextRef}>
+          <Icon src={leftIcon} />
+        </ProjectButtonRight>
         <Swiper
           slidesPerView={3}
           spaceBetween={16}
@@ -86,18 +92,13 @@ const Project: React.FC<ProjectsProps> = ({ projects }) => {
               if (navigation) {
                 navigation.prevEl = prevRef.current
                 navigation.nextEl = nextRef.current
+                swiper.update()
               }
             }
           }}
         >
           {cards}
         </Swiper>
-        <ProjectButtonLeft outline square ref={prevRef}>
-          <Icon src={leftIcon} />
-        </ProjectButtonLeft>
-        <ProjectButtonRight outline square ref={nextRef}>
-          <Icon src={leftIcon} />
-        </ProjectButtonRight>
       </ProjectContainer>
     </ProjectWrapper>
   )
