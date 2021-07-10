@@ -9,7 +9,7 @@ type ButtonProps = {
   dark?: boolean
   outline?: boolean
   loading?: boolean
-
+  square?: boolean
   marginRight?: boolean
   marginLeft?: boolean
 }
@@ -18,7 +18,8 @@ const Button = styled.button<ButtonProps>`
   display: inline-block;
   position: relative;
 
-  padding: ${pxToRem(6)}em ${pxToRem(12)}em;
+  padding: ${({ square }) =>
+    square ? `${pxToRem(6)}em` : `${pxToRem(6)}em ${pxToRem(12)}em`};
 
   color: ${({ theme }) => theme.colors.dark};
   border-radius: 4px;
