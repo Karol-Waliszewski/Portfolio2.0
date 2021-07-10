@@ -28,6 +28,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `projects`,
+        path: `${__dirname}/src/projects`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
@@ -40,21 +47,24 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [],
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          `karla\:400,500,600,700`,
-          `rubik\:400,500,600,700`
-        ],
-        display: 'swap'
-      }
+        fonts: [`karla\:400,500,600,700`, `rubik\:400,500,600,700`],
+        display: 'swap',
+      },
     },
     `gatsby-plugin-netlify`,
     {
       resolve: `gatsby-plugin-typescript`,
       options: {
-        isTSX: true, 
-        jsxPragma: `jsx`, 
+        isTSX: true,
+        jsxPragma: `jsx`,
         allExtensions: true,
       },
     },

@@ -9,11 +9,16 @@ import About from 'components/sections/about'
 import Technology from 'components/sections/technology/index'
 import Technologies from 'util/technologies'
 
+import type { Project } from 'util/projects'
+
 type DataProps = {
   about: ImageDataLike
+  projects: { edges: { node: Project }[] }
 }
 
 const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => {
+  console.log(data.projects.edges[0].node.frontmatter)
+
   return (
     <Layout>
       <Seo title="Home" />
@@ -34,6 +39,26 @@ export const query = graphql`
     about: file(relativePath: { eq: "images/about.png" }) {
       childImageSharp {
         gatsbyImageData(width: 700)
+      }
+    }
+    projects: allMarkdownRemark {
+      edges {
+        node {
+          excerpt
+          html
+          frontmatter {
+            slug
+            name
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
+            technology
+            live
+            github
+          }
+        }
       }
     }
   }
