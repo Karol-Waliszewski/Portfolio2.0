@@ -2,6 +2,10 @@ import styled from 'styled-components'
 
 import { pxToRem } from 'styles/mixins'
 
+type InputProps = {
+  error?: boolean
+}
+
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
@@ -17,13 +21,15 @@ export const Label = styled.label`
   color: ${({ theme }) => theme.colors.text};
 `
 
-export const Input = styled.input`
+export const Input = styled.input<InputProps>`
   width: 100%;
   padding: ${pxToRem(8)}rem ${pxToRem(14)}rem;
 
   font-weight: 500;
 
-  border: 0;
+  border: 1px solid
+    ${({ theme, error }) =>
+      error ? theme.colors.danger : theme.colors.lightgray};
   border-radius: 4px;
   background: ${({ theme }) => theme.colors.lightgray};
 `

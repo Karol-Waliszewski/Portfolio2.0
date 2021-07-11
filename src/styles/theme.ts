@@ -37,6 +37,8 @@ export const colors = {
   black: '#000000',
   gray: '#E8E7E7',
   lightgray: '#F8F8F8',
+  danger: '#e74c3c',
+  success: '#27ae60',
 }
 
 const theme = {
