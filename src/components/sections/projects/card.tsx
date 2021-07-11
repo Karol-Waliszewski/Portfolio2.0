@@ -87,7 +87,13 @@ const Card: React.FC<CardProps> = ({
         </CardText>
         <CardButtons>
           {live ? (
-            <CardButton as="a" href={live} rel="nofollow" marginRight>
+            <CardButton
+              as="a"
+              href={live}
+              rel="nofollow"
+              target="_blank"
+              marginRight
+            >
               Podgląd
             </CardButton>
           ) : (
@@ -97,7 +103,13 @@ const Card: React.FC<CardProps> = ({
           )}
 
           {github ? (
-            <CardButton as="a" href={github} rel="nofollow" outline>
+            <CardButton
+              as="a"
+              href={github}
+              rel="nofollow"
+              target="_blank"
+              outline
+            >
               Github
             </CardButton>
           ) : (
