@@ -1,6 +1,10 @@
 import { css } from 'styled-components'
 
 export default css`
+  * {
+    outline-color: ${({ theme }) => theme.colors.primary};
+  }
+
   html {
     font-size: ${({ theme }) => theme.fonts.size};
   }

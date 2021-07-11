@@ -63,7 +63,9 @@ export const Col = styled.div<ColProps>`
         (breakpoint) =>
           css`
             ${media[breakpoint].min} {
+              /* ts-ignore */
               flex-basis: ${(100 / 12) * props[breakpoint]}%;
+              /* ts-ignore */
               max-width: ${(100 / 12) * props[breakpoint]}%;
               display: block;
             }
@@ -77,8 +79,11 @@ export const Col = styled.div<ColProps>`
         (breakpoint) =>
           css`
             ${media[breakpoint].min} {
+              /* @ts-ignore */
               margin-left: ${(100 / 12) * props[`offset-${breakpoint}`]}%;
             }
           `
       )}
 `
+
+// TODO: check typescript workaround props[key] if filtered before
