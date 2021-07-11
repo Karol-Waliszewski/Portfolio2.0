@@ -9,7 +9,8 @@ import Icon from 'components/icon'
 import type { Project as ProjectType } from 'typings/projects'
 import Card from 'components/sections/projects/card'
 
-import leftIcon from 'assets/icons/arrow-down.svg'
+import leftArrowIcon from 'assets/icons/arrow-left.svg'
+import rightArrowIcon from 'assets/icons/arrow-right.svg'
 
 SwiperCore.use([Navigation])
 
@@ -75,17 +76,17 @@ const Project: React.FC<ProjectsProps> = ({ projects }) => {
       <ProjectContainer>
         <Heading>Co udało mi się stworzyć</Heading>
         <ProjectButtonLeft outline square ref={prevRef}>
-          <Icon src={leftIcon} />
+          <Icon src={leftArrowIcon} />
         </ProjectButtonLeft>
         <ProjectButtonRight outline square ref={nextRef}>
-          <Icon src={leftIcon} />
+          <Icon src={rightArrowIcon} />
         </ProjectButtonRight>
         <Swiper
           slidesPerView={3}
-          spaceBetween={16}
+          spaceBetween={15}
           loop
+          loopedSlides={4}
           grabCursor
-          navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
           onBeforeInit={(swiper) => {
             if (typeof swiper.params.navigation !== 'boolean') {
               const { navigation } = swiper.params

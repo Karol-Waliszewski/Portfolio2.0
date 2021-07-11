@@ -23,6 +23,7 @@ const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: calc(100% - 2px);
+  width: calc(100% - 3px);
 
   border-radius: 6px;
   border: 1px solid ${({ theme }) => theme.colors.gray};
