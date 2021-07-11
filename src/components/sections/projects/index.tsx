@@ -74,7 +74,7 @@ const Project: React.FC<ProjectsProps> = ({ projects }) => {
   return (
     <ProjectWrapper>
       <ProjectContainer>
-        <Heading>Co udało mi się stworzyć</Heading>
+        <Heading as="h2">Co udało mi się stworzyć</Heading>
         <ProjectButtonLeft outline square ref={prevRef}>
           <Icon src={leftArrowIcon} />
         </ProjectButtonLeft>

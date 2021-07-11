@@ -80,7 +80,7 @@ const Card: React.FC<CardProps> = ({
     <CardWrapper>
       <CardImage src={thumbnail} alt={alt} objectFit="cover" />
       <CardContent>
-        <CardTitle>{name}</CardTitle>
+        <CardTitle as="h3">{name}</CardTitle>
         <CardBadges>{badges}</CardBadges>
         <CardText>
           {excerpt} <Link to={`/projects${slug}`}>Więcej</Link>

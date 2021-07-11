@@ -42,7 +42,9 @@ const Technology: React.FC<TechnologyProps> = ({ technologies }) => {
   return (
     <TechnologyWrapper>
       <Container>
-        <Heading align="center">To już znam</Heading>
+        <Heading align="center" as="h2">
+          To już znam
+        </Heading>
       </Container>
       <TechnologySwiperWrapper>
         <Swiper

@@ -21,7 +21,7 @@ const About: React.FC<AboutProps> = ({ image }) => {
         <Grid>
           <Row>
             <Col xs={12} md={6}>
-              <Heading>Trochę o mnie</Heading>
+              <Heading as="h2">Trochę o mnie</Heading>
               <Text>
                 Nazywam się <Bold>Karol Waliszewski</Bold>. Jestem studentem
                 Politechniki Wrocławskiej z zamiłowaniem do programowania i
