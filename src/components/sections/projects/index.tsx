@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import styled from 'styled-components'
 import SwiperCore, { Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import media from 'styles/media'
 import Container from 'components/container'
 import { Heading } from 'components/typography'
 import Button from 'components/button'
@@ -45,11 +46,17 @@ const ProjectButton = styled(Button)`
 `
 
 const ProjectButtonLeft = styled(ProjectButton)`
-  left: 7px;
+  left: -10px;
+  ${media.xxl.max} {
+    left: 6px;
+  }
 `
 
 const ProjectButtonRight = styled(ProjectButton)`
-  right: 7px;
+  right: -10px;
+  ${media.xxl.max} {
+    right: 6px;
+  }
 `
 
 const Project: React.FC<ProjectsProps> = ({ projects }) => {
