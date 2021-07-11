@@ -9,6 +9,7 @@ type TextProps = {
 
 type HeadingProps = TextProps & {
   background?: boolean
+  light?: boolean
 }
 
 export const Heading = styled.h1<HeadingProps>`
@@ -45,7 +46,7 @@ export const Heading = styled.h1<HeadingProps>`
     }
   }}
 
-  ${({ background }) =>
+  ${({ background, light }) =>
     background &&
     css`
       &::after {
@@ -59,7 +60,8 @@ export const Heading = styled.h1<HeadingProps>`
         width: 45%;
         max-width: 250px;
 
-        background: ${({ theme }) => theme.colors.primary};
+        background: ${({ theme }) =>
+          light ? theme.colors.light : theme.colors.primary};
         border-radius: 4px;
       }
     `}
@@ -80,7 +82,7 @@ Subheading.defaultProps = {
   align: 'left',
 }
 
-export const Text = styled.p<TextProps>`
+const textStyles = css<TextProps>`
   font-weight: 500;
   line-height: 1.1em;
 
@@ -95,6 +97,18 @@ export const Text = styled.p<TextProps>`
   }
 `
 
+export const Text = styled.p<TextProps>`
+  ${textStyles}
+`
+
 export const Bold = styled.span`
   font-weight: 700;
+`
+
+export const Content = styled.section`
+  padding: 2rem 0;
+
+  p {
+    ${textStyles}
+  }
 `

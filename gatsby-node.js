@@ -12,3 +12,37 @@ exports.onCreateWebpackConfig = ({ actions }) => {
     },
   })
 }
+
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+  const result = await graphql(`
+    query {
+      allMarkdownRemark {
+        edges {
+          node {
+            html
+            frontmatter {
+              slug
+              name
+              live
+              github
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    createPage({
+      path: `/projects${node.frontmatter.slug}`,
+      component: path.resolve(`./src/pages/_project.tsx`),
+      context: {
+        content: node.html,
+        title: node.frontmatter.name,
+        live: node.frontmatter.live,
+        github: node.frontmatter.github,
+      },
+    })
+  })
+}
