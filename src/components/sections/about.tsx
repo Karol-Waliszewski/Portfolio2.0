@@ -37,7 +37,15 @@ const About: React.FC<AboutProps> = ({ image }) => {
                 Obecnie pracuję jako Web Deweloper i tworzę wiele zaawansowanych
                 aplikacji internetowych w mojej pracy. Jeśli mam trochę czasu,
                 to pracuję też nad własnymi projektami pobocznymi, które możesz
-                sprawdzić na moim GitHubie :)
+                sprawdzić na moim{' '}
+                <a
+                  href="https://github.com/Karol-Waliszewski"
+                  rel="noreferrer nofollow"
+                  target="_blank"
+                >
+                  githubie
+                </a>{' '}
+                :)
               </Text>
             </Col>
             <Col xs={12} md={5} offset-md={1}>

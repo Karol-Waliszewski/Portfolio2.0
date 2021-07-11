@@ -54,7 +54,7 @@ const Header: React.FC<HeaderProps> = ({ title, github, live }) => {
                     as="a"
                     href={live}
                     target="_blank"
-                    rel="nofollow"
+                    rel="noreferrer nofollow"
                     light
                   >
                     Podgląd
@@ -65,7 +65,7 @@ const Header: React.FC<HeaderProps> = ({ title, github, live }) => {
                     as="a"
                     href={github}
                     target="_blank"
-                    rel="nofollow"
+                    rel="noreferrer nofollow"
                     light
                   >
                     Github

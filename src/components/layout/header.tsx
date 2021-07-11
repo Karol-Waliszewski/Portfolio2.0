@@ -58,7 +58,7 @@ const Header: React.FC = () => {
                   as="a"
                   href="https://github.com/Karol-Waliszewski"
                   target="_blank"
-                  rel="nofollow"
+                  rel="noreferrer nofollow"
                 >
                   Github
                 </Button>

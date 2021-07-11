@@ -90,7 +90,7 @@ const Card: React.FC<CardProps> = ({
             <CardButton
               as="a"
               href={live}
-              rel="nofollow"
+              rel="noreferrer nofollow"
               target="_blank"
               marginRight
             >
@@ -106,7 +106,7 @@ const Card: React.FC<CardProps> = ({
             <CardButton
               as="a"
               href={github}
-              rel="nofollow"
+              rel="noreferrer nofollow"
               target="_blank"
               outline
             >

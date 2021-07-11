@@ -27,7 +27,7 @@ const TechnologyIcon = styled(Icon)`
 
 const SingleTechnology: React.FC<TechnologyProps> = ({ link, name, logo }) => {
   return (
-    <Wrapper href={link} rel="nofollow" target="_blank">
+    <Wrapper href={link} rel="noreferrer nofollow" target="_blank">
       <TechnologyIcon src={logo} size={80} />
       <Text>
         <Bold>{name}</Bold>
