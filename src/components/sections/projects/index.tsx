@@ -2,13 +2,15 @@ import React, { useRef } from 'react'
 import styled from 'styled-components'
 import SwiperCore, { Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
+
 import media from 'styles/media'
 import Container from 'components/container'
 import { Heading } from 'components/typography'
 import Button from 'components/button'
 import Icon from 'components/icon'
-import type { Project as ProjectType } from 'typings/projects'
 import Card from 'components/sections/projects/card'
+
+import type { Project as ProjectType } from 'typings/projects'
 
 import leftArrowIcon from 'assets/icons/arrow-left.svg'
 import rightArrowIcon from 'assets/icons/arrow-right.svg'

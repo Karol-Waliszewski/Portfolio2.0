@@ -1,5 +1,6 @@
 import React from 'react'
-import Image from './image'
+
+import Image from 'components/image'
 
 type IconProps = {
   src: string

@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import { ImageDataLike } from 'gatsby-plugin-image'
+
 import Container from 'components/container'
 import { Grid, Row, Col } from 'components/grid'
 import { Heading, Text, Bold } from 'components/typography'

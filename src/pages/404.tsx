@@ -4,6 +4,8 @@ import { PageProps } from 'gatsby'
 import Layout from 'components/layout/layout'
 import Seo from 'components/layout/seo'
 
+// TODO: 404
+
 const NotFoundPage: React.FC<PageProps> = () => (
   <Layout>
     <Seo title="404: Not found" />

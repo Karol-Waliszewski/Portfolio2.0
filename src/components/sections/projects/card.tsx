@@ -2,6 +2,7 @@ import * as React from 'react'
 import { Link } from 'gatsby'
 import type { ImageDataLike } from 'gatsby-plugin-image'
 import styled from 'styled-components'
+
 import { Subheading, Text } from 'components/typography'
 import Button from 'components/button'
 import LazyImage from 'components/lazyImage'

@@ -1,5 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import styled, { CSSProperties, css } from 'styled-components'
+
 import { pxToRem } from 'styles/mixins'
 
 type TextProps = {

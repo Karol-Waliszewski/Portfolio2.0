@@ -1,8 +1,8 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import media from 'styles/media'
 
-import Contact from './contact'
+import media from 'styles/media'
+import Contact from 'components/layout/contact'
 
 type LayoutProps = {
   children: React.ReactNode

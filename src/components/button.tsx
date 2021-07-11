@@ -1,6 +1,8 @@
 import styled, { css } from 'styled-components'
 import { darken } from 'polished'
+
 import { pxToRem } from 'styles/mixins'
+
 import loadingIcon from 'assets/icons/loading.svg'
 
 type ButtonProps = {

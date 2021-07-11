@@ -1,8 +1,10 @@
 import * as React from 'react'
 import styled from 'styled-components'
+
 import Icon from 'components/icon'
 import { Text, Bold } from 'components/typography'
-import type { TechnologyProps } from 'util/technologies'
+
+import type TechnologyProps from 'typings/technologies'
 
 const Wrapper = styled.a`
   display: flex;
