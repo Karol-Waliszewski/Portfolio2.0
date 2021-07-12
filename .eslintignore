@@ -3,10 +3,7 @@ package.json
 package-lock.json
 public
 
-gatsby-browser.js
-gatsby-ssr.js
-gatsby-config.js
-gatsby-node.js
-
 theme.d.ts
 images.d.ts
+
+/*.*
