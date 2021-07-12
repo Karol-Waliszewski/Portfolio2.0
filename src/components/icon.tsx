@@ -21,4 +21,6 @@ const Icon: React.FC<IconProps> = ({ src, size, className }) => (
   />
 )
 
+Icon.defaultProps = { size: 16 }
+
 export default Icon

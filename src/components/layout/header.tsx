@@ -16,7 +16,7 @@ const HeaderWrapper = styled.header`
   background-image: url(${backgroundHeader});
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: top right;
+  background-position: top right -1px;
 
   ${media.xxl.min} {
     background-size: auto 85%;

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Typescipt Styled-Components`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Karol Waliszewski`,
+    description: `Portfolio Karola Waliszewskiego zawierające informacje takie jak: poznane technologie, wykonane projekty oraz doświadczenie zawodowe.`,
     author: `Karol Waliszewski`,
   },
   plugins: [
@@ -81,6 +81,7 @@ module.exports = {
         },
       },
     },
+    `gatsby-plugin-smoothscroll`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

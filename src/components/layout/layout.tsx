@@ -2,7 +2,9 @@ import * as React from 'react'
 import styled from 'styled-components'
 
 import media from 'styles/media'
+
 import Contact from 'components/layout/contact'
+import Scroll from 'components/layout/scrollUp'
 
 type LayoutProps = {
   children: React.ReactNode
@@ -34,6 +36,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <main>{children}</main>
         <Contact />
       </Sheet>
+      <Scroll />
     </>
   )
 }

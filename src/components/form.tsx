@@ -51,10 +51,10 @@ export const Info = styled.span<InfoProps>`
 
 export const Label = styled.label`
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 
   font-weight: 700;
-  font-size: ${pxToRem(20)}rem;
+  font-size: ${pxToRem(18)}rem;
   color: ${({ theme }) => theme.colors.text};
 `
 
