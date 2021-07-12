@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { pxToRem } from 'styles/mixins'
 
@@ -6,10 +6,47 @@ type InputProps = {
   error?: boolean
 }
 
+type InfoProps = {
+  visible?: boolean
+
+  error?: boolean
+  success?: boolean
+}
+
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
+`
+
+export const Info = styled.span<InfoProps>`
+  display: block;
+  min-height: ${pxToRem(23)}rem;
+
+  font-size: ${pxToRem(12)}rem;
+  font-weight: 500;
+
+  visibility: hidden;
+  opacity: 0;
+
+  ${({ visible }) =>
+    visible &&
+    css`
+      visibility: visible;
+      opacity: 1;
+    `}
+
+  ${({ success }) =>
+    success &&
+    css`
+      color: ${({ theme }) => theme.colors.success};
+    `}
+
+  ${({ error }) =>
+    error &&
+    css`
+      color: ${({ theme }) => theme.colors.danger};
+    `}
 `
 
 export const Label = styled.label`
@@ -22,6 +59,7 @@ export const Label = styled.label`
 `
 
 export const Input = styled.input<InputProps>`
+  display: block;
   width: 100%;
   padding: ${pxToRem(8)}rem ${pxToRem(14)}rem;
 

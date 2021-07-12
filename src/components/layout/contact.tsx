@@ -6,7 +6,7 @@ import Container from 'components/container'
 import Button from 'components/button'
 import { Grid, Row, Col } from 'components/grid'
 import { Heading } from 'components/typography'
-import { Form, Label, Input, Textarea } from 'components/form'
+import { Form, Label, Input, Textarea, Info } from 'components/form'
 
 import { FormValues, initialValues, validationSchema } from 'util/form'
 
@@ -41,6 +41,7 @@ const Contact: React.FC = () => {
                   {({
                     values,
                     errors,
+                    touched,
                     handleChange,
                     handleBlur,
                     handleSubmit,
@@ -56,8 +57,14 @@ const Contact: React.FC = () => {
                             onChange={handleChange}
                             onBlur={handleBlur}
                             value={values.name}
-                            error={Boolean(errors.name)}
+                            error={Boolean(errors.name) && touched.name}
                           />
+                          <Info
+                            error
+                            visible={Boolean(errors.name) && touched.name}
+                          >
+                            {errors.name}
+                          </Info>
                         </Col>
                         <Col xs={12} sm={6}>
                           <Label htmlFor="email">Email</Label>
@@ -68,8 +75,14 @@ const Contact: React.FC = () => {
                             onChange={handleChange}
                             onBlur={handleBlur}
                             value={values.email}
-                            error={Boolean(errors.email)}
+                            error={Boolean(errors.email) && touched.email}
                           />
+                          <Info
+                            error
+                            visible={Boolean(errors.email) && touched.email}
+                          >
+                            {errors.email}
+                          </Info>
                         </Col>
                         <Col xs={12}>
                           <Label htmlFor="message">Email</Label>
@@ -80,8 +93,14 @@ const Contact: React.FC = () => {
                             onChange={handleChange}
                             onBlur={handleBlur}
                             value={values.message}
-                            error={Boolean(errors.message)}
+                            error={Boolean(errors.message) && touched.message}
                           />
+                          <Info
+                            error
+                            visible={Boolean(errors.message) && touched.message}
+                          >
+                            {errors.message}
+                          </Info>
                         </Col>
                       </Row>
                       <Button loading={isSubmitting}>Wyślij!</Button>
