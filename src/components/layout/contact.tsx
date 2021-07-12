@@ -17,12 +17,35 @@ const ContactWrapper = styled.footer`
 const Contact: React.FC = () => {
   const onSubmit = (
     values: FormValues,
-    { setSubmitting }: { setSubmitting: (arg: boolean) => void }
+    {
+      setSubmitting,
+      setStatus,
+      resetForm,
+    }: {
+      setSubmitting: (arg: boolean) => void
+      setStatus: (arg: any) => void
+      resetForm: () => void
+    }
   ) => {
     setTimeout(() => {
       console.log(values)
       setSubmitting(false)
+      setStatus('success')
+      setTimeout(() => {
+        resetForm()
+      }, 5000)
     }, 2000)
+  }
+
+  const renderMessage = (status: any) => {
+    switch (status) {
+      case 'success':
+        return 'Wysłano pomyślnie'
+      case 'error':
+        return 'Błąd wysyłania'
+      default:
+        return 'Wyślij!'
+    }
   }
 
   return (
@@ -46,6 +69,7 @@ const Contact: React.FC = () => {
                     handleBlur,
                     handleSubmit,
                     isSubmitting,
+                    status,
                   }) => (
                     <Form onSubmit={handleSubmit}>
                       <Row>
@@ -103,7 +127,14 @@ const Contact: React.FC = () => {
                           </Info>
                         </Col>
                       </Row>
-                      <Button loading={isSubmitting}>Wyślij!</Button>
+                      <Button
+                        loading={isSubmitting}
+                        success={status === 'success'}
+                        danger={status === 'error'}
+                        disabled={status !== undefined}
+                      >
+                        {renderMessage(status)}
+                      </Button>
                     </Form>
                   )}
                 </Formik>

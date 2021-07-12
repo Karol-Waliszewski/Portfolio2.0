@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { darken } from 'polished'
+import { darken, rgba } from 'polished'
 
 import { pxToRem } from 'styles/mixins'
 
@@ -8,6 +8,8 @@ import loadingIcon from 'assets/icons/loading.svg'
 type ButtonProps = {
   primary?: boolean
   light?: boolean
+  success?: boolean
+  danger?: boolean
   dark?: boolean
   outline?: boolean
   loading?: boolean
@@ -33,7 +35,7 @@ const Button = styled.button<ButtonProps>`
 
   cursor: pointer;
   transition: color 100ms ease, background-color 100ms ease,
-    border-color 100ms ease;
+    border-color 100ms ease, box-shadow 100ms ease;
 
   ${({ marginRight }) =>
     marginRight &&
@@ -58,6 +60,8 @@ const Button = styled.button<ButtonProps>`
           darken(0.05, String(theme.colors.primary))};
         border-color: ${({ theme }) =>
           darken(0.05, String(theme.colors.primary))};
+        box-shadow: 0 3px 6px
+          ${({ theme }) => rgba(String(theme.colors.primary), 0.3)};
       }
     `}
 
@@ -71,6 +75,39 @@ const Button = styled.button<ButtonProps>`
         background: ${({ theme }) => darken(0.05, String(theme.colors.light))};
         border-color: ${({ theme }) =>
           darken(0.05, String(theme.colors.light))};
+        box-shadow: 0 3px 6px
+          ${({ theme }) => rgba(String(theme.colors.light), 0.4)};
+      }
+    `}
+
+    ${({ danger }) =>
+    danger &&
+    css`
+      background: ${({ theme }) => theme.colors.danger};
+      border-color: ${({ theme }) => theme.colors.danger};
+
+      &:hover {
+        background: ${({ theme }) => darken(0.05, String(theme.colors.danger))};
+        border-color: ${({ theme }) =>
+          darken(0.05, String(theme.colors.danger))};
+        box-shadow: 0 3px 6px
+          ${({ theme }) => rgba(String(theme.colors.danger), 0.25)};
+      }
+    `}
+
+    ${({ success }) =>
+    success &&
+    css`
+      background: ${({ theme }) => theme.colors.success};
+      border-color: ${({ theme }) => theme.colors.success};
+
+      &:hover {
+        background: ${({ theme }) =>
+          darken(0.05, String(theme.colors.success))};
+        border-color: ${({ theme }) =>
+          darken(0.05, String(theme.colors.success))};
+        box-shadow: 0 3px 6px
+          ${({ theme }) => rgba(String(theme.colors.success), 0.25)};
       }
     `}
 
@@ -84,6 +121,8 @@ const Button = styled.button<ButtonProps>`
       &:hover {
         background: ${({ theme }) => darken(0.05, String(theme.colors.dark))};
         border-color: ${({ theme }) => darken(0.05, String(theme.colors.dark))};
+        box-shadow: 0 3px 6px
+          ${({ theme }) => rgba(String(theme.colors.dark), 0.2)};
       }
     `}
 
