@@ -10,8 +10,15 @@ import { Form, Label, Input, Textarea, Info } from 'components/form'
 
 import { FormValues, initialValues, validationSchema } from 'util/form'
 
+import backgroundFooter from 'assets/images/footer-background.svg'
+
 const ContactWrapper = styled.footer`
   padding: 3rem 0;
+
+  background-image: url(${backgroundFooter});
+  background-size: auto 90%;
+  background-repeat: no-repeat;
+  background-position: -2px bottom;
 `
 
 const Contact: React.FC = () => {
