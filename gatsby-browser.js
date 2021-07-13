@@ -10,12 +10,14 @@ const { ThemeProvider } = require('styled-components')
 const theme = require('styles/theme').default
 const GlobalStyles = require('styles/global').default
 
+const { NavProvider } = require('context/navContext')
+
 exports.wrapRootElement = ({ element }) => {
   console.log(theme)
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      {element}
+      <NavProvider>{element}</NavProvider>
     </ThemeProvider>
   )
 }

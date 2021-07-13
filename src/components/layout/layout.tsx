@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import media from 'styles/media'
 
+import Navigation from 'components/layout/navigation'
 import Contact from 'components/layout/contact'
 import Scroll from 'components/layout/scrollUp'
 
@@ -32,6 +33,7 @@ const Sheet = styled.div`
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
+      <Navigation />
       <Sheet>
         <main>{children}</main>
         <Contact />
