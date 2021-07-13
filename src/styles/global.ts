@@ -1,6 +1,8 @@
-import { css } from 'styled-components'
+import { createGlobalStyle, css } from 'styled-components'
 
-export default css`
+import Normalize from 'styles/normalize'
+
+const Global = css`
   * {
     outline-color: ${({ theme }) => theme.colors.primary};
   }
@@ -22,3 +24,10 @@ export default css`
     font-family: Rubik, sans-serif;
   }
 `
+
+const GlobalStyles = createGlobalStyle`
+    ${Normalize}
+    ${Global} 
+`
+
+export default GlobalStyles

@@ -1,22 +1,15 @@
-const sheetTheme = {
+import type { Breakpoints, Colors, Fonts, Sheet, Grid } from 'types/theme'
+
+const sheet: Sheet = {
   margins: '3.5rem',
 }
 
-const grid = {
+const grid: Grid = {
   gap: '1rem',
 }
 
-export const fonts = {
+export const fonts: Fonts = {
   size: '16px',
-}
-
-export type Breakpoints = {
-  xs: number
-  sm: number
-  md: number
-  lg: number
-  xl: number
-  xxl: number
 }
 
 export const breakpoints: Breakpoints = {
@@ -28,7 +21,7 @@ export const breakpoints: Breakpoints = {
   xxl: 1440,
 }
 
-export const colors = {
+export const colors: Colors = {
   primary: '#FECE47',
   light: '#FEF6E2',
   dark: '#242424',
@@ -42,7 +35,7 @@ export const colors = {
 }
 
 const theme = {
-  sheet: sheetTheme,
+  sheet,
   breakpoints,
   colors,
   grid,

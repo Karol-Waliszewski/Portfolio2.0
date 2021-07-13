@@ -10,7 +10,7 @@ import Button from 'components/button'
 import Icon from 'components/icon'
 import Card from 'components/sections/projects/card'
 
-import type { Project as ProjectType } from 'typings/projects'
+import type { Project as ProjectType } from 'types/projects'
 
 import leftArrowIcon from 'assets/icons/arrow-left.svg'
 import rightArrowIcon from 'assets/icons/arrow-right.svg'

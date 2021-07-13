@@ -29,5 +29,11 @@ module.exports = {
     '@typescript-eslint/ban-ts-ignore': 'off',
     // Enable prettier rules
     'prettier/prettier': 'error',
+    'no-restricted-syntax': [
+      'error',
+      'ForInStatement',
+      'LabeledStatement',
+      'WithStatement',
+    ],
   },
 }

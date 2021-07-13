@@ -8,7 +8,7 @@ import 'swiper/swiper-bundle.css'
 import Container from 'components/container'
 import { Heading } from 'components/typography'
 import SingleTechnology from 'components/sections/technology/single'
-import type SingleTechnologyProps from 'typings/technologies'
+import type SingleTechnologyProps from 'types/technologies'
 
 SwiperCore.use([Autoplay])
 
