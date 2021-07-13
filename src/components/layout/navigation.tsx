@@ -28,8 +28,7 @@ const NavigationButtonLine = css`
   transition-timing-function: ease-in-out;
   transition-property: width, opacity, visibility, transform;
 
-  margin-bottom: 3px;
-  border-radius: 2px;
+  border-radius: 4px;
 `
 
 const HamburgerLine = styled.div`
@@ -90,7 +89,6 @@ const HamburgerContent = styled.div<NavigationProps>`
   ${({ active }) =>
     active &&
     css`
-      padding-top: 3px;
       justify-content: center;
 
       ${HamburgerLine} {
@@ -111,7 +109,7 @@ const HamburgerContent = styled.div<NavigationProps>`
           top: initial;
           left: initial;
 
-          transform: rotate(315deg);
+          transform: rotate(135deg);
         }
       }
     `}
