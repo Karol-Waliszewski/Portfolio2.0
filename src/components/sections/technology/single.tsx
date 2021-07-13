@@ -1,8 +1,8 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
-import Icon from 'components/icon'
-import { Text, Bold } from 'components/typography'
+import Icon from 'components/shared/icon'
+import { Text, Bold } from 'components/shared/typography'
 
 import type TechnologyProps from 'types/technologies'
 

@@ -2,11 +2,11 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { Formik } from 'formik'
 
-import Container from 'components/container'
-import Button from 'components/button'
-import { Grid, Row, Col } from 'components/grid'
-import { Heading } from 'components/typography'
-import { Form, Label, Input, Textarea, Info } from 'components/form'
+import Container from 'components/shared/container'
+import Button from 'components/shared/button'
+import { Grid, Row, Col } from 'components/shared/grid'
+import { Heading } from 'components/shared/typography'
+import { Form, Label, Input, Textarea, Info } from 'components/shared/form'
 
 import { FormValues, initialValues, validationSchema } from 'util/form'
 
@@ -138,6 +138,7 @@ const Contact: React.FC = () => {
                         loading={isSubmitting}
                         success={status === 'success'}
                         danger={status === 'error'}
+                        primary
                         disabled={status !== undefined}
                       >
                         {renderMessage(status)}

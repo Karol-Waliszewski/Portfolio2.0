@@ -2,10 +2,10 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { ImageDataLike } from 'gatsby-plugin-image'
 
-import Container from 'components/container'
-import { Grid, Row, Col } from 'components/grid'
-import { Heading, Text, Bold } from 'components/typography'
-import LazyImage from 'components/lazyImage'
+import Container from 'components/shared/container'
+import { Grid, Row, Col } from 'components/shared/grid'
+import { Heading, Text, Bold } from 'components/shared/typography'
+import LazyImage from 'components/shared/lazyImage'
 
 type AboutProps = {
   image: ImageDataLike

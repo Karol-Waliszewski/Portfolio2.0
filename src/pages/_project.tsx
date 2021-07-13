@@ -4,8 +4,8 @@ import { PageProps } from 'gatsby'
 import Layout from 'components/layout/layout'
 import Seo from 'components/layout/seo'
 import Header from 'components/layout/projectHeader'
-import Container from 'components/container'
-import { Content } from 'components/typography'
+import Container from 'components/shared/container'
+import { Content } from 'components/shared/typography'
 
 type ProjectContext = {
   title: string

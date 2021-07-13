@@ -5,8 +5,8 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 import 'swiper/swiper-bundle.css'
 
-import Container from 'components/container'
-import { Heading } from 'components/typography'
+import Container from 'components/shared/container'
+import { Heading } from 'components/shared/typography'
 import SingleTechnology from 'components/sections/technology/single'
 import type SingleTechnologyProps from 'types/technologies'
 
