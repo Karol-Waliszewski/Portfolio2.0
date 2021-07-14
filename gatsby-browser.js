@@ -12,8 +12,7 @@ const GlobalStyles = require('styles/global').default
 
 const { NavProvider } = require('context/navContext')
 
-exports.wrapRootElement = ({ element }) => {
-  console.log(theme)
+exports.wrapPageElement = ({ element }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
