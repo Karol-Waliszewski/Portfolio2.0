@@ -1,6 +1,8 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
+import NavLink from 'components/layout/navigation/link'
+
 import type LinkType from 'types/navLink'
 import type { ActiveRequired } from 'types/active'
 
@@ -32,9 +34,19 @@ const NavigationContent: React.FC<NavigationContentProps> = ({
   links,
   active,
 }) => {
-  console.log(links, active)
+  const linksDOM = links.map((el) => (
+    <NavLink
+      text={el.text}
+      icon={el.icon}
+      link={el.link}
+      linkType={el.linkType}
+    />
+  ))
+
   return (
-    <NavigationContentWrapper active={active}>content</NavigationContentWrapper>
+    <NavigationContentWrapper active={active}>
+      {linksDOM}
+    </NavigationContentWrapper>
   )
 }
 

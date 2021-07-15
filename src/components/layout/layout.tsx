@@ -11,6 +11,8 @@ import useNav from 'util/useNav'
 
 import type { ActiveRequired } from 'types/active'
 
+import LINKS from 'util/links'
+
 type LayoutProps = {
   children: React.ReactNode
 }
@@ -47,7 +49,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <>
-      <Navigation />
+      <Navigation links={LINKS} />
       <SheetWrapper active={active}>
         <Sheet>
           <main>{children}</main>
