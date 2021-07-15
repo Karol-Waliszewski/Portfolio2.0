@@ -12,6 +12,13 @@ module.exports = {
         displayName: true,
       },
     },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://www.karolwaliszewski.pl/`,
+        stripQueryString: true,
+      },
+    },
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     {
