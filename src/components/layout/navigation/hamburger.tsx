@@ -3,21 +3,14 @@ import styled, { css } from 'styled-components'
 
 import Button from 'components/shared/button'
 
-import useNav from 'util/useNav'
-
-type NavigationProps = {
+type HamburgerProps = {
   active?: boolean
+  onClick?: () => void
 }
 
-const NavigationWrapper = styled.nav`
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
-`
-
-const NavigationButtonLine = css`
+const HamburgerLine = styled.div`
   position: absolute;
+  top: 50%;
 
   display: block;
   height: 2px;
@@ -29,20 +22,23 @@ const NavigationButtonLine = css`
   transition-property: width, opacity, visibility, transform;
 
   border-radius: 4px;
-`
 
-const HamburgerLine = styled.div`
-  ${NavigationButtonLine}
-  top: 50%;
   transform: translate3d(0, -50%, 0);
 `
 
 const HamburgerWrapper = styled(Button)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+
   width: 50px;
   height: 36px;
 
   border-radius: 0 0 4px 0;
   margin: 0;
+
+  pointer-events: all;
 
   &:hover {
     ${HamburgerLine} {
@@ -61,7 +57,7 @@ const HamburgerWrapper = styled(Button)`
   }
 `
 
-const HamburgerContent = styled.div<NavigationProps>`
+const HamburgerContent = styled.div<HamburgerProps>`
   position: relative;
   width: 100%;
   height: 100%;
@@ -115,8 +111,8 @@ const HamburgerContent = styled.div<NavigationProps>`
     `}
 `
 
-const Hamburger: React.FC<NavigationProps> = ({ active }) => (
-  <HamburgerWrapper>
+const Hamburger: React.FC<HamburgerProps> = ({ active, onClick }) => (
+  <HamburgerWrapper onClick={onClick}>
     <HamburgerContent active={active}>
       <HamburgerLine />
       <HamburgerLine />
@@ -125,16 +121,4 @@ const Hamburger: React.FC<NavigationProps> = ({ active }) => (
   </HamburgerWrapper>
 )
 
-const Navigation: React.FC = () => {
-  const { active, setActive } = useNav()
-
-  const toggleNav = () => setActive && setActive(!active)
-
-  return (
-    <NavigationWrapper onClick={toggleNav}>
-      <Hamburger active={active} />
-    </NavigationWrapper>
-  )
-}
-
-export default Navigation
+export default Hamburger

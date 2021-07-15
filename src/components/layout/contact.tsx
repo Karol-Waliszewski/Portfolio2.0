@@ -16,7 +16,7 @@ const ContactWrapper = styled.footer`
   padding: 3rem 0;
 
   background-image: url(${backgroundFooter});
-  background-size: auto 90%;
+  background-size: auto min(90%, 450px);
   background-repeat: no-repeat;
   background-position: -2px bottom;
 `

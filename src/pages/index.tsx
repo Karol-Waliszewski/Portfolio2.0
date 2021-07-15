@@ -10,7 +10,7 @@ import Technology from 'components/sections/technology/index'
 import Projects from 'components/sections/projects/index'
 import TECHNOLOGIES from 'util/technologies'
 
-import type { Project as ProjectType } from 'types/projects'
+import type ProjectType from 'types/projects'
 
 type DataProps = {
   about: ImageDataLike
