@@ -1,6 +1,6 @@
 import { ImageDataLike } from 'gatsby-plugin-image'
 
-export type Project = {
+type Project = {
   frontmatter: {
     slug: string
     name: string
@@ -13,3 +13,5 @@ export type Project = {
   html: string
   excerpt: string
 }
+
+export default Project

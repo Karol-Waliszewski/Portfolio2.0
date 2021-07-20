@@ -7,14 +7,20 @@ import Icon from 'components/shared/icon'
 import useScrollPosition from 'util/useScroll'
 import useWindowSize from 'util/useWindow'
 
+import media from 'styles/media'
+
+import { ActiveRequired } from 'types/active'
+
 import upArrowIcon from 'assets/icons/arrow-up.svg'
 
 type ScrollButtonProps = {
   visible: boolean
+  active: boolean
 }
 
 const ScrollButton = styled(Button)`
   position: fixed;
+  z-index: 5;
   bottom: 2%;
   right: 2%;
 
@@ -22,10 +28,14 @@ const ScrollButton = styled(Button)`
   pointer-events: ${({ visible }: ScrollButtonProps) =>
     visible ? 'initial' : 'none'};
 
-  transition: opacity 250ms ease;
+  transition: right 250ms ease-in-out, opacity 250ms ease;
+
+  ${media.xl.min} {
+    right: ${({ active }: ScrollButtonProps) => (active ? '1%' : '2%')};
+  }
 `
 
-const ScrollUp: React.FC = () => {
+const ScrollUp: React.FC<ActiveRequired> = ({ active }) => {
   const { y } = useScrollPosition(300)
   const { height } = useWindowSize(300)
 
@@ -39,7 +49,7 @@ const ScrollUp: React.FC = () => {
   }
 
   return (
-    <ScrollButton square visible={visible} onClick={scrollTop}>
+    <ScrollButton square visible={visible} onClick={scrollTop} active={active}>
       <Icon src={upArrowIcon} />
     </ScrollButton>
   )

@@ -1,7 +1,18 @@
-import type { Breakpoints, Colors, Fonts, Sheet, Grid } from 'types/theme'
+import type {
+  Breakpoints,
+  Colors,
+  Fonts,
+  Sheet,
+  Grid,
+  Navigation,
+} from 'types/theme'
 
 const sheet: Sheet = {
   margins: '3.5rem',
+}
+
+const navigation: Navigation = {
+  width: '240px',
 }
 
 const grid: Grid = {
@@ -40,6 +51,7 @@ const theme = {
   colors,
   grid,
   fonts,
+  navigation,
 }
 
 export default theme

@@ -34,6 +34,10 @@ export type Sheet = {
   margins: CSSProperties['margin']
 }
 
+export type Navigation = {
+  width: CSSProperties['width']
+}
+
 declare module 'styled-components' {
   export interface DefaultTheme {
     sheet: Sheet
@@ -41,5 +45,6 @@ declare module 'styled-components' {
     fonts: Fonts
     colors: Colors
     breakpoints: Breakpoints
+    navigation: Navigation
   }
 }

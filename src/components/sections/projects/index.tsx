@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import SwiperCore, { Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -10,7 +10,9 @@ import Button from 'components/shared/button'
 import Icon from 'components/shared/icon'
 import Card from 'components/sections/projects/card'
 
-import type { Project as ProjectType } from 'types/projects'
+import useNav from 'util/useNav'
+
+import type ProjectType from 'types/projects'
 
 import leftArrowIcon from 'assets/icons/arrow-left.svg'
 import rightArrowIcon from 'assets/icons/arrow-right.svg'
@@ -62,8 +64,18 @@ const ProjectButtonRight = styled(ProjectButton)`
 `
 
 const Project: React.FC<ProjectsProps> = ({ projects }) => {
+  const { active: activeNav } = useNav()
+  const [swiperRef, setSwiper] = useState<SwiperCore | null>(null)
   const prevRef = useRef<HTMLButtonElement>(null)
   const nextRef = useRef<HTMLButtonElement>(null)
+
+  useEffect(() => {
+    return () => {
+      if (swiperRef != null) {
+        setTimeout(() => swiperRef.update(), 250)
+      }
+    }
+  }, [activeNav])
 
   const cards = projects.map((el) => (
     <SwiperSlide>
@@ -96,7 +108,8 @@ const Project: React.FC<ProjectsProps> = ({ projects }) => {
           loop
           loopedSlides={4}
           grabCursor
-          onBeforeInit={(swiper) => {
+          onSwiper={(swiper: SwiperCore) => setSwiper(swiper)}
+          onBeforeInit={(swiper: SwiperCore) => {
             if (typeof swiper.params.navigation !== 'boolean') {
               const { navigation } = swiper.params
               if (navigation) {

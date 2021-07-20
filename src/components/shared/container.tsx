@@ -7,12 +7,14 @@ type ContainerProps = {
 
 const Container = styled.div<ContainerProps>`
   width: 100%;
-  max-width: calc(1000px + 3rem);
+  max-width: 1000px;
 
   margin-left: auto;
   margin-right: auto;
   padding-left: 3rem;
   padding-right: 3rem;
+
+  box-sizing: border-box;
 
   ${({ fullWidth }) =>
     fullWidth &&
