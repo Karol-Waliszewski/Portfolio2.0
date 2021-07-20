@@ -10,6 +10,7 @@ import type SingleTechnologyProps from 'types/technologies'
 
 type TechnologyProps = {
   technologies: SingleTechnologyProps[]
+  id: string
 }
 
 const TechnologyWrapper = styled.section`
@@ -28,13 +29,13 @@ const TechnologySwiperWrapper = styled.div`
   }
 `
 
-const Technology: React.FC<TechnologyProps> = ({ technologies }) => {
+const Technology: React.FC<TechnologyProps> = ({ technologies, id }) => {
   const half = Math.ceil(technologies.length / 2)
   const first = technologies.slice(0, half)
   const second = technologies.slice(half, technologies.length)
 
   return (
-    <TechnologyWrapper>
+    <TechnologyWrapper id={id}>
       <Container>
         <Heading align="center" as="h2">
           To już znam

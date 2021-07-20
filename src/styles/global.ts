@@ -9,6 +9,7 @@ const Global = css`
 
   html {
     font-size: ${({ theme }) => theme.fonts.size};
+    scroll-behavior: smooth;
   }
 
   body {

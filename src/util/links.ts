@@ -1,5 +1,6 @@
 import Link from 'types/navLink'
 
+import HomeIcon from 'assets/icons/home.svg'
 import BulbIcon from 'assets/icons/bulb.svg'
 import EmailIcon from 'assets/icons/mail.svg'
 import CodeIcon from 'assets/icons/code.svg'
@@ -9,7 +10,7 @@ import CVIcon from 'assets/icons/cv.svg'
 
 export const PRIMARY: Link[] = [
   {
-    icon: '',
+    icon: HomeIcon,
     text: 'Strona główna',
     link: '/',
     type: 'local',
@@ -17,19 +18,19 @@ export const PRIMARY: Link[] = [
   {
     icon: BulbIcon,
     text: 'O mnie',
-    link: '/',
+    link: '/#about',
     type: 'local',
   },
   {
     icon: CodeIcon,
     text: 'Technologie',
-    link: '/',
+    link: '/#technologies',
     type: 'local',
   },
   {
     icon: ProjectsIcon,
     text: 'Projekty',
-    link: '/',
+    link: '/#projects',
     type: 'local',
   },
   {

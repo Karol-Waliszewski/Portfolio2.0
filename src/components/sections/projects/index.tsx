@@ -21,6 +21,7 @@ SwiperCore.use([Navigation])
 
 type ProjectsProps = {
   projects: ProjectType[]
+  id: string
 }
 
 const ProjectWrapper = styled.section`
@@ -63,7 +64,7 @@ const ProjectButtonRight = styled(ProjectButton)`
   }
 `
 
-const Project: React.FC<ProjectsProps> = ({ projects }) => {
+const Project: React.FC<ProjectsProps> = ({ projects, id }) => {
   const { active: activeNav } = useNav()
   const [swiperRef, setSwiper] = useState<SwiperCore | null>(null)
   const prevRef = useRef<HTMLButtonElement>(null)
@@ -93,7 +94,7 @@ const Project: React.FC<ProjectsProps> = ({ projects }) => {
   ))
 
   return (
-    <ProjectWrapper>
+    <ProjectWrapper id={id}>
       <ProjectContainer>
         <Heading as="h2">Co udało mi się stworzyć</Heading>
         <ProjectButtonLeft outline square ref={prevRef}>

@@ -9,15 +9,16 @@ import LazyImage from 'components/shared/lazyImage'
 
 type AboutProps = {
   image: ImageDataLike
+  id: string
 }
 
 const AboutWrapper = styled.section`
   padding: 4rem 0;
 `
 
-const About: React.FC<AboutProps> = ({ image }) => {
+const About: React.FC<AboutProps> = ({ image, id }) => {
   return (
-    <AboutWrapper>
+    <AboutWrapper id={id}>
       <Container>
         <Grid>
           <Row>
