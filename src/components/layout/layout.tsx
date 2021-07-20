@@ -11,7 +11,10 @@ import useNav from 'util/useNav'
 
 import type { ActiveRequired } from 'types/active'
 
-import LINKS from 'util/links'
+import {
+  PRIMARY as PRIMARY_LINKS,
+  SECONDARY as SECONDARY_LINKS,
+} from 'util/links'
 
 type LayoutProps = {
   children: React.ReactNode
@@ -49,7 +52,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <>
-      <Navigation links={LINKS} />
+      <Navigation
+        primaryLinks={PRIMARY_LINKS}
+        secondaryLinks={SECONDARY_LINKS}
+      />
       <SheetWrapper active={active}>
         <Sheet>
           <main>{children}</main>

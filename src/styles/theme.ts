@@ -12,7 +12,7 @@ const sheet: Sheet = {
 }
 
 const navigation: Navigation = {
-  width: '220px',
+  width: '240px',
 }
 
 const grid: Grid = {

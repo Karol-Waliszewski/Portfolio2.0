@@ -5,6 +5,7 @@ import { pxToRem } from 'styles/mixins'
 
 type TextProps = {
   align?: CSSProperties['textAlign']
+  margin?: CSSProperties['margin']
   size?: number
 }
 
@@ -27,7 +28,7 @@ export const Heading = styled.h1<HeadingProps>`
   transform-style: preserve-3d;
 
   max-width: 100%;
-  margin-bottom: 1.5rem;
+  margin-bottom: ${({ margin }) => margin ?? '1.5rem'};
 
   ${({ align }) => {
     switch (align) {
@@ -81,6 +82,7 @@ Subheading.defaultProps = {
   size: 24,
   background: false,
   align: 'left',
+  margin: '1.25rem',
 }
 
 const textStyles = css<TextProps>`
@@ -91,7 +93,7 @@ const textStyles = css<TextProps>`
   text-align: ${({ align }) => align ?? 'left'};
   color: ${({ theme }) => theme.colors.text};
 
-  margin-bottom: 1rem;
+  margin-bottom: ${({ margin }) => margin ?? '1rem'};
 
   a {
     color: inherit;

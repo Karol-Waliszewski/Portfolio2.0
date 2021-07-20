@@ -19,10 +19,14 @@ const NavigationWrapper = styled.nav`
 `
 
 type NavigationProps = {
-  links: LinkType[]
+  primaryLinks: LinkType[]
+  secondaryLinks: LinkType[]
 }
 
-const Navigation: React.FC<NavigationProps> = ({ links }) => {
+const Navigation: React.FC<NavigationProps> = ({
+  primaryLinks,
+  secondaryLinks,
+}) => {
   const { active, setActive } = useNav()
 
   const toggleNav = () => setActive && setActive(!active)
@@ -30,7 +34,11 @@ const Navigation: React.FC<NavigationProps> = ({ links }) => {
   return (
     <NavigationWrapper>
       <Hamburger active={active} onClick={toggleNav} />
-      <Content links={links} active={active} />
+      <Content
+        primaryLinks={primaryLinks}
+        secondaryLinks={secondaryLinks}
+        active={active}
+      />
     </NavigationWrapper>
   )
 }

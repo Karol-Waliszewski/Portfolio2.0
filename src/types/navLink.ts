@@ -4,21 +4,21 @@ type LocalLink = {
   icon: string
   text: string
   link: `/${string}`
-  linkType: 'local'
+  type: 'local'
 }
 
 type AnchorLink = {
   icon: string
   text: string
   link: `#${string}`
-  linkType: 'anchor'
+  type: 'anchor'
 }
 
 type ExternalLink = {
   icon: string
   text: string
   link: `https://${string}` | `http://${string}`
-  linkType: 'external'
+  type: 'external'
 }
 
 export default Link

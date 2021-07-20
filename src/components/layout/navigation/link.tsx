@@ -1,21 +1,68 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
+import scrollTo from 'gatsby-plugin-smoothscroll'
+import { darken } from 'polished'
 
 import { Text } from 'components/shared/typography'
 import Icon from 'components/shared/icon'
 
+import { pxToRem } from 'styles/mixins'
+
 import type LinkType from 'types/navLink'
 
-const LinkWrapper = styled(Link)``
+const LinkWrapper = styled.div`
+  display: flex;
+  align-items: center;
 
-const NavLink: React.FC<LinkType> = ({ link, linkType, text, icon }) => {
-  return (
-    <LinkWrapper to={link} data-type={linkType}>
-      <Icon src={icon} />
-      <Text>{text}</Text>
-    </LinkWrapper>
+  padding: ${pxToRem(16)}rem ${pxToRem(24)}rem;
+  margin: ${pxToRem(6)}rem ${pxToRem(14)}rem;
+  border-radius: 4px;
+
+  text-decoration: none;
+
+  transition: background 150ms ease;
+
+  &:hover {
+    background: ${({ theme }) => darken(0.1, String(theme.colors.primary))};
+  }
+`
+
+const NavLink: React.FC<LinkType> = ({ link, type, text, icon }) => {
+  const NavLinkContent = (
+    <>
+      <Icon src={icon} marginRight size={18} />
+      <Text margin="0">{text}</Text>
+    </>
   )
+
+  switch (type) {
+    case 'anchor':
+      return (
+        <LinkWrapper as="button" onClick={() => scrollTo(link)}>
+          {NavLinkContent}
+        </LinkWrapper>
+      )
+
+    case 'external':
+      return (
+        <LinkWrapper
+          as="a"
+          href={link}
+          target="_blank"
+          rel="nofollow noreferrer"
+        >
+          {NavLinkContent}
+        </LinkWrapper>
+      )
+
+    default:
+      return (
+        <LinkWrapper as={Link} to={link}>
+          {NavLinkContent}
+        </LinkWrapper>
+      )
+  }
 }
 
 export default NavLink

@@ -25,27 +25,35 @@ const NavigationContentWrapper = styled.div<ActiveRequired>`
     `}
 `
 
+const NavigationSeparator = styled.span`
+  display: block;
+  padding: 12px 0;
+`
+
 type NavigationContentProps = {
-  links: LinkType[]
+  primaryLinks: LinkType[]
+  secondaryLinks: LinkType[]
   active: boolean
 }
 
 const NavigationContent: React.FC<NavigationContentProps> = ({
-  links,
+  primaryLinks,
+  secondaryLinks,
   active,
 }) => {
-  const linksDOM = links.map((el) => (
-    <NavLink
-      text={el.text}
-      icon={el.icon}
-      link={el.link}
-      linkType={el.linkType}
-    />
+  const primaryLinksDOM = primaryLinks.map((el) => (
+    <NavLink text={el.text} icon={el.icon} link={el.link} type={el.type} />
+  ))
+
+  const secondaryLinksDOM = secondaryLinks.map((el) => (
+    <NavLink text={el.text} icon={el.icon} link={el.link} type={el.type} />
   ))
 
   return (
     <NavigationContentWrapper active={active}>
-      {linksDOM}
+      {primaryLinksDOM}
+      <NavigationSeparator />
+      {secondaryLinksDOM}
     </NavigationContentWrapper>
   )
 }
