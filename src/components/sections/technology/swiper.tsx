@@ -30,7 +30,7 @@ const TechnologySwiper: React.FC<TechnologySwiperProps> = ({
 
     return (swiper: SwiperCore) => {
       slideTo = slideTo === 0 ? swiper.slides.length - 1 : 0
-      const duration = slideTo === 0 ? 0.00000001 : swiper.slides.length * speed
+      const duration = slideTo === 0 ? 1 : swiper.slides.length * speed
       swiper.slideTo(slideTo, duration, true)
     }
   }
