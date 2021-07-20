@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import scrollTo from 'gatsby-plugin-smoothscroll'
 import { darken } from 'polished'
 
 import { Text } from 'components/shared/typography'
@@ -20,11 +19,12 @@ const LinkWrapper = styled.div`
   border-radius: 4px;
 
   text-decoration: none;
+  background: ${({ theme }) => theme.colors.primary};
 
-  transition: background 150ms ease;
+  transition: background 100ms ease;
 
   &:hover {
-    background: ${({ theme }) => darken(0.1, String(theme.colors.primary))};
+    background: ${({ theme }) => darken(0.08, String(theme.colors.primary))};
   }
 `
 
@@ -39,7 +39,7 @@ const NavLink: React.FC<LinkType> = ({ link, type, text, icon }) => {
   switch (type) {
     case 'anchor':
       return (
-        <LinkWrapper as="button" onClick={() => scrollTo(link)}>
+        <LinkWrapper as={Link} to={link}>
           {NavLinkContent}
         </LinkWrapper>
       )

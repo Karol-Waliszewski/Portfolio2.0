@@ -10,7 +10,7 @@ type LocalLink = {
 type AnchorLink = {
   icon: string
   text: string
-  link: `#${string}`
+  link: `#${string}` | `/#${string}`
   type: 'anchor'
 }
 

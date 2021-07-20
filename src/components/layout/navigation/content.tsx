@@ -42,7 +42,7 @@ const NavigationContent: React.FC<NavigationContentProps> = ({
   active,
 }) => {
   const primaryLinksDOM = primaryLinks.map((el) => (
-    <NavLink text={el.text} icon={el.icon} link={el.link} type={el.type} />
+    <NavLink text={el.text} icon={el.icon} link={el.link} type={el.type} /> // TODO: find fix
   ))
 
   const secondaryLinksDOM = secondaryLinks.map((el) => (
