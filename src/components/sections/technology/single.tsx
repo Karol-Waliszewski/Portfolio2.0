@@ -31,7 +31,7 @@ const SingleTechnology: React.FC<TechnologyProps> = ({ link, name, logo }) => {
   return (
     <Wrapper href={link} rel="noreferrer nofollow" target="_blank">
       <TechnologyIcon src={logo} size={80} />
-      <Text>
+      <Text align="center">
         <Bold>{name}</Bold>
       </Text>
     </Wrapper>

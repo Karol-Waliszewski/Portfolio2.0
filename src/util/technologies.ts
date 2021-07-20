@@ -9,6 +9,7 @@ import TypescriptLogo from 'assets/logos/typescript.svg'
 import NodeLogo from 'assets/logos/node.svg'
 import SassLogo from 'assets/logos/sass.svg'
 import StyledLogo from 'assets/logos/styled.png'
+import AdobeXDLogo from 'assets/logos/adobexd.svg'
 
 import type TechnologyProps from 'types/technologies'
 
@@ -17,21 +18,6 @@ const technologies: TechnologyProps[] = [
     link: 'https://reactjs.org/',
     logo: ReactLogo,
     name: 'react',
-  },
-  {
-    link: 'https://vuejs.org/',
-    logo: VueLogo,
-    name: 'vue',
-  },
-  {
-    link: 'https://graphql.org/',
-    logo: GraphQLLogo,
-    name: 'graphql',
-  },
-  {
-    link: 'https://www.typescriptlang.org/',
-    logo: TypescriptLogo,
-    name: 'typescript',
   },
   {
     link: 'https://www.gatsbyjs.com/',
@@ -49,14 +35,34 @@ const technologies: TechnologyProps[] = [
     name: 'redux',
   },
   {
+    link: 'https://styled-components.com/',
+    logo: StyledLogo,
+    name: 'styled components',
+  },
+  {
+    link: 'https://www.adobe.com/in/products/xd.html',
+    logo: AdobeXDLogo,
+    name: 'adobe xd',
+  },
+  {
+    link: 'https://vuejs.org/',
+    logo: VueLogo,
+    name: 'vue',
+  },
+  {
     link: 'https://nuxtjs.org/',
     logo: NuxtLogo,
     name: 'nuxt.js',
   },
   {
-    link: 'https://styled-components.com/',
-    logo: StyledLogo,
-    name: 'styled components',
+    link: 'https://www.typescriptlang.org/',
+    logo: TypescriptLogo,
+    name: 'typescript',
+  },
+  {
+    link: 'https://graphql.org/',
+    logo: GraphQLLogo,
+    name: 'graphql',
   },
   {
     link: 'https://sass-lang.com/',

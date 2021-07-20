@@ -1,16 +1,12 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import SwiperCore, { Autoplay } from 'swiper'
-import { Swiper, SwiperSlide } from 'swiper/react'
-
-import 'swiper/swiper-bundle.css'
 
 import Container from 'components/shared/container'
 import { Heading } from 'components/shared/typography'
-import SingleTechnology from 'components/sections/technology/single'
-import type SingleTechnologyProps from 'types/technologies'
 
-SwiperCore.use([Autoplay])
+import Swiper from 'components/sections/technology/swiper'
+
+import type SingleTechnologyProps from 'types/technologies'
 
 type TechnologyProps = {
   technologies: SingleTechnologyProps[]
@@ -33,11 +29,9 @@ const TechnologySwiperWrapper = styled.div`
 `
 
 const Technology: React.FC<TechnologyProps> = ({ technologies }) => {
-  const technologiesDOM = technologies.map((el) => (
-    <SwiperSlide key={el.name}>
-      <SingleTechnology name={el.name} logo={el.logo} link={el.link} />
-    </SwiperSlide>
-  ))
+  const half = Math.ceil(technologies.length / 2)
+  const first = technologies.slice(0, half)
+  const second = technologies.slice(half, technologies.length)
 
   return (
     <TechnologyWrapper>
@@ -47,47 +41,11 @@ const Technology: React.FC<TechnologyProps> = ({ technologies }) => {
         </Heading>
       </Container>
       <TechnologySwiperWrapper>
-        <Swiper
-          slidesPerView={6}
-          autoplay={{
-            delay: 0,
-            disableOnInteraction: true,
-          }}
-          // on={{
-          //   transitionEnd: (swiper) => {
-          //     const speed = swiper.params.speed ?? 3000
-          //     swiper.slideTo(0, 0)
-          //     swiper.slideTo(
-          //       swiper.slides.length - 1,
-          //       swiper.slides.length * speed
-          //     )
-          //     // swiper.slideNext(swiper.params.speed)
-          //   },
-          // }}
-          speed={2000}
-          freeMode
-          loop
-          noSwiping
-          allowTouchMove={false}
-        >
-          {technologiesDOM}
-        </Swiper>
+        <Swiper slidesPerView={6} speed={1000} slides={first} />
       </TechnologySwiperWrapper>
-      {/* <TechnologySwiperWrapper>
-        <Swiper
-          slidesPerView={6}
-          autoplay={{
-            delay: -1,
-            disableOnInteraction: false,
-          }}
-          speed={3500}
-          freeMode
-          loop
-          grabCursor
-        >
-          {technologiesDOM}
-        </Swiper>
-      </TechnologySwiperWrapper> */}
+      <TechnologySwiperWrapper>
+        <Swiper slidesPerView={6} speed={1500} slides={second} />
+      </TechnologySwiperWrapper>
     </TechnologyWrapper>
   )
 }
