@@ -42,10 +42,10 @@ const Technology: React.FC<TechnologyProps> = ({ technologies, id }) => {
         </Heading>
       </Container>
       <TechnologySwiperWrapper>
-        <Swiper slidesPerView={6} speed={1000} slides={first} />
+        <Swiper slidesPerView={6} speed={2000} slides={first} />
       </TechnologySwiperWrapper>
       <TechnologySwiperWrapper>
-        <Swiper slidesPerView={6} speed={1500} slides={second} />
+        <Swiper slidesPerView={6} speed={2500} slides={second} />
       </TechnologySwiperWrapper>
     </TechnologyWrapper>
   )
