@@ -8,17 +8,29 @@ import { Grid, Row, Col } from 'components/shared/grid'
 import { Heading } from 'components/shared/typography'
 import { Form, Label, Input, Textarea, Info } from 'components/shared/form'
 
+import media from 'styles/media'
+
 import { FormValues, initialValues, validationSchema } from 'util/form'
 
 import backgroundFooter from 'assets/images/footer-background.svg'
+import backgroundFooterDark from 'assets/images/footer-background-dark.svg'
 
 const ContactWrapper = styled.footer`
   padding: 3rem 0;
 
-  background-image: url(${backgroundFooter});
+  background-image: ${({ theme }) =>
+    theme.dark ? `url(${backgroundFooterDark})` : `url(${backgroundFooter})`};
   background-size: auto min(90%, 450px);
   background-repeat: no-repeat;
   background-position: -2px bottom;
+
+  ${media.lg.max} {
+    background-size: auto min(85%, 350px);
+  }
+
+  ${media.md.max} {
+    background-image: none;
+  }
 `
 
 const Contact: React.FC = () => {
