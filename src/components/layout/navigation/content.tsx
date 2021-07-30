@@ -1,7 +1,10 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
+import { Text } from 'components/shared/typography'
 import NavLink from 'components/layout/navigation/link'
+
+import useMode from 'hooks/useMode'
 
 import type LinkType from 'types/navLink'
 import type { ActiveRequired } from 'types/active'
@@ -41,19 +44,26 @@ const NavigationContent: React.FC<NavigationContentProps> = ({
   secondaryLinks,
   active,
 }) => {
-  const primaryLinksDOM = primaryLinks.map((el) => (
-    <NavLink text={el.text} icon={el.icon} link={el.link} type={el.type} /> // TODO: find fix
-  ))
+  const { mode, toggleMode } = useMode()
+  const generateLink = (link: LinkType) => (
+    <NavLink
+      text={link.text}
+      icon={link.icon}
+      link={link.link}
+      type={link.type}
+    />
+  ) // TODO: find type fix
 
-  const secondaryLinksDOM = secondaryLinks.map((el) => (
-    <NavLink text={el.text} icon={el.icon} link={el.link} type={el.type} />
-  ))
+  const primaryLinksDOM = primaryLinks.map(generateLink)
+  const secondaryLinksDOM = secondaryLinks.map(generateLink)
 
   return (
     <NavigationContentWrapper active={active}>
       {primaryLinksDOM}
       <NavigationSeparator />
       {secondaryLinksDOM}
+      <NavigationSeparator />
+      <Text onClick={toggleMode}>Change mode ({mode})</Text>
     </NavigationContentWrapper>
   )
 }

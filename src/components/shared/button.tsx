@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import { darken, rgba, readableColor } from 'polished'
 
 import { Colors } from 'types/theme'
-import { colors } from 'styles/theme'
+import { lightColors as colors } from 'styles/theme'
 import { pxToRem } from 'styles/mixins'
 
 import loadingIcon from 'assets/icons/loading.svg'

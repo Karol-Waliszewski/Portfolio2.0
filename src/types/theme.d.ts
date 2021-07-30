@@ -14,6 +14,7 @@ export type Colors = {
   light: CSSProperties['color']
   dark: CSSProperties['color']
   text: CSSProperties['color']
+  almostwhite: CSSProperties['color']
   white: CSSProperties['color']
   black: CSSProperties['color']
   gray: CSSProperties['color']

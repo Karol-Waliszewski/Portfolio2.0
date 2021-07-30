@@ -21,7 +21,9 @@ type LayoutProps = {
 }
 
 const SheetWrapper = styled.div<ActiveRequired>`
+  padding: ${({ theme }) => `${theme.sheet.margins} 0`};
   transition: margin 200ms ease-in-out;
+  background: ${({ theme }) => theme.colors.almostwhite};
 
   ${media.xl.min} {
     ${({ active }) =>
@@ -33,14 +35,17 @@ const SheetWrapper = styled.div<ActiveRequired>`
 `
 
 const Sheet = styled.div`
-  margin: ${({ theme }) =>
-    `${theme.sheet.margins} auto ${theme.sheet.margins} auto`};
   width: 90%;
   max-width: 1100px;
   overflow: hidden;
 
   box-shadow: 0px 5px 44px #0000001a;
   border-radius: 10px;
+
+  background: ${({ theme }) => theme.colors.white};
+
+  margin-left: auto;
+  margin-right: auto;
 
   ${media.xl.min} {
     width: 85%;

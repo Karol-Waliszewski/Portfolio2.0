@@ -32,11 +32,26 @@ export const breakpoints: Breakpoints = {
   xxl: 1440,
 }
 
-export const colors: Colors = {
+export const darkColors: Colors = {
+  primary: '#354BD4',
+  light: '#2C2C2C',
+  dark: '#FEFDFF',
+  text: '#FEFDFF',
+  almostwhite: '#121212',
+  white: '#242424',
+  black: '#FEFDFF',
+  gray: '#121212',
+  lightgray: '#2C2C2C',
+  danger: '#e74c3c',
+  success: '#2ecc71',
+}
+
+export const lightColors: Colors = {
   primary: '#FECE47',
   light: '#FEF6E2',
   dark: '#242424',
   text: '#454545',
+  almostwhite: '#FEFDFF',
   white: '#FFFFFF',
   black: '#000000',
   gray: '#E8E7E7',
@@ -45,13 +60,22 @@ export const colors: Colors = {
   success: '#2ecc71',
 }
 
-const theme = {
+const baseTheme = {
   sheet,
   breakpoints,
-  colors,
   grid,
   fonts,
   navigation,
 }
 
-export default theme
+export const darkTheme = {
+  ...baseTheme,
+  colors: darkColors,
+}
+
+export const lightTheme = {
+  ...baseTheme,
+  colors: lightColors,
+}
+
+export default lightTheme

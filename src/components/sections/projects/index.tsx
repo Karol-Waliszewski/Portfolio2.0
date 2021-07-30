@@ -10,7 +10,7 @@ import Button from 'components/shared/button'
 import Icon from 'components/shared/icon'
 import Card from 'components/sections/projects/card'
 
-import useNav from 'util/useNav'
+import useNav from 'hooks/useNav'
 
 import type ProjectType from 'types/projects'
 
