@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import styled, { CSSProperties, css } from 'styled-components'
 
-import { pxToRem } from 'styles/mixins'
+import { pxToRem, themeAnimation } from 'styles/mixins'
 
 type TextProps = {
   align?: CSSProperties['textAlign']
@@ -29,6 +29,8 @@ export const Heading = styled.h1<HeadingProps>`
 
   max-width: 100%;
   margin-bottom: ${({ margin }) => margin ?? '1.5rem'};
+
+  ${themeAnimation()};
 
   ${({ align }) => {
     switch (align) {
@@ -65,6 +67,8 @@ export const Heading = styled.h1<HeadingProps>`
         background: ${({ theme }) =>
           light ? theme.colors.light : theme.colors.primary};
         border-radius: 4px;
+
+        ${themeAnimation()};
       }
     `}
 `
@@ -94,6 +98,8 @@ const textStyles = css<TextProps>`
   color: ${({ theme }) => theme.colors.text};
 
   margin-bottom: ${({ margin }) => margin ?? '1rem'};
+
+  ${themeAnimation()};
 
   a {
     color: inherit;

@@ -5,6 +5,8 @@ import NavLink from 'components/layout/navigation/link'
 
 import useMode from 'hooks/useMode'
 
+import { themeAnimation } from 'styles/mixins'
+
 import type LinkType from 'types/navLink'
 import type { ActiveRequired } from 'types/active'
 
@@ -19,7 +21,8 @@ const NavigationContentWrapper = styled.div<ActiveRequired>`
   background: ${({ theme }) => theme.colors.primary};
 
   transform: translate3d(calc(-100% + 4px), 0, 0);
-  transition: transform 200ms ease-in-out;
+
+  ${themeAnimation('transform 200ms ease-in-out')};
 
   pointer-events: all;
 

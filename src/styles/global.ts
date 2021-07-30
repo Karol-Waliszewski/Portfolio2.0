@@ -1,6 +1,7 @@
 import { createGlobalStyle, css } from 'styled-components'
 
 import Normalize from 'styles/normalize'
+import { themeAnimation } from 'styles/mixins'
 
 const Global = css`
   * {
@@ -15,6 +16,8 @@ const Global = css`
   body {
     font-family: Karla, sans-serif;
     background: ${({ theme }) => theme.colors.white};
+
+    ${themeAnimation()}
   }
 
   h1,

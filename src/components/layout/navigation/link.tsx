@@ -6,7 +6,7 @@ import { darken } from 'polished'
 import { Text } from 'components/shared/typography'
 import Icon from 'components/shared/icon'
 
-import { pxToRem } from 'styles/mixins'
+import { pxToRem, themeAnimation } from 'styles/mixins'
 
 import type LinkType from 'types/navLink'
 
@@ -23,13 +23,13 @@ const LinkWrapper = styled.div`
 
   text-decoration: none;
 
-  transition: background 100ms ease;
-
   cursor: pointer;
 
   &:hover {
     background: ${({ theme }) => darken(0.08, String(theme.colors.primary))};
   }
+
+  ${themeAnimation()};
 
   ${({ theme }) =>
     theme.dark &&

@@ -2,6 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 
 import media from 'styles/media'
+import { themeAnimation } from 'styles/mixins'
 
 import Navigation from 'components/layout/navigation'
 import Contact from 'components/layout/contact'
@@ -22,8 +23,9 @@ type LayoutProps = {
 
 const SheetWrapper = styled.div<ActiveRequired>`
   padding: ${({ theme }) => `${theme.sheet.margins} 0`};
-  transition: margin 200ms ease-in-out;
   background: ${({ theme }) => theme.colors.almostwhite};
+
+  ${themeAnimation('margin 250ms ease-in-out')};
 
   ${media.xl.min} {
     ${({ active }) =>
@@ -46,6 +48,8 @@ const Sheet = styled.div`
 
   margin-left: auto;
   margin-right: auto;
+
+  ${themeAnimation()};
 
   ${media.xl.min} {
     width: 85%;

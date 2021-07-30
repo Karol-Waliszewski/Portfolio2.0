@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-import { pxToRem } from 'styles/mixins'
+import { pxToRem, themeAnimation } from 'styles/mixins'
 
 type InputProps = {
   error?: boolean
@@ -29,6 +29,8 @@ export const Info = styled.span<InfoProps>`
   visibility: hidden;
   opacity: 0;
 
+  ${themeAnimation()};
+
   ${({ visible }) =>
     visible &&
     css`
@@ -56,6 +58,8 @@ export const Label = styled.label`
   font-weight: 700;
   font-size: ${pxToRem(18)}rem;
   color: ${({ theme }) => theme.colors.text};
+
+  ${themeAnimation()};
 `
 
 export const Input = styled.input<InputProps>`
@@ -63,6 +67,7 @@ export const Input = styled.input<InputProps>`
   width: 100%;
   padding: ${pxToRem(8)}rem ${pxToRem(14)}rem;
 
+  color: ${({ theme }) => theme.colors.text};
   font-weight: 500;
 
   border: 1px solid
@@ -70,9 +75,13 @@ export const Input = styled.input<InputProps>`
       error ? theme.colors.danger : theme.colors.lightgray};
   border-radius: 4px;
   background: ${({ theme }) => theme.colors.lightgray};
+
+  ${themeAnimation()};
 `
 
 export const Textarea = styled(Input).attrs({ as: 'textarea' })`
   min-height: 150px;
   resize: vertical;
+
+  ${themeAnimation()};
 `
