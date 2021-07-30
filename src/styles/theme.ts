@@ -36,7 +36,7 @@ export const darkColors: Colors = {
   primary: '#354BD4',
   light: '#2C2C2C',
   dark: '#FEFDFF',
-  text: '#FEFDFF',
+  text: '#EDEDED',
   almostwhite: '#121212',
   white: '#242424',
   black: '#FEFDFF',

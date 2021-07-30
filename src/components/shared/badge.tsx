@@ -16,7 +16,8 @@ const Badge = styled.span<BadgeProps>`
   line-height: 1em;
   padding: ${pxToRem(4)}em ${pxToRem(10)}em;
 
-  border: 1px solid ${({ theme }) => theme.colors.gray};
+  border: 1px solid
+    ${({ theme }) => (theme.dark ? theme.colors.text : theme.colors.gray)};
   border-radius: 3px;
 
   ${({ marginRight }) =>
