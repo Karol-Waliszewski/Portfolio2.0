@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Link } from 'gatsby'
 import { darken } from 'polished'
 
@@ -13,22 +13,35 @@ import type LinkType from 'types/navLink'
 const LinkWrapper = styled.div`
   display: flex;
   align-items: center;
+  width: calc(100% - ${pxToRem(14 * 2)}rem);
 
   padding: ${pxToRem(16)}rem ${pxToRem(24)}rem;
   margin: ${pxToRem(6)}rem ${pxToRem(14)}rem;
   border-radius: 4px;
-
-  text-decoration: none;
+  border: 0;
   background: ${({ theme }) => theme.colors.primary};
 
+  text-decoration: none;
+
   transition: background 100ms ease;
+
+  cursor: pointer;
 
   &:hover {
     background: ${({ theme }) => darken(0.08, String(theme.colors.primary))};
   }
+
+  ${({ theme }) =>
+    theme.dark &&
+    css`
+      img {
+        filter: brightness(0) invert(1);
+      }
+    `}
 `
 
-const NavLink: React.FC<LinkType> = ({ link, type, text, icon }) => {
+const NavLink: React.FC<LinkType> = (link) => {
+  const { icon, text } = link
   const NavLinkContent = (
     <>
       <Icon src={icon} marginRight size={18} />
@@ -36,10 +49,10 @@ const NavLink: React.FC<LinkType> = ({ link, type, text, icon }) => {
     </>
   )
 
-  switch (type) {
-    case 'anchor':
+  switch (link.type) {
+    case 'button':
       return (
-        <LinkWrapper as={Link} to={link}>
+        <LinkWrapper as="button" onClick={link.onClick}>
           {NavLinkContent}
         </LinkWrapper>
       )
@@ -48,7 +61,7 @@ const NavLink: React.FC<LinkType> = ({ link, type, text, icon }) => {
       return (
         <LinkWrapper
           as="a"
-          href={link}
+          href={link.link}
           target="_blank"
           rel="nofollow noreferrer"
         >
@@ -58,7 +71,7 @@ const NavLink: React.FC<LinkType> = ({ link, type, text, icon }) => {
 
     default:
       return (
-        <LinkWrapper as={Link} to={link}>
+        <LinkWrapper as={Link} to={link.link}>
           {NavLinkContent}
         </LinkWrapper>
       )

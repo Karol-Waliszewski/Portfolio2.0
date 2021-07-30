@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import SwiperCore, { Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
@@ -48,6 +48,14 @@ const ProjectButton = styled(Button)`
   position: absolute;
   top: 50%;
   transform: translate3d(0, -50%, 0);
+
+  ${({ theme }) =>
+    theme.dark &&
+    css`
+      img {
+        filter: brightness(0) invert(1);
+      }
+    `}
 `
 
 const ProjectButtonLeft = styled(ProjectButton)`

@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import Button from 'components/shared/button'
 import Icon from 'components/shared/icon'
@@ -33,6 +33,14 @@ const ScrollButton = styled(Button)`
   ${media.xl.min} {
     right: ${({ active }: ScrollButtonProps) => (active ? '1%' : '2%')};
   }
+
+  ${({ theme }) =>
+    theme.dark &&
+    css`
+      img {
+        filter: brightness(0) invert(1);
+      }
+    `}
 `
 
 const ScrollUp: React.FC<ActiveRequired> = ({ active }) => {

@@ -29,6 +29,8 @@ const CardWrapper = styled.div`
 
   border-radius: 6px;
   border: 1px solid ${({ theme }) => theme.colors.gray};
+  background: ${({ theme }) =>
+    theme.dark ? theme.colors.light : theme.colors.white};
   overflow: hidden;
 `
 

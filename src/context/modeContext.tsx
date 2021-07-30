@@ -2,19 +2,11 @@ import React, { createContext, useState, useEffect } from 'react'
 
 type Mode = 'light' | 'dark'
 
-type ModeContextType = {
-  mode: Mode
-  changeMode?: (mode: Mode) => void
-  toggleMode?: () => void
-}
+export const ModeContext = createContext<ReturnType<
+  typeof useProviderSettings
+> | null>(null)
 
-export const ModeContext = createContext<ModeContextType>({
-  mode: 'light',
-  changeMode: undefined,
-  toggleMode: undefined,
-})
-
-export const ModeProvider: React.FC = ({ children }) => {
+const useProviderSettings = () => {
   const [mode, setMode] = useState<Mode>('light')
 
   const changeMode = (newMode: Mode) => {
@@ -35,6 +27,12 @@ export const ModeProvider: React.FC = ({ children }) => {
       changeMode(localMode)
     }
   }, [])
+
+  return { mode, changeMode, toggleMode }
+}
+
+export const ModeProvider: React.FC = ({ children }) => {
+  const { mode, changeMode, toggleMode } = useProviderSettings()
 
   return (
     <ModeContext.Provider value={{ mode, changeMode, toggleMode }}>

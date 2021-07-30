@@ -1,13 +1,15 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
-import { Text } from 'components/shared/typography'
 import NavLink from 'components/layout/navigation/link'
 
 import useMode from 'hooks/useMode'
 
 import type LinkType from 'types/navLink'
 import type { ActiveRequired } from 'types/active'
+
+import MoonIcon from 'assets/icons/moon.svg'
+import SunIcon from 'assets/icons/sun.svg'
 
 const NavigationContentWrapper = styled.div<ActiveRequired>`
   width: ${({ theme }) => theme.navigation.width};
@@ -45,14 +47,26 @@ const NavigationContent: React.FC<NavigationContentProps> = ({
   active,
 }) => {
   const { mode, toggleMode } = useMode()
-  const generateLink = (link: LinkType) => (
-    <NavLink
-      text={link.text}
-      icon={link.icon}
-      link={link.link}
-      type={link.type}
-    />
-  ) // TODO: find type fix
+  const generateLink = (link: LinkType) => {
+    if (link.type === 'button')
+      return (
+        <NavLink
+          text={link.text}
+          icon={link.icon}
+          type={link.type}
+          onClick={link.onClick}
+        />
+      )
+
+    return (
+      <NavLink
+        text={link.text}
+        icon={link.icon}
+        link={link.link}
+        type={link.type}
+      />
+    )
+  } // TODO: find type fix
 
   const primaryLinksDOM = primaryLinks.map(generateLink)
   const secondaryLinksDOM = secondaryLinks.map(generateLink)
@@ -63,7 +77,12 @@ const NavigationContent: React.FC<NavigationContentProps> = ({
       <NavigationSeparator />
       {secondaryLinksDOM}
       <NavigationSeparator />
-      <Text onClick={toggleMode}>Change mode ({mode})</Text>
+      <NavLink
+        text={mode === 'dark' ? 'Light mode' : 'Dark mode'}
+        icon={mode === 'dark' ? SunIcon : MoonIcon}
+        type="button"
+        onClick={toggleMode}
+      />
     </NavigationContentWrapper>
   )
 }

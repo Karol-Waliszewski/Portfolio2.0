@@ -1,4 +1,4 @@
-type Link = LocalLink | AnchorLink | ExternalLink
+type Link = LocalLink | AnchorLink | ExternalLink | ButtonLink
 
 type LocalLink = {
   icon: string
@@ -19,6 +19,13 @@ type ExternalLink = {
   text: string
   link: `https://${string}` | `http://${string}`
   type: 'external'
+}
+
+type ButtonLink = {
+  icon: string
+  text: string
+  onClick: () => void
+  type: 'button'
 }
 
 export default Link

@@ -1,17 +1,17 @@
 import React, { createContext, useState } from 'react'
 
-type NavContextType = {
-  active: boolean
-  setActive?: React.Dispatch<React.SetStateAction<boolean>>
+export const NavContext = createContext<ReturnType<
+  typeof useProviderSettings
+> | null>(null)
+
+const useProviderSettings = () => {
+  const [active, setActive] = useState(false)
+
+  return { active, setActive }
 }
 
-export const NavContext = createContext<NavContextType>({
-  active: false,
-  setActive: undefined,
-})
-
 export const NavProvider: React.FC = ({ children }) => {
-  const [active, setActive] = useState(false)
+  const { active, setActive } = useProviderSettings()
 
   return (
     <NavContext.Provider value={{ active, setActive }}>
