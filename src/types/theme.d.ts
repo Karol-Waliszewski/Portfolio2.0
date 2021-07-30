@@ -47,5 +47,6 @@ declare module 'styled-components' {
     colors: Colors
     breakpoints: Breakpoints
     navigation: Navigation
+    dark: boolean
   }
 }

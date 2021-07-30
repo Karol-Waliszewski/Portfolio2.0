@@ -14,6 +14,7 @@ const Global = css`
 
   body {
     font-family: Karla, sans-serif;
+    background: ${({ theme }) => theme.colors.white};
   }
 
   h1,

@@ -1,5 +1,5 @@
-import * as React from 'react'
-import styled from 'styled-components'
+import React from 'react'
+import styled, { useTheme } from 'styled-components'
 
 import media from 'styles/media'
 import Container from 'components/shared/container'
@@ -9,11 +9,14 @@ import Image from 'components/shared/image'
 import Button from 'components/shared/button'
 
 import personImage from 'assets/images/header-image.svg'
+import personImageDark from 'assets/images/header-image-dark.svg'
 import backgroundHeader from 'assets/images/header-background.svg'
+import backgroundHeaderDark from 'assets/images/header-background-dark.svg'
 
 const HeaderWrapper = styled.header`
   height: ${({ theme }) => `calc(100vh - ${theme.sheet.margins})`};
-  background-image: url(${backgroundHeader});
+  background-image: ${({ theme }) =>
+    theme.dark ? `url(${backgroundHeaderDark})` : `url(${backgroundHeader})`};
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top right -1px;
@@ -41,6 +44,8 @@ const HeaderText = styled(Text)`
 `
 
 const Header: React.FC = () => {
+  const { dark } = useTheme()
+
   return (
     <HeaderWrapper>
       <Container fullHeight>
@@ -69,7 +74,7 @@ const Header: React.FC = () => {
             <Col xs={12} md={6}>
               <Image
                 height={600}
-                src={personImage}
+                src={dark ? personImageDark : personImage}
                 alt="Person coding on a laptop"
                 objectFit="contain"
                 objectPosition="right"

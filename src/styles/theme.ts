@@ -71,11 +71,13 @@ const baseTheme = {
 export const darkTheme = {
   ...baseTheme,
   colors: darkColors,
+  dark: true,
 }
 
 export const lightTheme = {
   ...baseTheme,
   colors: lightColors,
+  dark: false,
 }
 
 export default lightTheme
