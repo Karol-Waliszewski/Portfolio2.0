@@ -23,7 +23,9 @@ const NavigationContentWrapper = styled.div<ActiveRequired>`
 
   transform: translate3d(calc(-100% + 4px), 0, 0);
 
-  ${themeAnimation('transform 200ms ease-in-out')};
+  ${themeAnimation(
+    'transform 200ms ease-in-out, -webkit-transform 200ms ease-in-out'
+  )};
 
   pointer-events: all;
 
