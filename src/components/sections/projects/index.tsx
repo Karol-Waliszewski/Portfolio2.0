@@ -4,6 +4,8 @@ import SwiperCore, { Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import media from 'styles/media'
+import { breakpoints } from 'styles/theme'
+
 import Container from 'components/shared/container'
 import { Heading } from 'components/shared/typography'
 import Button from 'components/shared/button'
@@ -38,6 +40,12 @@ const ProjectWrapper = styled.section`
       }
     }
   }
+
+  ${media.md.max} {
+    .swiper-container {
+      overflow: initial;
+    }
+  }
 `
 
 const ProjectContainer = styled(Container)`
@@ -48,6 +56,10 @@ const ProjectButton = styled(Button)`
   position: absolute;
   top: 50%;
   transform: translate3d(0, -50%, 0);
+
+  ${media.md.max} {
+    display: none;
+  }
 
   ${({ theme }) =>
     theme.dark &&
@@ -112,8 +124,20 @@ const Project: React.FC<ProjectsProps> = ({ projects, id }) => {
           <Icon src={rightArrowIcon} />
         </ProjectButtonRight>
         <Swiper
-          slidesPerView={3}
-          spaceBetween={15}
+          breakpoints={{
+            [breakpoints.xs]: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            [breakpoints.sm]: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+            [breakpoints.xl]: {
+              slidesPerView: 3,
+              spaceBetween: 15,
+            },
+          }}
           loop
           loopedSlides={4}
           grabCursor

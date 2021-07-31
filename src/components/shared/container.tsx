@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components'
 
+import media from 'styles/media'
+
 type ContainerProps = {
   fullHeight?: boolean
   fullWidth?: boolean
@@ -13,6 +15,16 @@ const Container = styled.div<ContainerProps>`
   margin-right: auto;
   padding-left: 3rem;
   padding-right: 3rem;
+
+  ${media.md.max} {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  ${media.sm.max} {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
 
   box-sizing: border-box;
 

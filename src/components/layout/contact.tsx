@@ -128,7 +128,7 @@ const Contact: React.FC = () => {
                           </Info>
                         </Col>
                         <Col xs={12}>
-                          <Label htmlFor="message">Email</Label>
+                          <Label htmlFor="message">Wiadomość</Label>
                           <Textarea
                             type="message"
                             name="message"

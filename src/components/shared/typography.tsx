@@ -1,6 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import styled, { CSSProperties, css } from 'styled-components'
 
+import media from 'styles/media'
 import { pxToRem, themeAnimation } from 'styles/mixins'
 
 type TextProps = {
@@ -31,6 +32,21 @@ export const Heading = styled.h1<HeadingProps>`
   margin-bottom: ${({ margin }) => margin ?? '1.5rem'};
 
   ${themeAnimation()};
+
+  ${media.lg.max} {
+    font-size: ${({ size }) =>
+      size ? `${pxToRem((size * 40) / 42)}rem` : `${pxToRem(40)}rem`};
+  }
+
+  ${media.md.max} {
+    font-size: ${({ size }) =>
+      size ? `${pxToRem((size * 38) / 42)}rem` : `${pxToRem(38)}rem`};
+  }
+
+  ${media.sm.max} {
+    font-size: ${({ size }) =>
+      size ? `${pxToRem((size * 32) / 42)}rem` : `${pxToRem(32)}rem`};
+  }
 
   ${({ align }) => {
     switch (align) {

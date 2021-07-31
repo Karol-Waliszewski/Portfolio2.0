@@ -2,6 +2,7 @@ import React from 'react'
 import styled, { useTheme } from 'styled-components'
 
 import media from 'styles/media'
+
 import Container from 'components/shared/container'
 import { Grid, Row, Col } from 'components/shared/grid'
 import { Heading, Text, Bold } from 'components/shared/typography'
@@ -24,10 +25,20 @@ const HeaderWrapper = styled.header`
   ${media.xxl.min} {
     background-size: auto 85%;
   }
+
+  ${media.sm.max} {
+    height: auto;
+    background-size: auto 90%;
+  }
 `
 
 const HeaderContent = styled(Grid)`
   height: 100%;
+
+  ${media.sm.max} {
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+  }
 `
 
 const HeaderButtons = styled.div`
@@ -36,11 +47,20 @@ const HeaderButtons = styled.div`
 
 const HeaderHeading = styled(Heading)`
   margin-bottom: 0.75rem;
-  max-width: initial;
+
+  ${media.sm.min} {
+    max-width: initial;
+  }
 `
 
 const HeaderText = styled(Text)`
   margin-bottom: 0.5rem;
+`
+
+const ImageCol = styled(Col)`
+  ${media.lg.max} {
+    display: none;
+  }
 `
 
 const Header: React.FC = () => {
@@ -51,7 +71,7 @@ const Header: React.FC = () => {
       <Container fullHeight>
         <HeaderContent>
           <Row fullHeight alignItems="center">
-            <Col xs={12} md={6}>
+            <Col xs={12} md={8} lg={6}>
               <HeaderText>Cześć! Nazywam się</HeaderText>
               <HeaderHeading size={54}>Karol Waliszewski</HeaderHeading>
               <HeaderText>
@@ -71,7 +91,7 @@ const Header: React.FC = () => {
                 <Button>CV</Button>
               </HeaderButtons>
             </Col>
-            <Col xs={12} md={6}>
+            <ImageCol xs={12} md={6}>
               <Image
                 height={600}
                 src={dark ? personImageDark : personImage}
@@ -79,7 +99,7 @@ const Header: React.FC = () => {
                 objectFit="contain"
                 objectPosition="right"
               />
-            </Col>
+            </ImageCol>
           </Row>
         </HeaderContent>
       </Container>

@@ -6,6 +6,7 @@ import SingleTechnology from 'components/sections/technology/single'
 
 import type SingleTechnologyProps from 'types/technologies'
 
+import { breakpoints } from 'styles/theme'
 import 'swiper/swiper-bundle.css'
 
 type TechnologySwiperProps = {
@@ -46,6 +47,28 @@ const TechnologySwiper: React.FC<TechnologySwiperProps> = ({
       loop
       noSwiping
       allowTouchMove={false}
+      breakpoints={{
+        [breakpoints.xs]: {
+          slidesPerView: Math.ceil(slidesPerView / 2),
+          spaceBetween: 10,
+          speed: Math.ceil(speed / 2),
+        },
+        [breakpoints.sm]: {
+          slidesPerView: Math.ceil((slidesPerView / 3) * 2),
+          spaceBetween: 10,
+          speed: Math.ceil((speed / 3) * 2),
+        },
+        [breakpoints.md]: {
+          slidesPerView: slidesPerView - 1,
+          spaceBetween: 15,
+          speed,
+        },
+        [breakpoints.xl]: {
+          slidesPerView: 6,
+          spaceBetween: 15,
+          speed,
+        },
+      }}
     >
       {slidesDOM}
     </Swiper>
