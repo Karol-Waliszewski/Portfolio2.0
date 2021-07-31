@@ -33,6 +33,10 @@ const ProjectWrapper = styled.section`
     height: auto;
   }
 
+  .swiper-wrapper.swiper-slide {
+    transition-property: transform, -webkit-transform;
+  }
+
   .swiper-slide-duplicate {
     picture {
       img {
