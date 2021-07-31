@@ -30,7 +30,7 @@ const NavigationContentWrapper = styled.div<ActiveRequired>`
   pointer-events: all;
 
   ${media.sm.max} {
-    width: 100vw;
+    width: 100%;
   }
 
   ${({ active }) =>

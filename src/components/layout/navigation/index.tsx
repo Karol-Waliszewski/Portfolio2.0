@@ -4,9 +4,11 @@ import styled from 'styled-components'
 import Hamburger from 'components/layout/navigation/hamburger'
 import Content from 'components/layout/navigation/content'
 
-import LinkType from 'types/navLink'
+import media from 'styles/media'
 
 import useNav from 'hooks/useNav'
+
+import LinkType from 'types/navLink'
 
 const NavigationWrapper = styled.nav`
   position: fixed;
@@ -16,6 +18,10 @@ const NavigationWrapper = styled.nav`
 
   height: 100vh;
   pointer-events: none;
+
+  ${media.sm.max} {
+    width: 100%;
+  }
 `
 
 type NavigationProps = {
