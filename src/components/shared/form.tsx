@@ -70,6 +70,7 @@ export const Input = styled.input<InputProps>`
   color: ${({ theme }) => theme.colors.text};
   font-weight: 500;
 
+  box-shadow: none;
   border: 1px solid
     ${({ theme, error }) =>
       error ? theme.colors.danger : theme.colors.lightgray};
