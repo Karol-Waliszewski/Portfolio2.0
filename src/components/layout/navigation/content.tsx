@@ -5,6 +5,7 @@ import NavLink from 'components/layout/navigation/link'
 
 import useMode from 'hooks/useMode'
 
+import media from 'styles/media'
 import { themeAnimation } from 'styles/mixins'
 
 import type LinkType from 'types/navLink'
@@ -25,6 +26,10 @@ const NavigationContentWrapper = styled.div<ActiveRequired>`
   ${themeAnimation('transform 200ms ease-in-out')};
 
   pointer-events: all;
+
+  ${media.sm.max} {
+    width: 100vw;
+  }
 
   ${({ active }) =>
     active &&

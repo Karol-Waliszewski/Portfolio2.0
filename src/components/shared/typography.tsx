@@ -66,17 +66,18 @@ export const Heading = styled.h1<HeadingProps>`
     }
   }}
 
-  ${({ background, light }) =>
+  ${({ background, light, size }) =>
     background &&
     css`
       &::after {
         content: '';
         position: absolute;
         left: -2px;
-        top: 45%;
+        bottom: 5%;
         transform: translate3d(0, 0, -1px);
 
-        height: 50%;
+        height: ${() =>
+          size ? `${pxToRem(size * 0.55)}rem` : `${pxToRem(42 * 0.55)}rem`};
         width: 45%;
         max-width: 250px;
 
