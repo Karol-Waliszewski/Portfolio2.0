@@ -88,7 +88,7 @@ const NavigationContent: React.FC<NavigationContentProps> = ({
       {secondaryLinksDOM}
       <NavigationSeparator />
       <NavLink
-        text={mode === 'dark' ? 'Light mode' : 'Dark mode'}
+        text={mode === 'dark' ? 'Tryb jasny' : 'Tryb ciemny'}
         icon={mode === 'dark' ? SunIcon : MoonIcon}
         type="button"
         onClick={toggleMode}

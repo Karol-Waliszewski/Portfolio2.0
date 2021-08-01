@@ -12,6 +12,8 @@ import media from 'styles/media'
 
 import { FormValues, initialValues, validationSchema } from 'util/form'
 
+import type ID from 'types/id'
+
 import backgroundFooter from 'assets/images/footer-background.svg'
 import backgroundFooterDark from 'assets/images/footer-background-dark.svg'
 
@@ -33,7 +35,7 @@ const ContactWrapper = styled.footer`
   }
 `
 
-const Contact: React.FC = () => {
+const Contact: React.FC<ID> = ({ id }) => {
   const onSubmit = (
     values: FormValues,
     {
@@ -68,7 +70,7 @@ const Contact: React.FC = () => {
   }
 
   return (
-    <ContactWrapper>
+    <ContactWrapper id={id}>
       <Container>
         <Grid>
           <Row>

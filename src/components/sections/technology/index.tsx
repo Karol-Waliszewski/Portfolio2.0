@@ -7,11 +7,11 @@ import { Heading } from 'components/shared/typography'
 import Swiper from 'components/sections/technology/swiper'
 
 import type SingleTechnologyProps from 'types/technologies'
+import type ID from 'types/id'
 
 type TechnologyProps = {
   technologies: SingleTechnologyProps[]
-  id: string
-}
+} & ID
 
 const TechnologyWrapper = styled.section`
   padding: 3rem 0;

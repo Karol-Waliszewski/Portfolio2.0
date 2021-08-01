@@ -7,10 +7,11 @@ import { Grid, Row, Col } from 'components/shared/grid'
 import { Heading, Text, Bold } from 'components/shared/typography'
 import LazyImage from 'components/shared/lazyImage'
 
+import type ID from 'types/id'
+
 type AboutProps = {
   image: ImageDataLike
-  id: string
-}
+} & ID
 
 const AboutWrapper = styled.section`
   padding: 4rem 0;

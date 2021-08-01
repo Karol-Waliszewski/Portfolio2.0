@@ -15,6 +15,7 @@ import Card from 'components/sections/projects/card'
 import useNav from 'hooks/useNav'
 
 import type ProjectType from 'types/projects'
+import type ID from 'types/id'
 
 import leftArrowIcon from 'assets/icons/arrow-left.svg'
 import rightArrowIcon from 'assets/icons/arrow-right.svg'
@@ -23,8 +24,7 @@ SwiperCore.use([Navigation])
 
 type ProjectsProps = {
   projects: ProjectType[]
-  id: string
-}
+} & ID
 
 const ProjectWrapper = styled.section`
   padding: 4rem 0;

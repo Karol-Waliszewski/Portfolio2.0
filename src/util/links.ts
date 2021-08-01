@@ -36,7 +36,7 @@ export const PRIMARY: Link[] = [
   {
     icon: EmailIcon,
     text: 'Kontakt',
-    link: '/',
+    link: '/#contact',
     type: 'local',
   },
 ]

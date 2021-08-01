@@ -68,7 +68,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <SheetWrapper active={active}>
         <Sheet>
           <main>{children}</main>
-          <Contact />
+          <Contact id="contact" />
         </Sheet>
       </SheetWrapper>
 
