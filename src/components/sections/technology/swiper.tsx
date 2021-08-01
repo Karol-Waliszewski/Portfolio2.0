@@ -31,7 +31,10 @@ const TechnologySwiper: React.FC<TechnologySwiperProps> = ({
 
     return (swiper: SwiperCore) => {
       slideTo = slideTo === 0 ? swiper.slides.length - 1 : 0
-      const duration = slideTo === 0 ? 1 : swiper.slides.length * speed
+      const duration =
+        slideTo === 0
+          ? 1
+          : swiper.slides.length * (swiper.params.speed ?? speed)
       swiper.slideTo(slideTo, duration, true)
     }
   }
@@ -51,12 +54,12 @@ const TechnologySwiper: React.FC<TechnologySwiperProps> = ({
         [breakpoints.xs]: {
           slidesPerView: Math.ceil(slidesPerView / 2),
           spaceBetween: 10,
-          speed: Math.ceil(speed / 2),
+          speed: Math.ceil(speed * 1.5),
         },
         [breakpoints.sm]: {
           slidesPerView: Math.ceil((slidesPerView / 3) * 2),
           spaceBetween: 10,
-          speed: Math.ceil((speed / 3) * 2),
+          speed: Math.ceil(speed * 1.25),
         },
         [breakpoints.md]: {
           slidesPerView: slidesPerView - 1,
