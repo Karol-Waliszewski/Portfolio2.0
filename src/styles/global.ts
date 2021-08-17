@@ -1,5 +1,7 @@
 import { createGlobalStyle, css } from 'styled-components'
 
+import 'swiper/swiper.min.css'
+
 import Normalize from 'styles/normalize'
 import { themeAnimation } from 'styles/mixins'
 
