@@ -51,7 +51,7 @@ export const SECONDARY: Link[] = [
   {
     icon: CVIcon,
     text: 'CV',
-    link: 'http://example.com/',
+    link: 'https://docs.google.com/gview?url=https://karol-waliszewski.github.io/Portfolio/src/Karol_Waliszewski_CV.pdf&embedded=true',
     type: 'external',
   },
 ]

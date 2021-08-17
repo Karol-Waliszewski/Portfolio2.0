@@ -8,7 +8,7 @@ import Seo from 'components/layout/seo'
 import About from 'components/sections/about'
 import Technology from 'components/sections/technology'
 import Projects from 'components/sections/projects'
-import TECHNOLOGIES from 'util/technologies'
+import TECHNOLOGIES from 'constants/technologies'
 
 import type ProjectType from 'types/projects'
 

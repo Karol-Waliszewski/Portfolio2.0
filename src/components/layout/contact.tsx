@@ -10,7 +10,7 @@ import { Form, Label, Input, Textarea, Info } from 'components/shared/form'
 
 import media from 'styles/media'
 
-import { FormValues, initialValues, validationSchema } from 'util/form'
+import { FormValues, initialValues, validationSchema } from 'constants/form'
 
 import type ID from 'types/id'
 

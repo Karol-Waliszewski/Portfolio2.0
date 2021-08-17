@@ -15,7 +15,7 @@ import type { ActiveRequired } from 'types/active'
 import {
   PRIMARY as PRIMARY_LINKS,
   SECONDARY as SECONDARY_LINKS,
-} from 'util/links'
+} from 'constants/links'
 
 type LayoutProps = {
   children: React.ReactNode
