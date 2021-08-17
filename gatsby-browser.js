@@ -4,16 +4,17 @@
  * See: https://www.gatsbyjs.com/docs/browser-apis/
  */
 
-const React = require('react')
-const { ThemeProvider } = require('styled-components')
+import React from 'react'
 
-const { lightTheme, darkTheme } = require('styles/theme')
-const GlobalStyles = require('styles/global').default
+import { ThemeProvider } from 'styled-components'
 
-const { NavProvider } = require('context/navContext')
-const { ModeProvider } = require('context/modeContext')
+import { lightTheme, darkTheme } from 'styles/theme'
+import GlobalStyles from 'styles/global'
 
-const useMode = require('hooks/useMode').default
+import { NavProvider } from 'context/navContext'
+import { ModeProvider } from 'context/modeContext'
+
+import useMode from 'hooks/useMode'
 
 const Wrapper = ({ element }) => {
   const { mode } = useMode()
@@ -26,7 +27,7 @@ const Wrapper = ({ element }) => {
   )
 }
 
-exports.wrapPageElement = ({ element }) => (
+export const wrapPageElement = ({ element }) => (
   <ModeProvider>
     <Wrapper element={element} />
   </ModeProvider>

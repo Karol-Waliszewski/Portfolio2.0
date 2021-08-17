@@ -12,7 +12,7 @@ const Global = css`
 
   html {
     font-size: ${({ theme }) => theme.fonts.size};
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
   }
 
   body {

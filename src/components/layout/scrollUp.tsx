@@ -7,6 +7,8 @@ import Icon from 'components/shared/icon'
 import useScrollPosition from 'hooks/useScroll'
 import useWindowSize from 'hooks/useWindow'
 
+import { scrollTop } from 'utils/scrollTo'
+
 import media from 'styles/media'
 
 import { ActiveRequired } from 'types/active'
@@ -47,14 +49,7 @@ const ScrollUp: React.FC<ActiveRequired> = ({ active }) => {
   const { y } = useScrollPosition(300)
   const { height } = useWindowSize(300)
 
-  const isBrowser = typeof window !== `undefined`
   const visible = y > height / 3
-
-  const scrollTop = () => {
-    if (isBrowser) {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-    }
-  }
 
   return (
     <ScrollButton square visible={visible} onClick={scrollTop} active={active}>

@@ -1,10 +1,14 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { Link } from 'gatsby'
+import { Link, navigate } from 'gatsby'
 import { darken } from 'polished'
+import { useLocation } from '@reach/router'
 
 import { Text } from 'components/shared/typography'
 import Icon from 'components/shared/icon'
+
+import { scrollTop, scrollToSelector } from 'utils/scrollTo'
+import isBrowser from 'utils/isBrowser'
 
 import { pxToRem, themeAnimation } from 'styles/mixins'
 
@@ -42,6 +46,33 @@ const LinkWrapper = styled.div`
 
 const NavLink: React.FC<LinkType> = (link) => {
   const { icon, text } = link
+  const location = useLocation()
+
+  const onAnchor = (hash: string) => {
+    const splitted = hash.split('#')
+    if (splitted[0].includes('/') && splitted[0] !== location.pathname) {
+      navigate(hash)
+    } else if (splitted[0].includes('/')) {
+      scrollToSelector(`#${splitted[1]}`)
+      if (isBrowser) {
+        window.history.pushState(
+          '',
+          '',
+          `${location.origin}${location.pathname}#${splitted[1]}`
+        )
+      }
+    } else {
+      scrollToSelector(`#${splitted[0]}`)
+      if (isBrowser) {
+        window.history.pushState(
+          '',
+          '',
+          `${location.origin}${location.pathname}#${splitted[0]}`
+        )
+      }
+    }
+  }
+
   const NavLinkContent = (
     <>
       <Icon src={icon} marginRight size={18} />
@@ -69,7 +100,34 @@ const NavLink: React.FC<LinkType> = (link) => {
         </LinkWrapper>
       )
 
+    case 'anchor':
+      return (
+        <LinkWrapper
+          as="button"
+          onClick={(e: React.MouseEvent<HTMLElement>) => {
+            e.preventDefault()
+            onAnchor(link.link)
+          }}
+        >
+          {NavLinkContent}
+        </LinkWrapper>
+      )
+
     default:
+      if (link.link === location.pathname) {
+        return (
+          <LinkWrapper
+            as="button"
+            onClick={(e: React.MouseEvent<HTMLElement>) => {
+              e.preventDefault()
+              scrollTop()
+            }}
+          >
+            {NavLinkContent}
+          </LinkWrapper>
+        )
+      }
+
       return (
         <LinkWrapper as={Link} to={link.link}>
           {NavLinkContent}

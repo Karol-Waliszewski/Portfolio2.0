@@ -27,6 +27,8 @@ const CardWrapper = styled.div`
   width: calc(100% - 3px);
   margin-left: 1px;
 
+  text-decoration: none;
+
   border-radius: 6px;
   border: 1px solid ${({ theme }) => theme.colors.gray};
   background: ${({ theme }) =>
@@ -82,7 +84,9 @@ const Card: React.FC<CardProps> = ({
 
   return (
     <CardWrapper>
-      <CardImage src={thumbnail} alt={alt} objectFit="cover" />
+      <Link to={`/projects${slug}`}>
+        <CardImage src={thumbnail} alt={alt} objectFit="cover" />
+      </Link>
       <CardContent>
         <CardTitle as="h3">{name}</CardTitle>
         <CardBadges>{badges}</CardBadges>

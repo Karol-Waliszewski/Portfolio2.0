@@ -4,31 +4,31 @@
  * See: https://www.gatsbyjs.com/docs/browser-apis/
  */
 
- const React = require('react')
- const { ThemeProvider } = require('styled-components')
- 
- const { lightTheme, darkTheme } = require('styles/theme')
- const GlobalStyles = require('styles/global').default
- 
- const { NavProvider } = require('context/navContext')
- const { ModeProvider } = require('context/modeContext')
- 
- const useMode = require('hooks/useMode').default
- 
- const Wrapper = ({ element }) => {
-   const { mode } = useMode()
- 
-   return (
-     <ThemeProvider theme={mode === 'light' ? lightTheme : darkTheme}>
-       <GlobalStyles />
-       <NavProvider>{element}</NavProvider>
-     </ThemeProvider>
-   )
- }
- 
- exports.wrapPageElement = ({ element }) => (
-   <ModeProvider>
-     <Wrapper element={element} />
-   </ModeProvider>
- )
- 
+import React from 'react'
+
+import { ThemeProvider } from 'styled-components'
+
+import { lightTheme, darkTheme } from 'styles/theme'
+import GlobalStyles from 'styles/global'
+
+import { NavProvider } from 'context/navContext'
+import { ModeProvider } from 'context/modeContext'
+
+import useMode from 'hooks/useMode'
+
+const Wrapper = ({ element }) => {
+  const { mode } = useMode()
+
+  return (
+    <ThemeProvider theme={mode === 'light' ? lightTheme : darkTheme}>
+      <GlobalStyles />
+      <NavProvider>{element}</NavProvider>
+    </ThemeProvider>
+  )
+}
+
+export const wrapPageElement = ({ element }) => (
+  <ModeProvider>
+    <Wrapper element={element} />
+  </ModeProvider>
+)

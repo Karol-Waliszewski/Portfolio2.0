@@ -1,6 +1,6 @@
 import { useState, useLayoutEffect } from 'react'
 
-const isBrowser = typeof window !== `undefined`
+import isBrowser from 'utils/isBrowser'
 
 function getWindowSize() {
   if (!isBrowser) return { width: 0, height: 0 }

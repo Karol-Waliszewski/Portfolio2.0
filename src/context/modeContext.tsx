@@ -1,5 +1,7 @@
 import React, { createContext, useState, useEffect } from 'react'
 
+import isBrowser from 'utils/isBrowser'
+
 type Mode = 'light' | 'dark'
 
 export const ModeContext = createContext<ReturnType<
@@ -10,7 +12,7 @@ const useProviderSettings = () => {
   const [mode, setMode] = useState<Mode>('light')
 
   const changeMode = (newMode: Mode) => {
-    if (typeof window !== 'undefined') {
+    if (isBrowser) {
       window.localStorage.setItem('mode', newMode)
     }
     setMode(newMode)

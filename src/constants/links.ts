@@ -19,25 +19,25 @@ export const PRIMARY: Link[] = [
     icon: BulbIcon,
     text: 'O mnie',
     link: '/#about',
-    type: 'local',
+    type: 'anchor',
   },
   {
     icon: CodeIcon,
     text: 'Technologie',
     link: '/#technologies',
-    type: 'local',
+    type: 'anchor',
   },
   {
     icon: ProjectsIcon,
     text: 'Projekty',
     link: '/#projects',
-    type: 'local',
+    type: 'anchor',
   },
   {
     icon: EmailIcon,
     text: 'Kontakt',
     link: '/#contact',
-    type: 'local',
+    type: 'anchor',
   },
 ]
 
