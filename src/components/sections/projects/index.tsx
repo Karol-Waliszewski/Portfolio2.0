@@ -137,7 +137,7 @@ const Project: React.FC<ProjectsProps> = ({ projects, id }) => {
               slidesPerView: 2,
               spaceBetween: 10,
             },
-            [breakpoints.xl]: {
+            [breakpoints.lg]: {
               slidesPerView: 3,
               spaceBetween: 15,
             },
