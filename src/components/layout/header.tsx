@@ -23,7 +23,12 @@ const HeaderWrapper = styled.header`
   background-position: top right -1px;
 
   ${media.xxl.min} {
-    background-size: auto 85%;
+    background-size: auto 90%;
+  }
+
+  ${media.lg.max} {
+    height: auto;
+    background-size: auto 100%;
   }
 
   ${media.sm.max} {
@@ -35,9 +40,22 @@ const HeaderWrapper = styled.header`
 const HeaderContent = styled(Grid)`
   height: 100%;
 
+  ${media.lg.max} {
+    padding-top: 9rem;
+    padding-bottom: 10rem;
+    margin-bottom: -4rem;
+  }
+
+  ${media.md.max} {
+    padding-top: 6rem;
+    padding-bottom: 9rem;
+    margin-bottom: -6rem;
+  }
+
   ${media.sm.max} {
     padding-top: 6rem;
-    padding-bottom: 3rem;
+    padding-bottom: 7rem;
+    margin-bottom: -5rem;
   }
 `
 
