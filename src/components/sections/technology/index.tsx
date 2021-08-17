@@ -30,8 +30,8 @@ const Technology: React.FC<TechnologyProps> = ({ technologies, id }) => {
           To już znam
         </Heading>
       </Container>
-      <Logos speed={20} slides={first} />
-      <Logos speed={5} slides={second} />
+      <Logos speed={14} slides={first} />
+      <Logos speed={16} slides={second} />
     </TechnologyWrapper>
   )
 }

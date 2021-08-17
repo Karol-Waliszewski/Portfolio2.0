@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import Icon from 'components/shared/icon'
 import { Text, Bold } from 'components/shared/typography'
 
+import media from 'styles/media'
+
 import type TechnologyProps from 'types/technologies'
 
 const Wrapper = styled.a`
@@ -24,6 +26,16 @@ const TechnologyIcon = styled(Icon)`
 
   &:hover {
     filter: grayscale(0);
+  }
+
+  ${media.md.max} {
+    margin-bottom: 0.3rem;
+    max-width: 60px;
+  }
+
+  ${media.sm.max} {
+    margin-bottom: 0.2rem;
+    max-width: 55px;
   }
 `
 

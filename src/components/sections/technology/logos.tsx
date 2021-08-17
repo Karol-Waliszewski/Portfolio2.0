@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 
-import { Grid, Row, Col } from 'components/shared/grid'
+import { Grid, Row } from 'components/shared/grid'
 import SingleTechnology from 'components/sections/technology/single'
 
 import media from 'styles/media'
@@ -18,7 +18,7 @@ const SlideAnimation = keyframes`
     transform: translate3d(0,0,0);
   }
   100% {
-    transform: translate3d(-100%,0,0);
+    transform: translate3d(-50%,0,0);
   }
 `
 
@@ -32,21 +32,37 @@ const LogosWrapper = styled.div`
 const StyledGrid = styled(Grid).withConfig({
   shouldForwardProp: (prop) => prop !== 'speed', // TODO: fix
 })<{ speed: number }>`
+  width: fit-content;
   white-space: nowrap;
   padding: 0;
 
   animation: ${SlideAnimation} ${({ speed }) => speed}s linear infinite;
-  ${media.sm.max} {
-    animation-duration: ${({ speed }) => speed / 2}s;
+  ${media.md.max} {
+    animation-duration: ${({ speed }) => speed / 1.5}s;
   }
 `
 
-// TODO: fix on mobile
 const StyledRow = styled(Row)`
-  width: 100%;
   display: inline-flex;
   flex-wrap: nowrap;
   margin: 0;
+`
+
+const SingleTechnologyWrapper = styled.div`
+  min-width: 150px;
+  margin: 0 1rem;
+
+  ${media.lg.max} {
+    min-width: 130px;
+  }
+
+  ${media.md.max} {
+    min-width: 100px;
+  }
+
+  ${media.sm.max} {
+    min-width: 90px;
+  }
 `
 
 const TechnologySwiper: React.FC<TechnologySwiperProps> = ({
@@ -54,9 +70,9 @@ const TechnologySwiper: React.FC<TechnologySwiperProps> = ({
   slides,
 }) => {
   const slidesDOM = slides.map((el) => (
-    <Col key={el.name} xs={5} sm={3} lg={2}>
+    <SingleTechnologyWrapper key={el.name}>
       <SingleTechnology name={el.name} logo={el.logo} link={el.link} />
-    </Col>
+    </SingleTechnologyWrapper>
   ))
 
   return (
