@@ -19,6 +19,13 @@ module.exports = {
         stripQueryString: true,
       },
     },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: `#E8E7E7`,
+        showSpinner: true,
+      },
+    },
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     {

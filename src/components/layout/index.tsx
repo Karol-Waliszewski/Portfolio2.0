@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled, { css } from 'styled-components'
 
 import media from 'styles/media'
@@ -58,6 +58,18 @@ const Sheet = styled.div`
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const { active } = useNav()
+
+  useEffect(() => {
+    try {
+      const element = document.getElementById('loader')
+      if (element) {
+        element.classList.add('loaded')
+      }
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error(error)
+    }
+  }, [])
 
   return (
     <>

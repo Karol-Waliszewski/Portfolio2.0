@@ -112,7 +112,7 @@ const HamburgerContent = styled.div<HamburgerProps>`
 `
 
 const Hamburger: React.FC<HamburgerProps> = ({ active, onClick }) => (
-  <HamburgerWrapper onClick={onClick}>
+  <HamburgerWrapper onClick={onClick} name="navigation">
     <HamburgerContent active={active}>
       <HamburgerLine />
       <HamburgerLine />
