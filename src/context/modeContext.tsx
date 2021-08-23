@@ -1,6 +1,9 @@
 import React, { createContext, useState, useEffect } from 'react'
+import styled from 'styled-components'
 
 import isBrowser from 'utils/isBrowser'
+
+import type { ActiveRequired } from 'types/active'
 
 type Mode = 'light' | 'dark'
 
@@ -27,18 +30,36 @@ const useProviderSettings = () => {
     const localMode = window.localStorage.getItem('mode')
     if (localMode === 'light' || localMode === 'dark') {
       changeMode(localMode)
+    } else {
+      const mql = window.matchMedia('(prefers-color-scheme: dark)')
+      if (typeof mql.matches === 'boolean' && mql.matches) {
+        changeMode('dark')
+      }
     }
   }, [])
 
   return { mode, changeMode, toggleMode }
 }
 
+export const ModeWrapper = styled.div<ActiveRequired>`
+  opacity: ${({ active }) => (active ? 1 : 0)};
+
+  transition: 350ms opacity ease-in-out 50ms;
+`
+
 export const ModeProvider: React.FC = ({ children }) => {
+  const [mounted, setMounted] = useState(false)
   const { mode, changeMode, toggleMode } = useProviderSettings()
 
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   return (
-    <ModeContext.Provider value={{ mode, changeMode, toggleMode }}>
-      {children}
-    </ModeContext.Provider>
+    <ModeWrapper active={mounted}>
+      <ModeContext.Provider value={{ mode, changeMode, toggleMode }}>
+        {children}
+      </ModeContext.Provider>
+    </ModeWrapper>
   )
 }
