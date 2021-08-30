@@ -25,7 +25,8 @@ const SheetWrapper = styled.div<ActiveRequired>`
   padding: ${({ theme }) => `${theme.sheet.margins} 0`};
   background: ${({ theme }) => theme.colors.almostwhite};
 
-  ${themeAnimation('margin 250ms ease-in-out')};
+  ${themeAnimation('margin 220ms ease-in-out')};
+  will-change: margin;
 
   ${media.xl.min} {
     ${({ active }) =>

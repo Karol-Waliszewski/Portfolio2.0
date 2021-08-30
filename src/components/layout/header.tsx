@@ -2,6 +2,7 @@ import React from 'react'
 import styled, { useTheme } from 'styled-components'
 
 import media from 'styles/media'
+import { themeAnimation } from 'styles/mixins'
 
 import Container from 'components/shared/container'
 import { Grid, Row, Col } from 'components/shared/grid'
@@ -11,33 +12,42 @@ import Button from 'components/shared/button'
 
 import personImage from 'assets/images/header-image.svg'
 import personImageDark from 'assets/images/header-image-dark.svg'
-import backgroundHeader from 'assets/images/header-background.svg'
-import backgroundHeaderDark from 'assets/images/header-background-dark.svg'
 
 const HeaderWrapper = styled.header`
+  position: relative;
   height: ${({ theme }) => `calc(100vh - ${theme.sheet.margins})`};
-  background-image: ${({ theme }) =>
-    theme.dark ? `url(${backgroundHeaderDark})` : `url(${backgroundHeader})`};
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: top right -1px;
-
-  ${media.xxl.min} {
-    background-size: auto 90%;
-  }
 
   ${media.lg.max} {
     height: auto;
-    background-size: auto 100%;
   }
+`
 
-  ${media.sm.max} {
-    height: auto;
-    background-size: auto 90%;
+const HeaderBackground = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  svg {
+    ${themeAnimation('fill 125ms ease')};
+    max-height: 100%;
+    max-width: 100%;
+    fill: ${({ theme }) => theme.colors.light};
+
+    .b {
+      clip-path: url(#a);
+    }
   }
 `
 
 const HeaderContent = styled(Grid)`
+  position: relative;
+  z-index: 2;
   height: 100%;
 
   ${media.lg.max} {
@@ -86,6 +96,27 @@ const Header: React.FC = () => {
 
   return (
     <HeaderWrapper>
+      <HeaderBackground>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 836 901">
+          <defs>
+            <style>{`.a{fill:#fff;}.b{clip-path:url(#a);}`}</style>
+            <clipPath id="a">
+              <path
+                className="a"
+                d="M0,0H823a13,13,0,0,1,13,13V901a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V0A0,0,0,0,1,0,0Z"
+                transform="translate(844 101)"
+              />
+            </clipPath>
+          </defs>
+          <g className="b" transform="translate(-844 -101)">
+            <path
+              className="c"
+              d="M-2.857,0,698-.236,697.833,752.5S459.251,922.729,296.455,858.523,87.1,560.341,46.647,495.677C-45.929,347.706-107.165,353.465-119.541,229.545S-2.857,0-2.857,0Z"
+              transform="translate(982 101)"
+            />
+          </g>
+        </svg>
+      </HeaderBackground>
       <Container fullHeight>
         <HeaderContent>
           <Row fullHeight alignItems="center">
