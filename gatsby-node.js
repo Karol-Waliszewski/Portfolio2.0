@@ -26,6 +26,7 @@ exports.createPages = async ({ graphql, actions }) => {
               name
               live
               github
+              technology
             }
           }
         }
@@ -42,6 +43,7 @@ exports.createPages = async ({ graphql, actions }) => {
         title: node.frontmatter.name,
         live: node.frontmatter.live,
         github: node.frontmatter.github,
+        technology: node.frontmatter.technology,
       },
     })
   })

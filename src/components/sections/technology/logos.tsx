@@ -23,6 +23,9 @@ const SlideAnimation = keyframes`
 `
 
 const LogosWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -79,7 +82,7 @@ const TechnologySwiper: React.FC<TechnologySwiperProps> = ({
     <LogosWrapper>
       <StyledGrid speed={speed}>
         <StyledRow>{slidesDOM}</StyledRow>
-        <StyledRow>{slidesDOM}</StyledRow>
+        {speed > 0 && <StyledRow>{slidesDOM}</StyledRow>}
       </StyledGrid>
     </LogosWrapper>
   )

@@ -25,7 +25,12 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => {
       <Seo title="Home" />
       <Header />
       <About image={data.about} id="about" />
-      <Technology technologies={TECHNOLOGIES} id="technologies" />
+      <Technology
+        technologies={TECHNOLOGIES}
+        id="technologies"
+        title="To już znam"
+        dual
+      />
       <Projects projects={projects} id="projects" />
     </Layout>
   )
