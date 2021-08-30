@@ -10,11 +10,13 @@ import NodeLogo from 'assets/logos/node.svg'
 import SassLogo from 'assets/logos/sass.svg'
 import StyledLogo from 'assets/logos/styled.png'
 import AdobeXDLogo from 'assets/logos/adobexd.svg'
+import BulmaLogo from 'assets/logos/bulma.svg'
+import SocketLogo from 'assets/logos/socketio.svg'
 
 import type TechnologyProps from 'types/technologies'
 
 const getTechnology = (name: string): TechnologyProps => {
-  switch (name) {
+  switch (name.toLowerCase()) {
     case 'react':
       return {
         link: 'https://reactjs.org/',
@@ -98,8 +100,38 @@ const getTechnology = (name: string): TechnologyProps => {
         name: 'node',
       }
 
+    case 'node.js':
+      return {
+        link: 'https://nodejs.org/',
+        logo: NodeLogo,
+        name: 'node',
+      }
+
+    // TODO: update logos
+
+    case 'express':
+      return {
+        link: 'https://expressjs.com/',
+        logo: NodeLogo,
+        name: 'express',
+      }
+
+    case 'socket.io':
+      return {
+        link: 'https://socket.io/',
+        logo: SocketLogo,
+        name: 'socket.io',
+      }
+
+    case 'bulma':
+      return {
+        link: 'https://bulma.io/',
+        logo: BulmaLogo,
+        name: 'bulma',
+      }
+
     default:
-      throw new Error('Wrong technology name.')
+      throw new Error(`Wrong technology name: ${name}`)
   }
 }
 
