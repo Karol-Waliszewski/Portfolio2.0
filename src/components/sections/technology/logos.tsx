@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled, { keyframes, css } from 'styled-components'
 
 import { Grid, Row } from 'components/shared/grid'
 import SingleTechnology from 'components/sections/technology/single'
@@ -22,18 +22,24 @@ const SlideAnimation = keyframes`
   }
 `
 
-const LogosWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+const LogosWrapper = styled.div<{ center: boolean }>`
   width: 100%;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   overflow: hidden;
+
+  ${({ center }) =>
+    center &&
+    css`
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    `}
 `
 
 const StyledGrid = styled(Grid).withConfig({
-  shouldForwardProp: (prop) => prop !== 'speed', // TODO: fix
+  // @ts-ignore
+  shouldForwardProp: (prop) => prop !== 'speed',
 })<{ speed: number }>`
   width: fit-content;
   white-space: nowrap;
@@ -79,7 +85,7 @@ const TechnologySwiper: React.FC<TechnologySwiperProps> = ({
   ))
 
   return (
-    <LogosWrapper>
+    <LogosWrapper center={speed === 0}>
       <StyledGrid speed={speed}>
         <StyledRow>{slidesDOM}</StyledRow>
         {speed > 0 && <StyledRow>{slidesDOM}</StyledRow>}
