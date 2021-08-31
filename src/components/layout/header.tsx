@@ -76,7 +76,7 @@ const HeaderButtons = styled.div`
 const HeaderHeading = styled(Heading)`
   margin-bottom: 0.75rem;
 
-  ${media.sm.min} {
+  ${media.md.min} {
     max-width: initial;
   }
 `

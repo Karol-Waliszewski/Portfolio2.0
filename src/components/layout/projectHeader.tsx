@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import media from 'styles/media'
 import { themeAnimation } from 'styles/mixins'
 
 import Container from 'components/shared/container'
@@ -12,11 +13,15 @@ const HeaderWrapper = styled.header`
   position: relative;
   height: ${({ theme }) => `calc(100vh - ${theme.sheet.margins})`};
   background: ${({ theme }) => theme.colors.primary};
+
+  ${media.lg.max} {
+    height: auto;
+  }
 `
 
 const HeaderDivider = styled.div`
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 0;
   width: 100%;
   overflow: hidden;
@@ -34,6 +39,21 @@ const HeaderDivider = styled.div`
 
 const HeaderContent = styled(Grid)`
   height: 100%;
+
+  ${media.lg.max} {
+    padding-top: 9rem;
+    padding-bottom: 10rem;
+  }
+
+  ${media.md.max} {
+    padding-top: 6rem;
+    padding-bottom: 9rem;
+  }
+
+  ${media.sm.max} {
+    padding-top: 6rem;
+    padding-bottom: 7rem;
+  }
 `
 
 const HeaderButtons = styled.div`
@@ -42,7 +62,9 @@ const HeaderButtons = styled.div`
 
 const HeaderHeading = styled(Heading)`
   margin-bottom: 0.75rem;
-  max-width: initial;
+  ${media.md.min} {
+    max-width: initial;
+  }
 `
 
 const HeaderText = styled(Text)`

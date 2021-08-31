@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import media from 'styles/media'
+
 import Container from 'components/shared/container'
 import { Heading } from 'components/shared/typography'
 
@@ -20,6 +22,12 @@ const TechnologyWrapper = styled.section`
   background: ${({ theme }) => theme.colors.lightgray};
 `
 
+const TechnologyHeading = styled(Heading)`
+  ${media.sm.max} {
+    width: min-content;
+  }
+`
+
 const Technology: React.FC<TechnologyProps> = ({
   technologies,
   id,
@@ -33,9 +41,9 @@ const Technology: React.FC<TechnologyProps> = ({
   return (
     <TechnologyWrapper id={id}>
       <Container>
-        <Heading align="center" as="h2">
+        <TechnologyHeading align="center" as="h2">
           {title}
-        </Heading>
+        </TechnologyHeading>
       </Container>
       {!dual && (
         <Logos speed={technologies.length < 6 ? 0 : 20} slides={technologies} />

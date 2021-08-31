@@ -38,7 +38,7 @@ const SheetWrapper = styled.div<ActiveRequired>`
 `
 
 const Sheet = styled.div`
-  width: 90%;
+  width: 95%;
   max-width: 1100px;
   overflow: hidden;
 
@@ -54,6 +54,9 @@ const Sheet = styled.div`
 
   ${media.xl.min} {
     width: 85%;
+  }
+  ${media.sm.min} {
+    width: 90%;
   }
 `
 
