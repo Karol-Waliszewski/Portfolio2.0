@@ -45,6 +45,11 @@ const ProjectWrapper = styled.section`
     }
   }
 
+  .swiper-container {
+    padding: 1rem 0.5rem;
+    margin: -1rem -0.5rem;
+  }
+
   ${media.md.max} {
     .swiper-container {
       overflow: initial;

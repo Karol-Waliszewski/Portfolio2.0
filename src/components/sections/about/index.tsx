@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ImageDataLike } from 'gatsby-plugin-image'
 
 import Container from 'components/shared/container'
 import { Grid, Row, Col } from 'components/shared/grid'
 import { Heading, Text, Bold } from 'components/shared/typography'
 import LazyImage from 'components/shared/lazyImage'
 
+import type { ImageDataLike } from 'gatsby-plugin-image'
 import type ID from 'types/id'
 
 type AboutProps = {
@@ -15,6 +15,12 @@ type AboutProps = {
 
 const AboutWrapper = styled.section`
   padding: 4rem 0;
+`
+
+const StyledLazyImage = styled(LazyImage)`
+  border-radius: 4px;
+  overflow: hidden;
+  border: 2px solid ${({ theme }) => theme.colors.primary};
 `
 
 const About: React.FC<AboutProps> = ({ image, id }) => {
@@ -52,7 +58,7 @@ const About: React.FC<AboutProps> = ({ image, id }) => {
               </Text>
             </Col>
             <Col xs={12} md={5} offset-md={1}>
-              <LazyImage
+              <StyledLazyImage
                 src={image}
                 alt="Person coding on a laptop"
                 objectFit="contain"

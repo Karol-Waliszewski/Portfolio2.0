@@ -1,13 +1,16 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import type { ImageDataLike } from 'gatsby-plugin-image'
+import { rgba } from 'polished'
 import styled from 'styled-components'
 
 import { Subheading, Text } from 'components/shared/typography'
 import Button from 'components/shared/button'
 import LazyImage from 'components/shared/lazyImage'
 import Badge from 'components/shared/badge'
-import { pxToRem } from 'styles/mixins'
+
+import { pxToRem, themeAnimation } from 'styles/mixins'
+
+import type { ImageDataLike } from 'gatsby-plugin-image'
 
 type CardProps = {
   slug: string
@@ -34,6 +37,13 @@ const CardWrapper = styled.div`
   background: ${({ theme }) =>
     theme.dark ? theme.colors.light : theme.colors.white};
   overflow: hidden;
+
+  ${themeAnimation(`box-shadow 200ms ease`)};
+
+  &:hover {
+    box-shadow: 0 2px 10px
+      ${({ theme }) => rgba(String(theme.colors.dark), 0.15)};
+  }
 `
 
 const CardImage = styled(LazyImage)`
@@ -66,6 +76,10 @@ const CardTitle = styled(Subheading)`
   margin-bottom: 0.25rem;
 `
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+`
+
 const CardBadges = styled.div`
   margin-bottom: 1rem;
 `
@@ -88,7 +102,9 @@ const Card: React.FC<CardProps> = ({
         <CardImage src={thumbnail} alt={alt} objectFit="cover" />
       </Link>
       <CardContent>
-        <CardTitle as="h3">{name}</CardTitle>
+        <StyledLink to={`/projects${slug}`}>
+          <CardTitle as="h3">{name}</CardTitle>
+        </StyledLink>
         <CardBadges>{badges}</CardBadges>
         <CardText>
           {excerpt} <Link to={`/projects${slug}`}>Więcej</Link>
