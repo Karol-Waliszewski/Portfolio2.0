@@ -14,6 +14,7 @@ import type ProjectType from 'types/projects'
 
 type DataProps = {
   about: ImageDataLike
+  me: ImageDataLike
   projects: { edges: { node: ProjectType }[] }
 }
 
@@ -24,7 +25,7 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => {
     <Layout>
       <Seo title="Home" />
       <Header />
-      <About image={data.about} id="about" />
+      <About image={data.me} id="about" />
       <Technology
         technologies={TECHNOLOGIES}
         id="technologies"
@@ -41,6 +42,11 @@ export default IndexPage
 export const query = graphql`
   {
     about: file(relativePath: { eq: "images/about.png" }) {
+      childImageSharp {
+        gatsbyImageData(width: 700)
+      }
+    }
+    me: file(relativePath: { eq: "images/me.jpg" }) {
       childImageSharp {
         gatsbyImageData(width: 700)
       }
