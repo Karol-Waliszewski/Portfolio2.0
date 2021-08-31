@@ -1,7 +1,7 @@
 ---
 slug: '/kowbud'
 name: 'Kowbud'
-thumbnail: '../assets/images/about.png'
+thumbnail: '../assets/images/test.jpg'
 thumbnailAlt: 'Alt message'
 technology: ['Gatsby', 'React']
 live: 'https://www.ogrodzeniakepno.pl/'

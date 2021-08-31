@@ -1,7 +1,7 @@
 ---
 slug: '/gabinet-dentystyczny'
 name: 'Gabinet dentystyczny'
-thumbnail: '../assets/images/about.png'
+thumbnail: '../assets/images/test.jpg'
 thumbnailAlt: 'Alt message'
 technology: ['Sass', 'Node']
 live: 'https://karol-waliszewski.github.io/Dentist-Webpage/'

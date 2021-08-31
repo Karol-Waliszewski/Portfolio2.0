@@ -1,7 +1,7 @@
 ---
 slug: '/pictionary'
 name: 'Pictionary'
-thumbnail: '../assets/images/about.png'
+thumbnail: '../assets/images/test.jpg'
 thumbnailAlt: 'Alt message'
 technology: ['Vue', 'Socket.io', 'Node.js', 'Express', 'Bulma']
 live: 'https://karol-waliszewski.github.io/pictionary.io/'

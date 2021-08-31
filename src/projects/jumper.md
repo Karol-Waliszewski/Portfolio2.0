@@ -1,7 +1,7 @@
 ---
 slug: '/jumper-bialystok'
 name: 'Jumper Białystok'
-thumbnail: '../assets/images/about.png'
+thumbnail: '../assets/images/test.jpg'
 thumbnailAlt: 'Alt message'
 technology: ['React']
 live: 'https://jumperpark.pl/'
