@@ -7,6 +7,7 @@ import { pxToRem, themeAnimation } from 'styles/mixins'
 type TextProps = {
   align?: CSSProperties['textAlign']
   margin?: CSSProperties['margin']
+  line?: CSSProperties['lineHeight']
   size?: number
 }
 
@@ -108,7 +109,7 @@ Subheading.defaultProps = {
 
 const textStyles = css<TextProps>`
   font-weight: 500;
-  line-height: 1.1em;
+  line-height: ${({ line }) => line ?? 1.4};
 
   font-size: ${({ size }) => (size ? `${pxToRem(size)}rem` : '1rem')};
   text-align: ${({ align }) => align ?? 'left'};
@@ -136,5 +137,9 @@ export const Content = styled.section`
 
   p {
     ${textStyles}
+  }
+
+  .gatsby-resp-image-wrapper {
+    margin-bottom: 1rem;
   }
 `

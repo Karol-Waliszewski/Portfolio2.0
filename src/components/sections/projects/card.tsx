@@ -63,12 +63,13 @@ const CardContent = styled.div`
   padding: 1.75rem;
 `
 
-const CardText = styled(Text)`
-  margin-top: auto;
+const CardText = styled(Text).attrs({ line: 1.2, size: 15 })`
+  margin-top: 0.5rem;
 `
 
 const CardButtons = styled.div`
-  margin-top: 0.5rem;
+  margin-top: auto;
+  padding-top: 0.2rem;
 `
 
 const CardButton = styled(Button)`

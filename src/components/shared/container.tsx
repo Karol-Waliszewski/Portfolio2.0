@@ -5,6 +5,7 @@ import media from 'styles/media'
 type ContainerProps = {
   fullHeight?: boolean
   fullWidth?: boolean
+  slim?: boolean
 }
 
 const Container = styled.div<ContainerProps>`
@@ -27,6 +28,12 @@ const Container = styled.div<ContainerProps>`
   }
 
   box-sizing: border-box;
+
+  ${({ slim }) =>
+    slim &&
+    css`
+      max-width: 800px;
+    `}
 
   ${({ fullWidth }) =>
     fullWidth &&
