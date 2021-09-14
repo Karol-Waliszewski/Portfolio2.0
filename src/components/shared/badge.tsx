@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import { lighten } from 'polished'
 
 import { pxToRem } from 'styles/mixins'
 
@@ -16,8 +17,13 @@ const Badge = styled.span<BadgeProps>`
   line-height: 1em;
   padding: ${pxToRem(4)}em ${pxToRem(10)}em;
 
+  background: ${({ theme }) =>
+    theme.dark ? lighten(0.05, String(theme.colors.lightgray)) : 'transparent'};
   border: 1px solid
-    ${({ theme }) => (theme.dark ? theme.colors.text : theme.colors.gray)};
+    ${({ theme }) =>
+      theme.dark
+        ? lighten(0.05, String(theme.colors.lightgray))
+        : theme.colors.gray};
   border-radius: 3px;
 
   ${({ marginRight }) =>
