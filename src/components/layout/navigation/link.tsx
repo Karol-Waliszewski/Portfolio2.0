@@ -103,7 +103,8 @@ const NavLink: React.FC<LinkType> = (link) => {
     case 'anchor':
       return (
         <LinkWrapper
-          as="button"
+          as="a"
+          href={link.link}
           onClick={(e: React.MouseEvent<HTMLElement>) => {
             e.preventDefault()
             onAnchor(link.link)
@@ -117,7 +118,8 @@ const NavLink: React.FC<LinkType> = (link) => {
       if (link.link === location.pathname) {
         return (
           <LinkWrapper
-            as="button"
+            as="a"
+            href={link.link}
             onClick={(e: React.MouseEvent<HTMLElement>) => {
               e.preventDefault()
               scrollTop()
