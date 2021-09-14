@@ -1,6 +1,7 @@
 import ReactLogo from 'assets/logos/react.svg'
 import VueLogo from 'assets/logos/vue.svg'
 import GraphQLLogo from 'assets/logos/graphql.svg'
+import GraphCMSLogo from 'assets/logos/graphcms.svg'
 import GatsbyLogo from 'assets/logos/gatsby.svg'
 import NuxtLogo from 'assets/logos/nuxt.svg'
 import NextLogo from 'assets/logos/next.svg'
@@ -86,6 +87,14 @@ const getTechnology = (name: string): TechnologyProps => {
         logo: GraphQLLogo,
         name: 'graphql',
       }
+
+    case 'graphcms':
+      return {
+        link: 'https://graphcms.com/',
+        logo: GraphCMSLogo,
+        name: 'graphcms',
+      }
+
     case 'sass':
       return {
         link: 'https://sass-lang.com/',

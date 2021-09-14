@@ -102,16 +102,16 @@ const Card: React.FC<CardProps> = ({
 
   return (
     <CardWrapper>
-      <Link to={`/projects${slug}`}>
+      <Link to={`/projekty/${slug}`}>
         <CardImage src={thumbnail} alt={alt} objectFit="cover" />
       </Link>
       <CardContent>
-        <StyledLink to={`/projects${slug}`}>
+        <StyledLink to={`/projekty/${slug}`}>
           <CardTitle as="h3">{name}</CardTitle>
         </StyledLink>
         <CardBadges>{badges}</CardBadges>
         <CardText>
-          {excerpt} <Link to={`/projects${slug}`}>Więcej</Link>
+          {excerpt} <Link to={`/projekty/${slug}`}>Więcej</Link>
         </CardText>
         <CardButtons>
           {live ? (

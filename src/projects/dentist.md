@@ -1,5 +1,5 @@
 ---
-slug: '/gabinet-dentystyczny'
+slug: 'gabinet-dentystyczny'
 name: 'Gabinet dentystyczny'
 thumbnail: '../assets/images/test.jpg'
 thumbnailAlt: 'Alt message'

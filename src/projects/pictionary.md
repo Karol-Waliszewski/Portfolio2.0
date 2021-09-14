@@ -1,8 +1,8 @@
 ---
-slug: '/pictionary'
+slug: 'pictionary'
 name: 'Pictionary'
-thumbnail: '../assets/images/test.jpg'
-thumbnailAlt: 'Alt message'
+thumbnail: '../assets/projects/pictionary/room.png'
+thumbnailAlt: 'Pictionary - przebieg gry'
 technology: ['Vue', 'Socket.io', 'Node.js', 'Express', 'Bulma']
 live: 'https://karol-waliszewski.github.io/pictionary.io/'
 github: 'https://github.com/Karol-Waliszewski/pictionary.io'

@@ -1,5 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import styled, { CSSProperties, css } from 'styled-components'
+import { rgba } from 'polished'
 
 import media from 'styles/media'
 import { pxToRem, themeAnimation } from 'styles/mixins'
@@ -134,6 +135,78 @@ export const Bold = styled.span`
 
 export const Content = styled.section`
   padding: 2rem 0;
+  color: ${({ theme }) => theme.colors.text};
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    position: relative;
+    max-width: 100%;
+    width: max-content;
+
+    transform-style: preserve-3d;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: -2px;
+      bottom: 5%;
+      transform: translate3d(0, 0, -1px);
+
+      width: 45%;
+      max-width: 250px;
+
+      background: ${({ theme }) => theme.colors.primary};
+      border-radius: 4px;
+
+      ${themeAnimation()};
+    }
+  }
+
+  h1 {
+    font-size: 42px;
+    &::after {
+      height: ${pxToRem(42 * 0.55)}rem;
+    }
+  }
+
+  h2 {
+    font-size: 38px;
+    &::after {
+      height: ${pxToRem(38 * 0.55)}rem;
+    }
+  }
+
+  h3 {
+    font-size: 34px;
+    &::after {
+      height: ${pxToRem(34 * 0.55)}rem;
+    }
+  }
+
+  h4 {
+    font-size: 30px;
+    &::after {
+      height: ${pxToRem(30 * 0.55)}rem;
+    }
+  }
+
+  h5 {
+    font-size: 26px;
+    &::after {
+      height: ${pxToRem(28 * 0.55)}rem;
+    }
+  }
+
+  h6 {
+    font-size: 20px;
+    &::after {
+      height: ${pxToRem(20 * 0.55)}rem;
+    }
+  }
 
   p {
     ${textStyles}
@@ -141,5 +214,10 @@ export const Content = styled.section`
 
   .gatsby-resp-image-wrapper {
     margin-bottom: 1rem;
+    box-shadow: 0 2px 18px
+      ${({ theme }) =>
+        theme.dark
+          ? rgba(String(theme.colors.gray), 0.1)
+          : rgba(String(theme.colors.dark), 0.1)};
   }
 `

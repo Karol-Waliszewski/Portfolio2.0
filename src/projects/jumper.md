@@ -1,5 +1,5 @@
 ---
-slug: '/jumper-bialystok'
+slug: 'jumper-bialystok'
 name: 'Jumper Białystok'
 thumbnail: '../assets/images/test.jpg'
 thumbnailAlt: 'Alt message'
