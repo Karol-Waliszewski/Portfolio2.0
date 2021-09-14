@@ -42,7 +42,10 @@ const CardWrapper = styled.div`
 
   &:hover {
     box-shadow: 0 2px 10px
-      ${({ theme }) => rgba(String(theme.colors.dark), 0.15)};
+      ${({ theme }) =>
+        theme.dark
+          ? rgba(String(theme.colors.gray), 0.15)
+          : rgba(String(theme.colors.dark), 0.15)};
   }
 `
 
