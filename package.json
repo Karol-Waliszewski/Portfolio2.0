@@ -1,7 +1,7 @@
 {
   "name": "gatsby-starter-typescript-styled-components",
   "private": true,
-  "description": "Starter with typescript and styled-components",
+  "description": "Personal portfolio",
   "version": "0.1.0",
   "author": "Karol Waliszewski <karolwaliszewski@gmail.com>",
   "dependencies": {
