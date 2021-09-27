@@ -16,7 +16,7 @@ const NotFoundPage: React.FC<PageProps> = () => (
       subtext="Chyba się zgubiłeś"
       buttons={
         <>
-          <Button as={Link} to="/" primary>
+          <Button as={Link} to="/" light>
             Strona główna
           </Button>
         </>
