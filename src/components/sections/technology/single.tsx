@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Icon from 'components/shared/icon'
-import { Text, Bold } from 'components/shared/typography'
+import Icon from 'components/shared/Icon'
+import { Text, Bold } from 'components/shared/Typography'
 
 import media from 'styles/media'
 

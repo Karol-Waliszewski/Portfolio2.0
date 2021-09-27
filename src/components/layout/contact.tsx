@@ -2,11 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 import { Formik } from 'formik'
 
-import Container from 'components/shared/container'
-import Button from 'components/shared/button'
-import { Grid, Row, Col } from 'components/shared/grid'
-import { Heading } from 'components/shared/typography'
-import { Form, Label, Input, Textarea, Info } from 'components/shared/form'
+import Container from 'components/shared/Container'
+import Button from 'components/shared/Button'
+import { Grid, Row, Col } from 'components/shared/Grid'
+import { Heading } from 'components/shared/Typography'
+import { Form, Label, Input, Textarea, Info } from 'components/shared/Form'
 
 import media from 'styles/media'
 

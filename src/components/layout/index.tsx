@@ -4,9 +4,9 @@ import styled, { css } from 'styled-components'
 import media from 'styles/media'
 import { themeAnimation } from 'styles/mixins'
 
-import Navigation from 'components/layout/navigation'
-import Contact from 'components/layout/contact'
-import Scroll from 'components/layout/scrollUp'
+import Navigation from 'components/layout/Navigation'
+import Contact from 'components/layout/Contact'
+import Scroll from 'components/layout/ScrollUp'
 
 import useNav from 'hooks/useNav'
 

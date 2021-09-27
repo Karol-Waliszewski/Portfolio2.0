@@ -1,8 +1,8 @@
 import React from 'react'
 import styled, { keyframes, css } from 'styled-components'
 
-import { Grid, Row } from 'components/shared/grid'
-import SingleTechnology from 'components/sections/technology/single'
+import { Grid, Row } from 'components/shared/Grid'
+import SingleTechnology from 'components/sections/Technology/Single'
 
 import media from 'styles/media'
 

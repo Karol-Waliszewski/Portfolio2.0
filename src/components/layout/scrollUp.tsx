@@ -1,8 +1,8 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
-import Button from 'components/shared/button'
-import Icon from 'components/shared/icon'
+import Button from 'components/shared/Button'
+import Icon from 'components/shared/Icon'
 
 import useScrollPosition from 'hooks/useScroll'
 import useWindowSize from 'hooks/useWindow'

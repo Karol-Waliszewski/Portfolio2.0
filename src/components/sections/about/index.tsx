@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Container from 'components/shared/container'
-import { Grid, Row, Col } from 'components/shared/grid'
-import { Heading, Text, Bold } from 'components/shared/typography'
-import LazyImage from 'components/shared/lazyImage'
+import Container from 'components/shared/Container'
+import { Grid, Row, Col } from 'components/shared/Grid'
+import { Heading, Text, Bold } from 'components/shared/Typography'
+import LazyImage from 'components/shared/LazyImage'
 
 import type { ImageDataLike } from 'gatsby-plugin-image'
 import type ID from 'types/id'

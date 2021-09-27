@@ -2,7 +2,7 @@ import React from 'react'
 import SwiperCore from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import SingleTechnology from 'components/sections/technology/single'
+import SingleTechnology from 'components/sections/Technology/Single'
 
 import type SingleTechnologyProps from 'types/technologies'
 

@@ -3,10 +3,10 @@ import styled from 'styled-components'
 
 import media from 'styles/media'
 
-import Container from 'components/shared/container'
-import { Heading } from 'components/shared/typography'
+import Container from 'components/shared/Container'
+import { Heading } from 'components/shared/Typography'
 
-import Logos from 'components/sections/technology/logos'
+import Logos from 'components/sections/Technology/Logos'
 
 import type SingleTechnologyProps from 'types/technologies'
 import type ID from 'types/id'

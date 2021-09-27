@@ -1,16 +1,27 @@
 import React from 'react'
-import { PageProps } from 'gatsby'
+import { Link, PageProps } from 'gatsby'
 
 import Layout from 'components/layout'
-import Seo from 'components/layout/seo'
+import Seo from 'components/layout/Seo'
+import Header from 'components/layout/Header/Common'
+import Button from 'components/shared/Button'
 
 // TODO: 404
 
 const NotFoundPage: React.FC<PageProps> = () => (
   <Layout>
-    <Seo title="404: Not found" />
-    <h1>404: Not Found</h1>
-    <p>You just hit a route that doesn't exist... the sadness.</p>
+    <Seo title="404" />
+    <Header
+      title="Ups, taka strona nie istnieje"
+      subtext="Chyba się zgubiłeś"
+      buttons={
+        <>
+          <Button as={Link} to="/" primary>
+            Strona główna
+          </Button>
+        </>
+      }
+    />
   </Layout>
 )
 

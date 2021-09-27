@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
-import Image from 'components/shared/image'
+import Image from 'components/shared/Image'
 
 import { pxToRem } from 'styles/mixins'
 

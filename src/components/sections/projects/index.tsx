@@ -6,11 +6,11 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import media from 'styles/media'
 import { breakpoints } from 'styles/theme'
 
-import Container from 'components/shared/container'
-import { Heading } from 'components/shared/typography'
-import Button from 'components/shared/button'
-import Icon from 'components/shared/icon'
-import Card from 'components/sections/projects/card'
+import Container from 'components/shared/Container'
+import { Heading } from 'components/shared/Typography'
+import Button from 'components/shared/Button'
+import Icon from 'components/shared/Icon'
+import Card from 'components/sections/Projects/Card'
 
 import useNav from 'hooks/useNav'
 

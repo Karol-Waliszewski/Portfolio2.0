@@ -3,19 +3,20 @@ import { PageProps } from 'gatsby'
 import styled from 'styled-components'
 
 import Layout from 'components/layout'
-import Seo from 'components/layout/seo'
-import Header from 'components/layout/projectHeader'
+import Seo from 'components/layout/Seo'
+import Header from 'components/layout/Header/Project'
 
-import Container from 'components/shared/container'
-import { Content } from 'components/shared/typography'
-import Button from 'components/shared/button'
+import Container from 'components/shared/Container'
+import { Content } from 'components/shared/Typography'
+import Button from 'components/shared/Button'
 
-import Technology from 'components/sections/technology'
+import Technology from 'components/sections/Technology'
 
 import getTechnology from 'utils/getTechnology'
 
 type ProjectContext = {
   title: string
+  subtitle?: string
   content: string
   technology: string[]
 
@@ -32,7 +33,7 @@ const ProjectButtons = styled.div`
 `
 
 const ProjectPage: React.FC<PageProps<object, ProjectContext>> = ({
-  pageContext: { title, content, github, live, technology },
+  pageContext: { title, subtitle, content, github, live, technology },
 }) => {
   const technologies = useMemo(
     () => technology.map((name) => getTechnology(name)),
@@ -42,7 +43,7 @@ const ProjectPage: React.FC<PageProps<object, ProjectContext>> = ({
   return (
     <Layout>
       <Seo title={title} />
-      <Header title={title} github={github} live={live} />
+      <Header title={title} subtext={subtitle} github={github} live={live} />
       <Container slim>
         <Content dangerouslySetInnerHTML={{ __html: content }} />
         <ProjectButtons>

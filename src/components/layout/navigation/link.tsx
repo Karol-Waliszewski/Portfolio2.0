@@ -4,8 +4,8 @@ import { Link, navigate } from 'gatsby'
 import { darken } from 'polished'
 import { useLocation } from '@reach/router'
 
-import { Text } from 'components/shared/typography'
-import Icon from 'components/shared/icon'
+import { Text } from 'components/shared/Typography'
+import Icon from 'components/shared/Icon'
 
 import { scrollTop, scrollToSelector } from 'utils/scrollTo'
 import isBrowser from 'utils/isBrowser'

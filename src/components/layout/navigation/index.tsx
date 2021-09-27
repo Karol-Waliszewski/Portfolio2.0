@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Hamburger from 'components/layout/navigation/hamburger'
-import Content from 'components/layout/navigation/content'
+import Hamburger from 'components/layout/Navigation/Hamburger'
+import Content from 'components/layout/Navigation/Content'
 
 import media from 'styles/media'
 

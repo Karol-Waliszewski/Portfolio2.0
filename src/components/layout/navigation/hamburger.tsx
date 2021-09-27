@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
-import Button from 'components/shared/button'
+import Button from 'components/shared/Button'
 
 type HamburgerProps = {
   active?: boolean

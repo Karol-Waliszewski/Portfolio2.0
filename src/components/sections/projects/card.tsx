@@ -3,10 +3,10 @@ import { Link } from 'gatsby'
 import { rgba } from 'polished'
 import styled from 'styled-components'
 
-import { Subheading, Text } from 'components/shared/typography'
-import Button from 'components/shared/button'
-import LazyImage from 'components/shared/lazyImage'
-import Badge from 'components/shared/badge'
+import { Subheading, Text } from 'components/shared/Typography'
+import Button from 'components/shared/Button'
+import LazyImage from 'components/shared/LazyImage'
+import Badge from 'components/shared/Badge'
 
 import { pxToRem, themeAnimation } from 'styles/mixins'
 
