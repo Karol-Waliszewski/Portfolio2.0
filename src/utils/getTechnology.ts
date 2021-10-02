@@ -8,11 +8,13 @@ import NextLogo from 'assets/logos/next.svg'
 import ReduxLogo from 'assets/logos/redux.svg'
 import TypescriptLogo from 'assets/logos/typescript.svg'
 import NodeLogo from 'assets/logos/node.svg'
+import ExpressLogo from 'assets/logos/expressjs.svg'
 import SassLogo from 'assets/logos/sass.svg'
 import StyledLogo from 'assets/logos/styled.png'
 import AdobeXDLogo from 'assets/logos/adobexd.svg'
 import BulmaLogo from 'assets/logos/bulma.svg'
 import SocketLogo from 'assets/logos/socketio.svg'
+import MongoLogo from 'assets/logos/mongo.svg'
 
 import type TechnologyProps from 'types/technologies'
 
@@ -113,15 +115,15 @@ const getTechnology = (name: string): TechnologyProps => {
       return {
         link: 'https://nodejs.org/',
         logo: NodeLogo,
-        name: 'node',
+        name: 'nodejs',
       }
 
-    // TODO: update logos
-
     case 'express':
+    case 'expressjs':
+    case 'express.js':
       return {
         link: 'https://expressjs.com/',
-        logo: NodeLogo,
+        logo: ExpressLogo,
         name: 'express',
       }
 
@@ -137,6 +139,14 @@ const getTechnology = (name: string): TechnologyProps => {
         link: 'https://bulma.io/',
         logo: BulmaLogo,
         name: 'bulma',
+      }
+
+    case 'mongo':
+    case 'mongodb':
+      return {
+        link: 'https://www.mongodb.com/',
+        logo: MongoLogo,
+        name: 'mongodb',
       }
 
     default:

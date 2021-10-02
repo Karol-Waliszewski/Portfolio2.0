@@ -1,6 +1,6 @@
 import isBrowser from 'utils/isBrowser'
 
-export const scrollToElement = (element: Element | null) => {
+export const scrollToElement = (element: Element | null): boolean => {
   if (element && isBrowser) {
     const behavior: ScrollBehavior = 'smooth'
     const navigation = document.getElementById('navigation')
@@ -17,7 +17,7 @@ export const scrollToElement = (element: Element | null) => {
   return false
 }
 
-export const scrollToSelector = (selector: string) => {
+export const scrollToSelector = (selector: string): boolean => {
   if (selector && isBrowser) {
     const element = document.querySelector(selector)
     return scrollToElement(element)
@@ -25,7 +25,7 @@ export const scrollToSelector = (selector: string) => {
   return false
 }
 
-export const scrollTop = () => {
+export const scrollTop = (): boolean => {
   if (isBrowser) {
     window.scrollTo({ top: 0, behavior: 'smooth' })
     return true

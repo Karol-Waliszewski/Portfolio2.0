@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import styled, { css, CSSProperties } from 'styled-components'
 
 import { Breakpoints } from 'types/theme'

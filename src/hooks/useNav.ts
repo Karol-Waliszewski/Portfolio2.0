@@ -1,8 +1,8 @@
-import { useContext } from 'react'
+import { ContextType, useContext } from 'react'
 
 import { NavContext } from 'context/navContext'
 
-const useNav = () => {
+const useNav = (): ContextType<typeof NavContext> => {
   const context = useContext(NavContext)
 
   if (!context) {
