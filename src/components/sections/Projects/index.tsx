@@ -105,7 +105,7 @@ const Project: React.FC<ProjectsProps> = ({ projects, id }) => {
         setTimeout(() => swiperRef.update(), 250)
       }
     }
-  }, [activeNav])
+  }, [activeNav, swiperRef])
 
   const cards = projects.map((el) => (
     <SwiperSlide>

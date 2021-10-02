@@ -32,7 +32,9 @@ const ProjectButtons = styled.div`
   margin-bottom: 2rem;
 `
 
-const ProjectPage: React.FC<PageProps<object, ProjectContext>> = ({
+const ProjectPage: React.FC<
+  PageProps<Record<string, unknown>, ProjectContext>
+> = ({
   pageContext: { title, subtitle, content, github, live, technology },
 }) => {
   const technologies = useMemo(

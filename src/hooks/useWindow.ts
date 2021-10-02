@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect } from 'react'
+import { useState, useLayoutEffect, useRef } from 'react'
 
 import isBrowser from 'utils/isBrowser'
 
@@ -8,21 +8,24 @@ function getWindowSize() {
   return { width: window.innerWidth, height: window.innerHeight }
 }
 
-export default function useWindowSize(wait: number, dependencies: any[] = []) {
+export default function useWindowSize(
+  wait: number,
+  dependencies: any[] = []
+): ReturnType<typeof getWindowSize> {
   const [size, setSize] = useState(getWindowSize())
 
-  let throttleTimeout: NodeJS.Timeout | null = null
+  const throttleTimeout = useRef<NodeJS.Timeout | null>(null)
 
   const callBack = () => {
     setSize(getWindowSize())
-    throttleTimeout = null
+    throttleTimeout.current = null
   }
 
   useLayoutEffect(() => {
     const handleResize = () => {
       if (wait) {
-        if (throttleTimeout === null) {
-          throttleTimeout = setTimeout(callBack, wait)
+        if (throttleTimeout.current === null) {
+          throttleTimeout.current = setTimeout(callBack, wait)
         }
       } else {
         callBack()
@@ -32,7 +35,8 @@ export default function useWindowSize(wait: number, dependencies: any[] = []) {
     window.addEventListener('resize', handleResize)
 
     return () => window.removeEventListener('resize', handleResize)
-  }, dependencies)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [wait, ...dependencies])
 
   return size
 }

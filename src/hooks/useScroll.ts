@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect } from 'react'
+import { useState, useLayoutEffect, useRef } from 'react'
 
 import isBrowser from 'utils/isBrowser'
 
@@ -11,21 +11,21 @@ function getScrollPosition() {
 export default function useScrollPosition(
   wait: number,
   dependencies: any[] = []
-) {
+): ReturnType<typeof getScrollPosition> {
   const [position, setPosition] = useState(getScrollPosition())
 
-  let throttleTimeout: NodeJS.Timeout | null = null
+  const throttleTimeout = useRef<NodeJS.Timeout | null>(null)
 
   const callBack = () => {
     setPosition(getScrollPosition())
-    throttleTimeout = null
+    throttleTimeout.current = null
   }
 
   useLayoutEffect(() => {
     const handleScroll = () => {
       if (wait) {
-        if (throttleTimeout === null) {
-          throttleTimeout = setTimeout(callBack, wait)
+        if (throttleTimeout.current === null) {
+          throttleTimeout.current = setTimeout(callBack, wait)
         }
       } else {
         callBack()
@@ -35,7 +35,8 @@ export default function useScrollPosition(
     window.addEventListener('scroll', handleScroll)
 
     return () => window.removeEventListener('scroll', handleScroll)
-  }, dependencies)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [wait, ...dependencies])
 
   return position
 }

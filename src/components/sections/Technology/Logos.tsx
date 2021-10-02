@@ -38,6 +38,7 @@ const LogosWrapper = styled.div<{ center: boolean }>`
 `
 
 const StyledGrid = styled(Grid).withConfig({
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   shouldForwardProp: (prop) => prop !== 'speed',
 })<{ speed: number }>`
