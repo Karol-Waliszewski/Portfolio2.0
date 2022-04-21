@@ -2,6 +2,10 @@ import styled, { css } from 'styled-components'
 
 import { pxToRem, themeAnimation } from 'styles/mixins'
 
+type FormProps = {
+  netlify?: boolean
+}
+
 type InputProps = {
   error?: boolean
 }
@@ -13,7 +17,7 @@ type InfoProps = {
   success?: boolean
 }
 
-export const Form = styled.form`
+export const Form = styled.form<FormProps>`
   display: flex;
   flex-direction: column;
   align-items: center;
