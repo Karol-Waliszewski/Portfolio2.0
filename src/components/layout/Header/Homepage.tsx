@@ -15,10 +15,12 @@ import personImageDark from 'assets/images/header-image-dark.svg'
 
 const HeaderWrapper = styled.header`
   position: relative;
-  height: ${({ theme }) => `calc(100vh - ${theme.sheet.margins})`};
+  height: ${({ theme }) => `calc(80vh - ${theme.sheet.margins})`};
+  min-height: 600px;
 
   ${media.lg.max} {
     height: auto;
+    min-height: auto;
   }
 `
 

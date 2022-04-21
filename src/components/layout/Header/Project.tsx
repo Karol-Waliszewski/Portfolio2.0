@@ -13,9 +13,11 @@ const HeaderWrapper = styled.header`
   position: relative;
   height: ${({ theme }) => `calc(60vh - ${theme.sheet.margins})`};
   background: ${({ theme }) => theme.colors.primary};
+  min-height: 500px;
 
   ${media.lg.max} {
     height: auto;
+    min-height: auto;
   }
 `
 
