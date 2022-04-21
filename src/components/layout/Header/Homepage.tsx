@@ -96,7 +96,7 @@ const Header: React.FC = () => {
               >
                 Github
               </Button>
-              <Button>CV</Button>
+              {/* <Button>CV</Button> */}
             </>
           }
         />

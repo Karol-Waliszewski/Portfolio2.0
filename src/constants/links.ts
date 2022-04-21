@@ -48,10 +48,10 @@ export const SECONDARY: Link[] = [
     link: 'https://github.com/Karol-Waliszewski',
     type: 'external',
   },
-  {
-    icon: CVIcon,
-    text: 'CV',
-    link: 'https://docs.google.com/gview?url=https://karol-waliszewski.github.io/Portfolio/src/Karol_Waliszewski_CV.pdf&embedded=true',
-    type: 'external',
-  },
+  // {
+  //   icon: CVIcon,
+  //   text: 'CV',
+  //   link: 'https://docs.google.com/gview?url=https://karol-waliszewski.github.io/Portfolio/src/Karol_Waliszewski_CV.pdf&embedded=true',
+  //   type: 'external',
+  // },
 ]
