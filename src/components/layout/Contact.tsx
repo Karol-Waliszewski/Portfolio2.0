@@ -101,7 +101,7 @@ const Contact: React.FC<ID> = ({ id }) => {
                     isSubmitting,
                     status,
                   }) => (
-                    <Form onSubmit={handleSubmit} netlify>
+                    <Form onSubmit={handleSubmit} data-netlify>
                       <Row>
                         <Col xs={12} sm={6}>
                           <Label htmlFor="name">Imię</Label>

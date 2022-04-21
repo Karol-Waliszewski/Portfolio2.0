@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 import { pxToRem, themeAnimation } from 'styles/mixins'
 
 type FormProps = {
-  netlify?: boolean
+  'data-netlify'?: boolean
 }
 
 type InputProps = {
