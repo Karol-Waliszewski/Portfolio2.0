@@ -11,7 +11,7 @@ import HeaderContent from 'components/layout/Header/Content'
 
 const HeaderWrapper = styled.header`
   position: relative;
-  height: ${({ theme }) => `calc(100vh - ${theme.sheet.margins})`};
+  height: ${({ theme }) => `calc(60vh - ${theme.sheet.margins})`};
   background: ${({ theme }) => theme.colors.primary};
 
   ${media.lg.max} {

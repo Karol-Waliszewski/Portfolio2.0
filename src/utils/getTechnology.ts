@@ -15,6 +15,8 @@ import AdobeXDLogo from 'assets/logos/adobexd.svg'
 import BulmaLogo from 'assets/logos/bulma.svg'
 import SocketLogo from 'assets/logos/socketio.svg'
 import MongoLogo from 'assets/logos/mongo.svg'
+import GulpLogo from 'assets/logos/gulp.svg'
+import FlameLinkLogo from 'assets/logos/flamelink.png'
 
 import type TechnologyProps from 'types/technologies'
 
@@ -24,63 +26,65 @@ const getTechnology = (name: string): TechnologyProps => {
       return {
         link: 'https://reactjs.org/',
         logo: ReactLogo,
-        name: 'react',
+        name: 'React',
       }
 
     case 'gatsby':
       return {
         link: 'https://www.gatsbyjs.com/',
         logo: GatsbyLogo,
-        name: 'gatsby',
+        name: 'Gatsby',
       }
 
     case 'next.js':
       return {
         link: 'https://nextjs.org/',
         logo: NextLogo,
-        name: 'next.js',
+        name: 'Next.js',
       }
 
     case 'redux':
       return {
         link: 'https://redux.js.org/',
         logo: ReduxLogo,
-        name: 'redux',
+        name: 'Redux',
       }
 
     case 'styled components':
+    case 'styledcomponents':
+    case 'styled-components':
       return {
         link: 'https://styled-components.com/',
         logo: StyledLogo,
-        name: 'styled components',
+        name: 'StyledComponents',
       }
 
     case 'adobe xd':
       return {
         link: 'https://www.adobe.com/in/products/xd.html',
         logo: AdobeXDLogo,
-        name: 'adobe xd',
+        name: 'AdobeXD',
       }
 
     case 'vue':
       return {
         link: 'https://vuejs.org/',
         logo: VueLogo,
-        name: 'vue',
+        name: 'Vue',
       }
 
     case 'nuxt.js':
       return {
         link: 'https://nuxtjs.org/',
         logo: NuxtLogo,
-        name: 'nuxt.js',
+        name: 'Nuxt.js',
       }
 
     case 'typescript':
       return {
         link: 'https://www.typescriptlang.org/',
         logo: TypescriptLogo,
-        name: 'typescript',
+        name: 'TypeScript',
       }
 
     case 'graphql':
@@ -94,28 +98,38 @@ const getTechnology = (name: string): TechnologyProps => {
       return {
         link: 'https://graphcms.com/',
         logo: GraphCMSLogo,
-        name: 'graphcms',
+        name: 'GraphCMS',
       }
 
     case 'sass':
+    case 'scss':
       return {
         link: 'https://sass-lang.com/',
         logo: SassLogo,
-        name: 'sass',
+        name: 'Sass',
+      }
+
+    case 'flamelink':
+      return {
+        link: 'https://flamelink.io/',
+        logo: FlameLinkLogo,
+        name: 'FlameLink',
+      }
+
+    case 'gulp':
+    case 'gulpjs':
+      return {
+        link: 'https://gulpjs.com/',
+        logo: GulpLogo,
+        name: 'Gulp',
       }
 
     case 'node':
-      return {
-        link: 'https://nodejs.org/',
-        logo: NodeLogo,
-        name: 'node',
-      }
-
     case 'node.js':
       return {
         link: 'https://nodejs.org/',
         logo: NodeLogo,
-        name: 'nodejs',
+        name: 'NodeJS',
       }
 
     case 'express':
@@ -124,21 +138,21 @@ const getTechnology = (name: string): TechnologyProps => {
       return {
         link: 'https://expressjs.com/',
         logo: ExpressLogo,
-        name: 'express',
+        name: 'Express',
       }
 
     case 'socket.io':
       return {
         link: 'https://socket.io/',
         logo: SocketLogo,
-        name: 'socket.io',
+        name: 'Socket.io',
       }
 
     case 'bulma':
       return {
         link: 'https://bulma.io/',
         logo: BulmaLogo,
-        name: 'bulma',
+        name: 'Bulma',
       }
 
     case 'mongo':
@@ -146,7 +160,7 @@ const getTechnology = (name: string): TechnologyProps => {
       return {
         link: 'https://www.mongodb.com/',
         logo: MongoLogo,
-        name: 'mongodb',
+        name: 'MongoDB',
       }
 
     default:

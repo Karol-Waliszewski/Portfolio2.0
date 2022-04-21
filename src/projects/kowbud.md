@@ -7,6 +7,6 @@ technology: ['Gatsby', 'React', 'GraphCMS', 'GraphQL', 'Styled Components']
 live: 'https://www.ogrodzeniakepno.pl/'
 ---
 
-Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus quis similique cum perspiciatis, autem aliquid culpa quia, iure natus consequatur magnam alias. Eos, non! Provident, illum! Deserunt culpa nobis eaque.
+Komercyjnie zaprojektowana, oraz stworzona strona dla sprzedawcy ogrodzeń. Projekt graficzny został wykonany w pełni przeze mnie. Podczas procesu programowania skorzystałem z Gatsby'ego, którego możliwości SSG (Static Site Generator) pozwoliły na generację gotowych plików statycznych jak np HTML dla poszczególnych podstron, co przyczyniło się do bardzo szybkiego działania strony, ponieważ nie ma potrzeby renderowania rzeczy "w locie".
 
 ![Strona](../assets/projects/kowbud/full.png)

@@ -23,7 +23,7 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => {
 
   return (
     <Layout>
-      <Seo title="Home" />
+      <Seo title="Strona główna" />
       <Header />
       <About image={data.me} id="about" />
       <Technology
