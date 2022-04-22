@@ -37,6 +37,7 @@ const ContactWrapper = styled.footer`
 `
 
 const Contact: React.FC<ID> = ({ id }) => {
+  const formName = 'contact'
   const onSubmit = (
     values: FormValues,
     {
@@ -52,7 +53,7 @@ const Contact: React.FC<ID> = ({ id }) => {
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ ...values, 'form-name': 'contact' }),
+      body: encode({ ...values, 'form-name': formName }),
     })
       .then(() => {
         setSubmitting(false)
@@ -102,6 +103,7 @@ const Contact: React.FC<ID> = ({ id }) => {
                     status,
                   }) => (
                     <Form onSubmit={handleSubmit} data-netlify>
+                      <input type="hidden" name="form-name" value={formName} />
                       <Row>
                         <Col xs={12} sm={6}>
                           <Label htmlFor="name">Imię</Label>
