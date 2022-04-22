@@ -49,13 +49,25 @@ const Contact: React.FC<ID> = ({ id }) => {
       resetForm: () => void
     }
   ) => {
-    setTimeout(() => {
-      setSubmitting(false)
-      setStatus('success')
-      setTimeout(() => {
-        resetForm()
-      }, 5000)
-    }, 2000)
+    fetch('https://portfolio-kw-node-mailer.herokuapp.com', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(values),
+    })
+      .then(() => {
+        setStatus('success')
+      })
+      .catch(() => {
+        setStatus('error')
+      })
+      .finally(() => {
+        setSubmitting(false)
+        setTimeout(() => {
+          resetForm()
+        }, 5000)
+      })
   }
 
   const renderMessage = (status: any) => {
