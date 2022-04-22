@@ -2,9 +2,8 @@ import styled, { css } from 'styled-components'
 
 import { pxToRem, themeAnimation } from 'styles/mixins'
 
-type FormProps = {
-  'data-netlify'?: boolean
-}
+// eslint-disable-next-line @typescript-eslint/ban-types
+type FormProps = {}
 
 type InputProps = {
   error?: boolean

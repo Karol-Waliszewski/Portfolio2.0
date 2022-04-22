@@ -16,7 +16,6 @@ import type ID from 'types/id'
 
 import backgroundFooter from 'assets/images/footer-background.svg'
 import backgroundFooterDark from 'assets/images/footer-background-dark.svg'
-import encode from 'utils/encode'
 
 const ContactWrapper = styled.footer`
   padding: 3rem 0;
@@ -50,22 +49,13 @@ const Contact: React.FC<ID> = ({ id }) => {
       resetForm: () => void
     }
   ) => {
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ ...values, 'form-name': formName }),
-    })
-      .then(() => {
-        setSubmitting(false)
-        setStatus('success')
-        setTimeout(() => {
-          resetForm()
-        }, 5000)
-      })
-      .catch(() => {
-        setSubmitting(false)
-        setStatus('error')
-      })
+    setTimeout(() => {
+      setSubmitting(false)
+      setStatus('success')
+      setTimeout(() => {
+        resetForm()
+      }, 5000)
+    }, 2000)
   }
 
   const renderMessage = (status: any) => {
@@ -102,8 +92,7 @@ const Contact: React.FC<ID> = ({ id }) => {
                     isSubmitting,
                     status,
                   }) => (
-                    <Form onSubmit={handleSubmit} data-netlify>
-                      <input type="hidden" name="form-name" value={formName} />
+                    <Form onSubmit={handleSubmit}>
                       <Row>
                         <Col xs={12} sm={6}>
                           <Label htmlFor="name">Imię</Label>
