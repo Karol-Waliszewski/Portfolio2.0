@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect, useState, useMemo } from 'react'
 import styled, { css } from 'styled-components'
 import SwiperCore, { Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -107,22 +107,26 @@ const Project: React.FC<ProjectsProps> = ({ projects, id }) => {
     }
   }, [activeNav, swiperRef])
 
-  const cards = projects
-    .sort((a, b) => a.frontmatter.order - b.frontmatter.order)
-    .map((el) => (
-      <SwiperSlide>
-        <Card
-          name={el.frontmatter.name}
-          slug={el.frontmatter.slug}
-          live={el.frontmatter.live}
-          github={el.frontmatter.github}
-          technology={el.frontmatter.technology}
-          thumbnail={el.frontmatter.thumbnail}
-          alt={el.frontmatter.thumbnailAlt}
-          excerpt={el.excerpt}
-        />
-      </SwiperSlide>
-    ))
+  const cards = useMemo(
+    () =>
+      projects
+        .sort((a, b) => a.frontmatter.order - b.frontmatter.order)
+        .map((el) => (
+          <SwiperSlide>
+            <Card
+              name={el.frontmatter.name}
+              slug={el.frontmatter.slug}
+              live={el.frontmatter.live}
+              github={el.frontmatter.github}
+              technology={el.frontmatter.technology}
+              thumbnail={el.frontmatter.thumbnail}
+              alt={el.frontmatter.thumbnailAlt}
+              excerpt={el.excerpt}
+            />
+          </SwiperSlide>
+        )),
+    [projects]
+  )
 
   return (
     <ProjectWrapper id={id}>
@@ -149,6 +153,7 @@ const Project: React.FC<ProjectsProps> = ({ projects, id }) => {
               spaceBetween: 15,
             },
           }}
+          initialSlide={0}
           loop
           loopedSlides={4}
           grabCursor

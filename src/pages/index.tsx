@@ -67,6 +67,7 @@ export const query = graphql`
             technology
             live
             github
+            order
           }
         }
       }
