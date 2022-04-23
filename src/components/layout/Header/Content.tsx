@@ -17,19 +17,19 @@ const HeaderContent = styled(Grid)`
   ${media.lg.max} {
     padding-top: 9rem;
     padding-bottom: 10rem;
-    margin-bottom: -4rem;
+    /* margin-bottom: -4rem; */
   }
 
   ${media.md.max} {
     padding-top: 6rem;
     padding-bottom: 9rem;
-    margin-bottom: -6rem;
+    /* margin-bottom: -6rem; */
   }
 
   ${media.sm.max} {
     padding-top: 6rem;
     padding-bottom: 7rem;
-    margin-bottom: -5rem;
+    /* margin-bottom: -5rem; */
   }
 `
 
