@@ -36,7 +36,6 @@ const ContactWrapper = styled.footer`
 `
 
 const Contact: React.FC<ID> = ({ id }) => {
-  const formName = 'contact'
   const onSubmit = (
     values: FormValues,
     {
@@ -49,15 +48,19 @@ const Contact: React.FC<ID> = ({ id }) => {
       resetForm: () => void
     }
   ) => {
-    fetch('https://portfolio-kw-node-mailer.herokuapp.com', {
+    fetch('/api/mailer', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(values),
     })
-      .then(() => {
-        setStatus('success')
+      .then((res) => {
+        if (res.status === 200) {
+          setStatus('success')
+        } else {
+          setStatus('error')
+        }
       })
       .catch(() => {
         setStatus('error')

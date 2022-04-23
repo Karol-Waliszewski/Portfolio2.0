@@ -5,6 +5,8 @@
   "version": "0.1.0",
   "author": "Karol Waliszewski <karolwaliszewski@gmail.com>",
   "dependencies": {
+    "axios": "^0.26.1",
+    "dotenv": "^16.0.0",
     "formik": "^2.2.9",
     "gatsby": "^4.12.1",
     "gatsby-plugin-canonical-urls": "^4.12.1",
