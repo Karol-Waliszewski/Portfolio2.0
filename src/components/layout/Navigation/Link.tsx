@@ -13,6 +13,7 @@ import isBrowser from 'utils/isBrowser'
 import { pxToRem, themeAnimation } from 'styles/mixins'
 
 import type LinkType from 'types/navLink'
+import useNav from 'hooks/useNav'
 
 const LinkWrapper = styled.div`
   display: flex;
@@ -47,6 +48,7 @@ const LinkWrapper = styled.div`
 const NavLink: React.FC<LinkType> = (link) => {
   const { icon, text } = link
   const location = useLocation()
+  const { setActive } = useNav()
 
   const onAnchor = (hash: string) => {
     const splitted = hash.split('#')
@@ -107,6 +109,7 @@ const NavLink: React.FC<LinkType> = (link) => {
           href={link.link}
           onClick={(e: React.MouseEvent<HTMLElement>) => {
             e.preventDefault()
+            setActive(false)
             onAnchor(link.link)
           }}
         >
@@ -122,6 +125,7 @@ const NavLink: React.FC<LinkType> = (link) => {
             href={link.link}
             onClick={(e: React.MouseEvent<HTMLElement>) => {
               e.preventDefault()
+              setActive(false)
               scrollTop()
             }}
           >
@@ -131,7 +135,13 @@ const NavLink: React.FC<LinkType> = (link) => {
       }
 
       return (
-        <LinkWrapper as={Link} to={link.link}>
+        <LinkWrapper
+          as={Link}
+          to={link.link}
+          onClick={() => {
+            setActive(false)
+          }}
+        >
           {NavLinkContent}
         </LinkWrapper>
       )

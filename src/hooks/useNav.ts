@@ -2,7 +2,7 @@ import { ContextType, useContext } from 'react'
 
 import { NavContext } from 'context/navContext'
 
-const useNav = (): ContextType<typeof NavContext> => {
+const useNav = (): NonNullable<ContextType<typeof NavContext>> => {
   const context = useContext(NavContext)
 
   if (!context) {
