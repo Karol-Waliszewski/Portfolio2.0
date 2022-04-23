@@ -107,20 +107,22 @@ const Project: React.FC<ProjectsProps> = ({ projects, id }) => {
     }
   }, [activeNav, swiperRef])
 
-  const cards = projects.map((el) => (
-    <SwiperSlide>
-      <Card
-        name={el.frontmatter.name}
-        slug={el.frontmatter.slug}
-        live={el.frontmatter.live}
-        github={el.frontmatter.github}
-        technology={el.frontmatter.technology}
-        thumbnail={el.frontmatter.thumbnail}
-        alt={el.frontmatter.thumbnailAlt}
-        excerpt={el.excerpt}
-      />
-    </SwiperSlide>
-  ))
+  const cards = projects
+    .sort((el) => el.frontmatter.order)
+    .map((el) => (
+      <SwiperSlide>
+        <Card
+          name={el.frontmatter.name}
+          slug={el.frontmatter.slug}
+          live={el.frontmatter.live}
+          github={el.frontmatter.github}
+          technology={el.frontmatter.technology}
+          thumbnail={el.frontmatter.thumbnail}
+          alt={el.frontmatter.thumbnailAlt}
+          excerpt={el.excerpt}
+        />
+      </SwiperSlide>
+    ))
 
   return (
     <ProjectWrapper id={id}>

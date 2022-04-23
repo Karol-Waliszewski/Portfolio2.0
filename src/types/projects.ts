@@ -9,6 +9,7 @@ type Project = {
     thumbnailAlt: string
     github?: string
     live?: string
+    order: number
   }
   html: string
   excerpt: string
