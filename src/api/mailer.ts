@@ -12,33 +12,36 @@ export default async function handler(
 ): Promise<void> {
   console.log(req.headers.origin)
 
-  if (
-    req.method === 'POST' &&
-    req.headers.origin === 'https://karolwaliszewski.pl' &&
-    process.env.MAILER_URL
-  ) {
-    try {
-      const data = {
-        name: req.body.name,
-        email: req.body.email,
-        message: req.body.message,
-      }
-      const result = await axios.post(process.env.MAILER_URL, data, {
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${process.env.CLIENT_TOKEN}`,
-        },
-      })
+  if (req.method === 'POST') {
+    if (
+      req.headers.origin === 'https://karolwaliszewski.pl' &&
+      process.env.MAILER_URL
+    ) {
+      try {
+        const data = {
+          name: req.body.name,
+          email: req.body.email,
+          message: req.body.message,
+        }
+        const result = await axios.post(process.env.MAILER_URL, data, {
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${process.env.CLIENT_TOKEN}`,
+          },
+        })
 
-      res.status(result.status).send(result.data)
-    } catch (error: unknown | AxiosError) {
-      if (axios.isAxiosError(error)) {
-        res.status(error.response?.status || 500).send(error.response?.data)
-      } else {
-        res.status(500).send('Error occured')
+        res.status(result.status).send(result.data)
+      } catch (error: unknown | AxiosError) {
+        if (axios.isAxiosError(error)) {
+          res.status(error.response?.status || 500).send(error.response?.data)
+        } else {
+          res.status(500).send('Error occured')
+        }
       }
+    } else {
+      res.status(401).send('Unauthorized')
     }
   } else {
-    res.status(401).send('Unauthorized')
+    res.status(405).send('Method Not Allowed')
   }
 }
