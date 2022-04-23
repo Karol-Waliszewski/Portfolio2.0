@@ -17,7 +17,7 @@ const HeaderWrapper = styled.header`
   position: relative;
   height: ${({ theme }) => `calc(80vh - ${theme.sheet.margins})`};
   min-height: 600px;
-
+  max-height: 900px;
   ${media.lg.max} {
     height: auto;
     min-height: auto;
@@ -37,8 +37,9 @@ const HeaderBackground = styled.div`
 
   svg {
     ${themeAnimation('fill 125ms ease')};
+    display: inline-block;
+    height: 100%;
     max-height: 100%;
-    width: 100%;
     max-width: 100%;
     fill: ${({ theme }) => theme.colors.light};
 
