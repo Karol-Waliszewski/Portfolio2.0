@@ -10,10 +10,12 @@ import Icon from 'components/shared/Icon'
 import { scrollTop, scrollToSelector } from 'utils/scrollTo'
 import isBrowser from 'utils/isBrowser'
 
+import useNav from 'hooks/useNav'
+import useBreakpoint from 'hooks/useBreakpoint'
+
 import { pxToRem, themeAnimation } from 'styles/mixins'
 
 import type LinkType from 'types/navLink'
-import useNav from 'hooks/useNav'
 
 const LinkWrapper = styled.div`
   display: flex;
@@ -49,6 +51,9 @@ const NavLink: React.FC<LinkType> = (link) => {
   const { icon, text } = link
   const location = useLocation()
   const { setActive } = useNav()
+  const { lg } = useBreakpoint()
+
+  const isMobile = !lg
 
   const onAnchor = (hash: string) => {
     const splitted = hash.split('#')
@@ -109,7 +114,10 @@ const NavLink: React.FC<LinkType> = (link) => {
           href={link.link}
           onClick={(e: React.MouseEvent<HTMLElement>) => {
             e.preventDefault()
-            setActive(false)
+            if (isMobile) {
+              setActive(false)
+            }
+
             onAnchor(link.link)
           }}
         >
@@ -125,7 +133,9 @@ const NavLink: React.FC<LinkType> = (link) => {
             href={link.link}
             onClick={(e: React.MouseEvent<HTMLElement>) => {
               e.preventDefault()
-              setActive(false)
+              if (isMobile) {
+                setActive(false)
+              }
               scrollTop()
             }}
           >
@@ -139,7 +149,9 @@ const NavLink: React.FC<LinkType> = (link) => {
           as={Link}
           to={link.link}
           onClick={() => {
-            setActive(false)
+            if (isMobile) {
+              setActive(false)
+            }
           }}
         >
           {NavLinkContent}
