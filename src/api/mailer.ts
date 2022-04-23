@@ -10,11 +10,10 @@ export default async function handler(
   req: GatsbyFunctionRequest<ContactBody>,
   res: GatsbyFunctionResponse
 ): Promise<void> {
-  console.log(req.headers.origin)
-
   if (req.method === 'POST') {
     if (
-      req.headers.origin === 'https://karolwaliszewski.pl' &&
+      (req.headers.origin === 'https://www.karolwaliszewski.pl' ||
+        req.headers.origin === 'https://karolwaliszewski.pl') &&
       process.env.MAILER_URL
     ) {
       try {
