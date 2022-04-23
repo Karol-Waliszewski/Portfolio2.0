@@ -108,7 +108,7 @@ const Project: React.FC<ProjectsProps> = ({ projects, id }) => {
   }, [activeNav, swiperRef])
 
   const cards = projects
-    .sort((el) => el.frontmatter.order)
+    .sort((a, b) => a.frontmatter.order - b.frontmatter.order)
     .map((el) => (
       <SwiperSlide>
         <Card
