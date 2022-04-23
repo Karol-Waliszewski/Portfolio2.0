@@ -32,7 +32,7 @@ const HeaderBackground = styled.div`
   bottom: 0;
 
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: flex-end;
 
   svg {
