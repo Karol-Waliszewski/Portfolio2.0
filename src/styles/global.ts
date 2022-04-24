@@ -22,6 +22,10 @@ const Global = css`
     ${themeAnimation()}
   }
 
+  .medium-zoom--opened .medium-zoom-overlay {
+    opacity: 0.8;
+  }
+
   h1,
   h2,
   h3,
