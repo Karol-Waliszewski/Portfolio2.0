@@ -43,6 +43,11 @@ const HeaderBackground = styled.div`
     max-width: 100%;
     fill: ${({ theme }) => theme.colors.light};
 
+    @media screen and (max-width: 450px) {
+      height: auto;
+      width: 100%;
+    }
+
     .b {
       clip-path: url(#a);
     }
