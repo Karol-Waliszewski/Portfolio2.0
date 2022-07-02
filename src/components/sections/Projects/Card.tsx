@@ -33,19 +33,20 @@ const CardWrapper = styled.div`
   text-decoration: none;
 
   border-radius: 6px;
-  border: 1px solid ${({ theme }) => theme.colors.gray};
+  border: 1px solid ${({ theme }) => theme.colors.lightgray};
   background: ${({ theme }) =>
     theme.dark ? theme.colors.light : theme.colors.white};
   overflow: hidden;
 
-  ${themeAnimation(`box-shadow 200ms ease`)};
+  ${themeAnimation(`box-shadow 200ms ease, transform 200ms ease`)};
 
   &:hover {
+    transform: translateY(-3px) scale(1.015);
     box-shadow: 0 2px 10px
       ${({ theme }) =>
         theme.dark
-          ? rgba(String(theme.colors.gray), 0.15)
-          : rgba(String(theme.colors.dark), 0.15)};
+          ? rgba(String(theme.colors.gray), 0.08)
+          : rgba(String(theme.colors.dark), 0.08)};
   }
 `
 
@@ -122,11 +123,11 @@ const Card: React.FC<CardProps> = ({
               target="_blank"
               marginRight
             >
-              Podgląd
+              Live
             </CardButton>
           ) : (
             <CardButton disabled marginRight>
-              Podgląd
+              Live
             </CardButton>
           )}
 
