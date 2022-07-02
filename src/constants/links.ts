@@ -1,12 +1,12 @@
 import Link from 'types/navLink'
 
 import HomeIcon from 'assets/icons/home.svg'
-import BulbIcon from 'assets/icons/bulb.svg'
+import PersonIcon from 'assets/icons/person.svg'
 import EmailIcon from 'assets/icons/mail.svg'
 import CodeIcon from 'assets/icons/code.svg'
 import ProjectsIcon from 'assets/icons/projects.svg'
 import GithubIcon from 'assets/icons/github.svg'
-import CVIcon from 'assets/icons/cv.svg'
+// import CVIcon from 'assets/icons/cv.svg'
 
 export const PRIMARY: Link[] = [
   {
@@ -16,7 +16,7 @@ export const PRIMARY: Link[] = [
     type: 'local',
   },
   {
-    icon: BulbIcon,
+    icon: PersonIcon,
     text: 'O mnie',
     link: '/#about',
     type: 'anchor',

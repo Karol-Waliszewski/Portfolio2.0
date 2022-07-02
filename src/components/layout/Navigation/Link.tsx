@@ -4,7 +4,7 @@ import { Link, navigate } from 'gatsby'
 import { darken } from 'polished'
 import { useLocation } from '@reach/router'
 
-import { Text } from 'components/shared/Typography'
+import { LinkText } from 'components/shared/Typography'
 import Icon from 'components/shared/Icon'
 
 import { scrollTop, scrollToSelector } from 'utils/scrollTo'
@@ -83,7 +83,7 @@ const NavLink: React.FC<LinkType> = (link) => {
   const NavLinkContent = (
     <>
       <Icon src={icon} marginRight size={18} />
-      <Text margin="0">{text}</Text>
+      <LinkText margin="0">{text}</LinkText>
     </>
   )
 

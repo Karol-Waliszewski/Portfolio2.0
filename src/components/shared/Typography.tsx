@@ -129,6 +129,10 @@ export const Text = styled.p<TextProps>`
   ${textStyles}
 `
 
+export const LinkText = styled(Text)`
+  color: ${({ theme }) => theme.colors.dark};
+`
+
 export const Bold = styled.span`
   font-weight: 700;
 `
