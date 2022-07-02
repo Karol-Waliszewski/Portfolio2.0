@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Formik } from 'formik'
+import { Formik, FormikProps } from 'formik'
 
 import Container from 'components/shared/Container'
 import Button from 'components/shared/Button'
@@ -16,8 +16,10 @@ import type ID from 'types/id'
 
 import backgroundFooter from 'assets/images/footer-background.svg'
 import backgroundFooterDark from 'assets/images/footer-background-dark.svg'
+import footerPerson from 'assets/images/person-call.png'
 
 const ContactWrapper = styled.footer`
+  position: relative;
   padding: 3rem 0;
 
   background-image: ${({ theme }) =>
@@ -33,6 +35,30 @@ const ContactWrapper = styled.footer`
   ${media.md.max} {
     background-image: none;
   }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    display: block;
+    height: 100%;
+    width: 100%;
+
+    background-image: url(${footerPerson});
+    background-size: auto min(90%, 400px);
+    background-repeat: no-repeat;
+    background-position: -2% 105%;
+
+    ${media.lg.max} {
+      background-size: auto min(85%, 300px);
+    }
+
+    ${media.md.max} {
+      background-image: none;
+    }
+  }
 `
 
 const Contact: React.FC<ID> = ({ id }) => {
@@ -42,11 +68,10 @@ const Contact: React.FC<ID> = ({ id }) => {
       setSubmitting,
       setStatus,
       resetForm,
-    }: {
-      setSubmitting: (arg: boolean) => void
-      setStatus: (arg: any) => void
-      resetForm: () => void
-    }
+    }: Pick<
+      FormikProps<FormValues>,
+      'setSubmitting' | 'setStatus' | 'resetForm'
+    >
   ) => {
     fetch('/api/mailer', {
       method: 'POST',

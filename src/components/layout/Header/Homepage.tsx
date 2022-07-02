@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { useTheme } from 'styled-components'
+import styled from 'styled-components'
 
 import media from 'styles/media'
 import { themeAnimation } from 'styles/mixins'
@@ -10,8 +10,7 @@ import Button from 'components/shared/Button'
 
 import HeaderContent from 'components/layout/Header/Content'
 
-import personImage from 'assets/images/header-image.svg'
-import personImageDark from 'assets/images/header-image-dark.svg'
+import personImage from 'assets/images/person-thumb.png'
 
 const HeaderWrapper = styled.header`
   position: relative;
@@ -55,8 +54,6 @@ const HeaderBackground = styled.div`
 `
 
 const Header: React.FC = () => {
-  const { dark } = useTheme()
-
   return (
     <HeaderWrapper>
       <HeaderBackground>
@@ -91,8 +88,8 @@ const Header: React.FC = () => {
             </>
           }
           image={{
-            src: dark ? personImageDark : personImage,
-            alt: 'Person programming on laptop',
+            src: personImage,
+            alt: 'Person with thumb up',
           }}
           buttons={
             <>
