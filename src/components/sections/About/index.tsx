@@ -36,25 +36,25 @@ const About: React.FC<AboutProps> = ({ image, id }) => {
                 Politechniki Wrocławskiej z zamiłowaniem do programowania i
                 street workoutu.
               </Text>
-              <Text>
+              {/* <Text>
                 Odkąd miałem dostęp do gier, wolałem je edytować, niż w nie
                 grać, jednak przygodę stricte z programowaniem rozpocząłem na
                 początku liceum. Najpierw był to C++, jednak po około połowie
                 roku spróbowałem Web Developmentu i to było to!
-              </Text>
+              </Text> */}
               <Text>
                 Obecnie pracuję jako Web Deweloper i tworzę wiele zaawansowanych
-                aplikacji internetowych w mojej pracy. Jeśli mam trochę czasu,
-                to pracuję też nad własnymi projektami pobocznymi, które możesz
-                sprawdzić na moim{' '}
+                aplikacji internetowych. Jeśli mam trochę czasu, to pracuję też
+                nad własnymi projektami pobocznymi, które możesz sprawdzić na
+                moim{' '}
                 <a
                   href="https://github.com/Karol-Waliszewski"
                   rel="noreferrer nofollow"
                   target="_blank"
                 >
                   githubie
-                </a>{' '}
-                :)
+                </a>
+                !
               </Text>
             </Col>
             <Col xs={12} md={5} offset-md={1}>
