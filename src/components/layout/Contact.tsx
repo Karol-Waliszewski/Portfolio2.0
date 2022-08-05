@@ -36,6 +36,11 @@ const ContactWrapper = styled.footer`
     background-image: none;
   }
 
+  ${Container} {
+    position: relative;
+    z-index: 2;
+  }
+
   &::after {
     content: '';
     position: absolute;
@@ -56,6 +61,7 @@ const ContactWrapper = styled.footer`
     }
 
     ${media.md.max} {
+      content: none;
       background-image: none;
     }
   }
