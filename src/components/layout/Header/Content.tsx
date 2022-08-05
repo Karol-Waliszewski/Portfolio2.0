@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 import media from 'styles/media'
 
@@ -49,7 +49,17 @@ const HeaderText = styled(Text)`
   margin-bottom: 0.5rem;
 `
 
+const floating = keyframes`
+  0% {
+    transform: translateY(0, -0.75rem, 0);
+  }
+  100% {
+    transform: translate3d(0, 0.75rem, 0);
+  }
+`
+
 const ImageCol = styled(Col)`
+  animation: ${floating} 1.5s ease-in-out infinite alternate;
   ${media.lg.max} {
     display: none;
   }
