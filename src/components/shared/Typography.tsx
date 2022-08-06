@@ -130,7 +130,8 @@ export const Text = styled.p<TextProps>`
 `
 
 export const LinkText = styled(Text)`
-  color: ${({ theme }) => theme.colors.dark};
+  color: ${({ theme }) =>
+    theme.dark ? theme.colors.light : theme.colors.dark};
 `
 
 export const Bold = styled.span`

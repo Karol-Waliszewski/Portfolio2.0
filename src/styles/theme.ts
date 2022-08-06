@@ -33,7 +33,7 @@ export const breakpoints: Breakpoints = {
 }
 
 export const darkColors: Colors = {
-  primary: '#354BD4',
+  primary: '#c89a04',
   light: '#2C2C2C',
   dark: '#FEFDFF',
   text: '#EDEDED',

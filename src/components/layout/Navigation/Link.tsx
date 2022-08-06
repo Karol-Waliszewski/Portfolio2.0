@@ -33,18 +33,13 @@ const LinkWrapper = styled.div`
   cursor: pointer;
 
   &:hover {
-    background: ${({ theme }) => darken(0.08, String(theme.colors.primary))};
+    background: ${({ theme }) =>
+      theme.dark
+        ? darken(0.02, String(theme.colors.primary))
+        : darken(0.08, String(theme.colors.primary))};
   }
 
   ${themeAnimation()};
-
-  ${({ theme }) =>
-    theme.dark &&
-    css`
-      img {
-        filter: brightness(0) invert(1);
-      }
-    `}
 `
 
 const NavLink: React.FC<LinkType> = (link) => {

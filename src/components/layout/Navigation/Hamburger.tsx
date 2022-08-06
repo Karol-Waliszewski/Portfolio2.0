@@ -16,7 +16,8 @@ const HamburgerLine = styled.div`
   height: 2px;
   width: 100%;
   max-width: 100%;
-  background: ${({ theme }) => theme.colors.dark};
+  background: ${({ theme }) =>
+    theme.dark ? theme.colors.light : theme.colors.dark};
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
   transition-property: width, opacity, visibility, transform;

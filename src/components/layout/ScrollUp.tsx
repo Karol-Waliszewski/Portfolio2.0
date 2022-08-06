@@ -30,19 +30,15 @@ const ScrollButton = styled(Button)`
   pointer-events: ${({ visible }: ScrollButtonProps) =>
     visible ? 'initial' : 'none'};
 
-  transition: right 250ms ease-in-out, opacity 250ms ease;
+  transition: right 250ms ease-in-out, opacity 250ms ease, transform 250ms ease;
 
   ${media.xl.min} {
     right: ${({ active }: ScrollButtonProps) => (active ? '1%' : '2%')};
   }
 
-  ${({ theme }) =>
-    theme.dark &&
-    css`
-      img {
-        filter: brightness(0) invert(1);
-      }
-    `}
+  &:hover {
+    transform: translate3d(0, -2px, 0);
+  }
 `
 
 const ScrollUp: React.FC<ActiveRequired> = ({ active }) => {

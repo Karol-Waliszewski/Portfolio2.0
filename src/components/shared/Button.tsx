@@ -57,6 +57,7 @@ const Button = styled.button<ButtonProps>`
         colorProps.includes(key) &&
         Boolean(props[key as keyof typeof props])
       ) {
+        const darkenValue = props.theme.dark ? 0.02 : 0.05
         return css`
           background: ${({ theme }) => theme.colors[key as keyof Colors]};
           border-color: ${({ theme }) => theme.colors[key as keyof Colors]};
@@ -69,15 +70,18 @@ const Button = styled.button<ButtonProps>`
 
           &:hover {
             background: ${({ theme }) =>
-              darken(0.05, String(theme.colors[key as keyof Colors]))};
+              darken(darkenValue, String(theme.colors[key as keyof Colors]))};
             border-color: ${({ theme }) =>
-              darken(0.05, String(theme.colors[key as keyof Colors]))};
+              darken(darkenValue, String(theme.colors[key as keyof Colors]))};
             box-shadow: 0 4px 6px
               ${({ theme }) =>
-                rgba(String(theme.colors[key as keyof Colors]), 0.2)};
+                rgba(
+                  String(theme.colors[key as keyof Colors]),
+                  theme.dark ? 0.02 : 0.2
+                )};
             color: ${({ theme }) =>
               readableColor(
-                darken(0.05, String(theme.colors[key as keyof Colors])),
+                darken(darkenValue, String(theme.colors[key as keyof Colors])),
                 theme.colors.dark,
                 theme.colors.white
               )};
