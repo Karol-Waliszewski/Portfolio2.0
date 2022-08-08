@@ -19,10 +19,9 @@ type ColSize = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
 
 type ColProps = {
   [breakpoint in keyof Breakpoints]?: ColSize
-} &
-  {
-    [breakpoint in keyof Breakpoints as `offset-${breakpoint}`]?: ColSize
-  }
+} & {
+  [breakpoint in keyof Breakpoints as `offset-${breakpoint}`]?: ColSize
+}
 
 export const Grid = styled.div<GridProps>`
   padding-left: calc(${({ theme }) => theme.grid.gap} / 2);

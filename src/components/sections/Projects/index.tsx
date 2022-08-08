@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState, useMemo } from 'react'
 import styled, { css } from 'styled-components'
-import SwiperCore, { Navigation } from 'swiper'
+import SwiperCore, { Navigation, Mousewheel } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import media from 'styles/media'
@@ -20,7 +20,7 @@ import type ID from 'types/id'
 import leftArrowIcon from 'assets/icons/arrow-left.svg'
 import rightArrowIcon from 'assets/icons/arrow-right.svg'
 
-SwiperCore.use([Navigation])
+SwiperCore.use([Navigation, Mousewheel])
 
 type ProjectsProps = {
   projects: ProjectType[]
@@ -157,6 +157,7 @@ const Project: React.FC<ProjectsProps> = ({ projects, id }) => {
           loop
           loopedSlides={4}
           grabCursor
+          mousewheel={{ forceToAxis: true }}
           onSwiper={(swiper: SwiperCore) => setSwiper(swiper)}
           onBeforeInit={(swiper: SwiperCore) => {
             if (typeof swiper.params.navigation !== 'boolean') {
