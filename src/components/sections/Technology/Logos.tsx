@@ -1,5 +1,6 @@
 import React from 'react'
 import styled, { keyframes, css } from 'styled-components'
+import { Fade } from 'react-reveal'
 
 import { Grid, Row } from 'components/shared/Grid'
 import SingleTechnology from 'components/sections/Technology/Single'
@@ -86,12 +87,14 @@ const TechnologySwiper: React.FC<TechnologySwiperProps> = ({
   ))
 
   return (
-    <LogosWrapper center={speed === 0}>
-      <StyledGrid speed={speed}>
-        <StyledRow>{slidesDOM}</StyledRow>
-        {speed > 0 && <StyledRow>{slidesDOM}</StyledRow>}
-      </StyledGrid>
-    </LogosWrapper>
+    <Fade bottom ssrFadeout>
+      <LogosWrapper center={speed === 0}>
+        <StyledGrid speed={speed}>
+          <StyledRow>{slidesDOM}</StyledRow>
+          {speed > 0 && <StyledRow>{slidesDOM}</StyledRow>}
+        </StyledGrid>
+      </LogosWrapper>
+    </Fade>
   )
 }
 

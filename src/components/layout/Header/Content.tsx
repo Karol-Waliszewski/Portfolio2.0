@@ -1,5 +1,6 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
+import { Fade } from 'react-reveal'
 
 import media from 'styles/media'
 
@@ -60,6 +61,7 @@ const floating = keyframes`
 
 const ImageCol = styled(Col)`
   animation: ${floating} 1.5s ease-in-out infinite alternate;
+  z-index: -1;
   ${media.lg.max} {
     display: none;
   }
@@ -76,10 +78,14 @@ const Header: React.FC<Props> = ({
     <HeaderContent>
       <Row fullHeight alignItems="center">
         <Col xs={12} md={8} lg={6}>
-          {uppertext && <HeaderText>{uppertext}</HeaderText>}
-          <HeaderHeading size={54}>{title}</HeaderHeading>
-          {subtext && <HeaderText>{subtext}</HeaderText>}
-          {buttons && <HeaderButtons>{buttons}</HeaderButtons>}
+          <Fade bottom cascade ssrFadeout>
+            <div>
+              {uppertext && <HeaderText>{uppertext}</HeaderText>}
+              <HeaderHeading size={54}>{title}</HeaderHeading>
+              {subtext && <HeaderText>{subtext}</HeaderText>}
+              {buttons && <HeaderButtons>{buttons}</HeaderButtons>}{' '}
+            </div>
+          </Fade>
         </Col>
         {image && (
           <ImageCol xs={12} md={6}>

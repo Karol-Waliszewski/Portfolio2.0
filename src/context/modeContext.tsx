@@ -44,7 +44,7 @@ const useProviderSettings = () => {
 export const ModeWrapper = styled.div<ActiveRequired>`
   opacity: ${({ active }) => (active ? 1 : 0)};
 
-  transition: 350ms opacity ease-in-out 50ms;
+  transition: 100ms opacity ease-in-out 75ms;
 `
 
 export const ModeProvider: React.FC = ({ children }) => {

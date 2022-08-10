@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react'
 import { PageProps } from 'gatsby'
+import { Fade } from 'react-reveal'
 import styled from 'styled-components'
 
 import Layout from 'components/layout'
@@ -48,32 +49,34 @@ const ProjectPage: React.FC<
       <Seo title={title} />
       <Header title={title} subtext={subtitle} github={github} live={live} />
       <Container slim>
-        <Content dangerouslySetInnerHTML={{ __html: content }} />
-        <ProjectButtons>
-          {live && (
-            <Button
-              marginRight
-              as="a"
-              href={live}
-              target="_blank"
-              rel="noreferrer nofollow"
-              primary
-            >
-              Podgląd
-            </Button>
-          )}
-          {github && (
-            <Button
-              as="a"
-              href={github}
-              target="_blank"
-              rel="noreferrer nofollow"
-              primary
-            >
-              Github
-            </Button>
-          )}
-        </ProjectButtons>
+        <Fade bottom cascade ssrFadeout>
+          <Content dangerouslySetInnerHTML={{ __html: content }} />
+          <ProjectButtons>
+            {live && (
+              <Button
+                marginRight
+                as="a"
+                href={live}
+                target="_blank"
+                rel="noreferrer nofollow"
+                primary
+              >
+                Podgląd
+              </Button>
+            )}
+            {github && (
+              <Button
+                as="a"
+                href={github}
+                target="_blank"
+                rel="noreferrer nofollow"
+                primary
+              >
+                Github
+              </Button>
+            )}
+          </ProjectButtons>
+        </Fade>
       </Container>
 
       <Technology

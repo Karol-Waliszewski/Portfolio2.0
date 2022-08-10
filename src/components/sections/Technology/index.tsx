@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Fade } from 'react-reveal'
 
 import media from 'styles/media'
 
@@ -20,6 +21,7 @@ type TechnologyProps = {
 const TechnologyWrapper = styled.section`
   padding: 3rem 0;
   background: ${({ theme }) => theme.colors.lightgray};
+  overflow: hidden;
 `
 
 const TechnologyHeading = styled(Heading)`
@@ -41,9 +43,13 @@ const Technology: React.FC<TechnologyProps> = ({
   return (
     <TechnologyWrapper id={id}>
       <Container>
-        <TechnologyHeading align="center" as="h2">
-          {title}
-        </TechnologyHeading>
+        <Fade bottom cascade ssrFadeout>
+          <div>
+            <TechnologyHeading align="center" as="h2">
+              {title}
+            </TechnologyHeading>
+          </div>
+        </Fade>
       </Container>
       {!dual && (
         <Logos speed={technologies.length < 6 ? 0 : 20} slides={technologies} />

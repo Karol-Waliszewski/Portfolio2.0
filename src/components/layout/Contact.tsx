@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Fade } from 'react-reveal'
 import { Formik, FormikProps } from 'formik'
 
 import Container from 'components/shared/Container'
@@ -122,7 +123,9 @@ const Contact: React.FC<ID> = ({ id }) => {
           <Row>
             <Col xs={12} md={8} offset-md={4}>
               <Grid>
-                <Heading>Napisz do mnie!</Heading>
+                <Fade bottom ssrFadeouļt>
+                  <Heading>Napisz do mnie!</Heading>
+                </Fade>
                 <Formik
                   initialValues={initialValues}
                   validationSchema={validationSchema}
@@ -141,68 +144,78 @@ const Contact: React.FC<ID> = ({ id }) => {
                     <Form onSubmit={handleSubmit}>
                       <Row>
                         <Col xs={12} sm={6}>
-                          <Label htmlFor="name">Imię</Label>
-                          <Input
-                            name="name"
-                            id="name"
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            value={values.name}
-                            error={Boolean(errors.name) && touched.name}
-                          />
-                          <Info
-                            error
-                            visible={Boolean(errors.name) && touched.name}
-                          >
-                            {errors.name}
-                          </Info>
+                          <Fade bottom cascade ssrFadeout>
+                            <Label htmlFor="name">Imię</Label>
+                            <Input
+                              name="name"
+                              id="name"
+                              onChange={handleChange}
+                              onBlur={handleBlur}
+                              value={values.name}
+                              error={Boolean(errors.name) && touched.name}
+                            />
+                            <Info
+                              error
+                              visible={Boolean(errors.name) && touched.name}
+                            >
+                              {errors.name}
+                            </Info>
+                          </Fade>
                         </Col>
                         <Col xs={12} sm={6}>
-                          <Label htmlFor="email">Email</Label>
-                          <Input
-                            type="email"
-                            name="email"
-                            id="email"
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            value={values.email}
-                            error={Boolean(errors.email) && touched.email}
-                          />
-                          <Info
-                            error
-                            visible={Boolean(errors.email) && touched.email}
-                          >
-                            {errors.email}
-                          </Info>
+                          <Fade bottom cascade ssrFadeout>
+                            <Label htmlFor="email">Email</Label>
+                            <Input
+                              type="email"
+                              name="email"
+                              id="email"
+                              onChange={handleChange}
+                              onBlur={handleBlur}
+                              value={values.email}
+                              error={Boolean(errors.email) && touched.email}
+                            />
+                            <Info
+                              error
+                              visible={Boolean(errors.email) && touched.email}
+                            >
+                              {errors.email}
+                            </Info>
+                          </Fade>
                         </Col>
                         <Col xs={12}>
-                          <Label htmlFor="message">Wiadomość</Label>
-                          <Textarea
-                            type="message"
-                            name="message"
-                            id="message"
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            value={values.message}
-                            error={Boolean(errors.message) && touched.message}
-                          />
-                          <Info
-                            error
-                            visible={Boolean(errors.message) && touched.message}
-                          >
-                            {errors.message}
-                          </Info>
+                          <Fade bottom cascade ssrFadeout>
+                            <Label htmlFor="message">Wiadomość</Label>
+                            <Textarea
+                              type="message"
+                              name="message"
+                              id="message"
+                              onChange={handleChange}
+                              onBlur={handleBlur}
+                              value={values.message}
+                              error={Boolean(errors.message) && touched.message}
+                            />
+                            <Info
+                              error
+                              visible={
+                                Boolean(errors.message) && touched.message
+                              }
+                            >
+                              {errors.message}
+                            </Info>
+                          </Fade>
                         </Col>
                       </Row>
-                      <Button
-                        loading={isSubmitting}
-                        success={status === 'success'}
-                        danger={status === 'error'}
-                        primary
-                        disabled={status !== undefined}
-                      >
-                        {renderMessage(status)}
-                      </Button>
+                      <Fade bottom ssrFadeout>
+                        <Button
+                          loading={isSubmitting}
+                          success={status === 'success'}
+                          danger={status === 'error'}
+                          primary
+                          disabled={status !== undefined}
+                        >
+                          {renderMessage(status)}
+                        </Button>
+                      </Fade>
                     </Form>
                   )}
                 </Formik>

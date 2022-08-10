@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState, useMemo } from 'react'
 import styled, { css } from 'styled-components'
+import { Fade } from 'react-reveal'
 import SwiperCore, { Navigation, Mousewheel } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
@@ -31,6 +32,9 @@ const ProjectWrapper = styled.section`
 
   .swiper-slide {
     height: auto;
+    .react-reveal {
+      height: 100%;
+    }
   }
 
   .swiper-wrapper.swiper-slide {
@@ -111,18 +115,20 @@ const Project: React.FC<ProjectsProps> = ({ projects, id }) => {
     () =>
       projects
         .sort((a, b) => a.frontmatter.order - b.frontmatter.order)
-        .map((el) => (
+        .map((el, index) => (
           <SwiperSlide>
-            <Card
-              name={el.frontmatter.name}
-              slug={el.frontmatter.slug}
-              live={el.frontmatter.live}
-              github={el.frontmatter.github}
-              technology={el.frontmatter.technology}
-              thumbnail={el.frontmatter.thumbnail}
-              alt={el.frontmatter.thumbnailAlt}
-              excerpt={el.excerpt}
-            />
+            <Fade bottom delay={index * 50} distance="30%" ssrFadeout>
+              <Card
+                name={el.frontmatter.name}
+                slug={el.frontmatter.slug}
+                live={el.frontmatter.live}
+                github={el.frontmatter.github}
+                technology={el.frontmatter.technology}
+                thumbnail={el.frontmatter.thumbnail}
+                alt={el.frontmatter.thumbnailAlt}
+                excerpt={el.excerpt}
+              />
+            </Fade>
           </SwiperSlide>
         )),
     [projects]
@@ -131,13 +137,16 @@ const Project: React.FC<ProjectsProps> = ({ projects, id }) => {
   return (
     <ProjectWrapper id={id}>
       <ProjectContainer>
-        <Heading as="h2">Co udało mi się stworzyć</Heading>
+        <Fade bottom ssrFadeout>
+          <Heading as="h2">Co udało mi się stworzyć</Heading>
+        </Fade>
         <ProjectButtonLeft outline square ref={prevRef}>
           <Icon src={leftArrowIcon} />
         </ProjectButtonLeft>
         <ProjectButtonRight outline square ref={nextRef}>
           <Icon src={rightArrowIcon} />
         </ProjectButtonRight>
+
         <Swiper
           breakpoints={{
             [breakpoints.xs]: {

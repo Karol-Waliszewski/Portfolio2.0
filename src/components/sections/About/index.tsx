@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Fade } from 'react-reveal'
 
 import Container from 'components/shared/Container'
 import { Grid, Row, Col } from 'components/shared/Grid'
@@ -30,32 +31,30 @@ const About: React.FC<AboutProps> = ({ image, id }) => {
         <Grid>
           <Row>
             <Col xs={12} md={6}>
-              <Heading as="h2">Trochę o mnie</Heading>
-              <Text>
-                Nazywam się <Bold>Karol Waliszewski</Bold>. Jestem studentem
-                Politechniki Wrocławskiej z zamiłowaniem do programowania i
-                street workoutu.
-              </Text>
-              {/* <Text>
-                Odkąd miałem dostęp do gier, wolałem je edytować, niż w nie
-                grać, jednak przygodę stricte z programowaniem rozpocząłem na
-                początku liceum. Najpierw był to C++, jednak po około połowie
-                roku spróbowałem Web Developmentu i to było to!
-              </Text> */}
-              <Text>
-                Obecnie pracuję jako Web Deweloper i tworzę wiele zaawansowanych
-                aplikacji internetowych. Jeśli mam trochę czasu, to pracuję też
-                nad własnymi projektami pobocznymi, które możesz sprawdzić na
-                moim{' '}
-                <a
-                  href="https://github.com/Karol-Waliszewski"
-                  rel="noreferrer nofollow"
-                  target="_blank"
-                >
-                  githubie
-                </a>
-                !
-              </Text>
+              <Fade bottom cascade ssrFadeout>
+                <div>
+                  <Heading as="h2">Trochę o mnie</Heading>
+                  <Text>
+                    Nazywam się <Bold>Karol Waliszewski</Bold>. Jestem studentem
+                    Politechniki Wrocławskiej z zamiłowaniem do programowania i
+                    street workoutu.
+                  </Text>
+                  <Text>
+                    Obecnie pracuję jako Web Deweloper i tworzę wiele
+                    zaawansowanych aplikacji internetowych. Jeśli mam trochę
+                    czasu, to pracuję też nad własnymi projektami pobocznymi,
+                    które możesz sprawdzić na moim{' '}
+                    <a
+                      href="https://github.com/Karol-Waliszewski"
+                      rel="noreferrer nofollow"
+                      target="_blank"
+                    >
+                      githubie
+                    </a>
+                    !
+                  </Text>
+                </div>
+              </Fade>
             </Col>
             <Col xs={12} md={5} offset-md={1}>
               <StyledLazyImage

@@ -74,6 +74,7 @@ export const Heading = styled.h1<HeadingProps>`
       &::after {
         content: '';
         position: absolute;
+        z-index: -1;
         left: -2px;
         bottom: 5%;
         transform: translate3d(0, 0, -1px);
