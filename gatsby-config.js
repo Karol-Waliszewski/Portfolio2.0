@@ -26,7 +26,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-nprogress`,
       options: {
-        color: `#E8E7E7`,
+        color: `#FECE47`,
         showSpinner: true,
       },
     },
@@ -61,11 +61,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Karol Waliszewski Portfolio`,
+        short_name: `Waliszewski Portfolio`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#FECE47`,
+        theme_color: `#FECE47`,
         display: `minimal-ui`,
         icon: `src/assets/icons/favicon.png`, // This path is relative to the root of the site.
       },
