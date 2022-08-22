@@ -55,10 +55,10 @@ const Sheet = styled.div`
     width: 90%;
   }
 `
-
-const Layout: React.FC<PropsWithChildren<Record<string, never>>> = ({
-  children,
-}) => {
+type Props = {
+  children: React.ReactNode
+}
+const Layout: React.FC<Props> = ({ children }) => {
   const { active } = useNav()
 
   useEffect(() => {
