@@ -4,7 +4,7 @@ import React, {
   useEffect,
   PropsWithChildren,
 } from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 
 import isBrowser from 'utils/isBrowser'
 
@@ -46,25 +46,9 @@ const useProviderSettings = () => {
   return { mode, changeMode, toggleMode }
 }
 
-const fadeIn = keyframes`
-  0% {
-    opacity: 0.01;
-  }
-  1% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-`
-
 export const ModeWrapper = styled.div<ActiveRequired>`
-  opacity: 1;
-
-  animation-name: ${fadeIn};
-  animation-iteration-count: 1;
-  animation-timing-function: ease-in;
-  animation-duration: 175ms;
+  opacity: ${({ active }) => (active ? 1 : 0.001)};
+  transition: opacity 100ms ease 50ms;
 `
 
 export const ModeProvider: React.FC<
