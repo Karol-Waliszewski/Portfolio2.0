@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, PropsWithChildren, useState } from 'react'
 
 export const NavContext = createContext<ReturnType<
   typeof useProviderSettings
@@ -10,7 +10,9 @@ const useProviderSettings = () => {
   return { active, setActive }
 }
 
-export const NavProvider: React.FC = ({ children }) => {
+export const NavProvider: React.FC<
+  PropsWithChildren<Record<string, never>>
+> = ({ children }) => {
   const { active, setActive } = useProviderSettings()
 
   return (

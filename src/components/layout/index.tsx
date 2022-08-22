@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { PropsWithChildren, useEffect } from 'react'
 import styled, { css } from 'styled-components'
 
 import media from 'styles/media'
@@ -16,10 +16,6 @@ import {
   PRIMARY as PRIMARY_LINKS,
   SECONDARY as SECONDARY_LINKS,
 } from 'constants/links'
-
-type LayoutProps = {
-  children: React.ReactNode
-}
 
 const SheetWrapper = styled.div<ActiveRequired>`
   padding: ${({ theme }) => `${theme.sheet.margins} 0`};
@@ -60,7 +56,9 @@ const Sheet = styled.div`
   }
 `
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC<PropsWithChildren<Record<string, never>>> = ({
+  children,
+}) => {
   const { active } = useNav()
 
   useEffect(() => {

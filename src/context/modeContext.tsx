@@ -1,4 +1,9 @@
-import React, { createContext, useState, useEffect } from 'react'
+import React, {
+  createContext,
+  useState,
+  useEffect,
+  PropsWithChildren,
+} from 'react'
 import styled from 'styled-components'
 
 import isBrowser from 'utils/isBrowser'
@@ -47,7 +52,9 @@ export const ModeWrapper = styled.div<ActiveRequired>`
   transition: 100ms opacity ease-in-out 75ms;
 `
 
-export const ModeProvider: React.FC = ({ children }) => {
+export const ModeProvider: React.FC<
+  PropsWithChildren<Record<string, never>>
+> = ({ children }) => {
   const [mounted, setMounted] = useState(false)
   const { mode, changeMode, toggleMode } = useProviderSettings()
 
