@@ -53,9 +53,6 @@ const fadeIn = keyframes`
   1% {
     opacity: 0;
   }
-  50% {
-    opacity: 0;
-  }
   100% {
     opacity: 1;
   }
@@ -67,7 +64,7 @@ export const ModeWrapper = styled.div<ActiveRequired>`
   animation-name: ${fadeIn};
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
-  animation-duration: 150ms;
+  animation-duration: 175ms;
 `
 
 export const ModeProvider: React.FC<
