@@ -34,6 +34,11 @@ const ProjectWrapper = styled.section`
     height: auto;
     .react-reveal {
       height: 100%;
+
+      ${media.sm.max} {
+        animation: none !important;
+        opacity: 1 !important;
+      }
     }
   }
 
