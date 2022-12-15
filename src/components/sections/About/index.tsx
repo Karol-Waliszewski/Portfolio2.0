@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import { Fade } from 'react-reveal'
 
 import Container from 'components/shared/Container'
