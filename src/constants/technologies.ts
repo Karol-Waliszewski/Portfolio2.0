@@ -13,6 +13,7 @@ const technologies: TechnologyProps[] = [
   getTechnology('nuxt.js'),
   getTechnology('typescript'),
   getTechnology('graphql'),
+  getTechnology('tailwindcss'),
   getTechnology('sass'),
   getTechnology('node'),
 ]

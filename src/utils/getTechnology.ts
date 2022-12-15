@@ -8,6 +8,7 @@ import NextLogo from 'assets/logos/next.svg'
 import ReduxLogo from 'assets/logos/redux.svg'
 import TypescriptLogo from 'assets/logos/typescript.svg'
 import NodeLogo from 'assets/logos/node.svg'
+import TailwindLogo from 'assets/logos/tailwindcss.svg'
 import ExpressLogo from 'assets/logos/expressjs.svg'
 import SassLogo from 'assets/logos/sass.svg'
 import StyledLogo from 'assets/logos/styled.png'
@@ -91,7 +92,7 @@ const getTechnology = (name: string): TechnologyProps => {
       return {
         link: 'https://graphql.org/',
         logo: GraphQLLogo,
-        name: 'graphql',
+        name: 'GraphQL',
       }
 
     case 'graphcms':
@@ -107,6 +108,13 @@ const getTechnology = (name: string): TechnologyProps => {
         link: 'https://sass-lang.com/',
         logo: SassLogo,
         name: 'Sass',
+      }
+
+    case 'tailwindcss':
+      return {
+        link: 'https://tailwindcss.com/',
+        logo: TailwindLogo,
+        name: 'TailwindCSS',
       }
 
     case 'flamelink':
