@@ -13,7 +13,6 @@ import TECHNOLOGIES from 'constants/technologies'
 import type ProjectType from 'types/projects'
 
 type DataProps = {
-  about: ImageDataLike
   me: ImageDataLike
   projects: { edges: { node: ProjectType }[] }
 }
@@ -41,11 +40,6 @@ export default IndexPage
 
 export const query = graphql`
   {
-    about: file(relativePath: { eq: "images/about.png" }) {
-      childImageSharp {
-        gatsbyImageData(width: 700)
-      }
-    }
     me: file(relativePath: { eq: "images/me.jpg" }) {
       childImageSharp {
         gatsbyImageData(width: 700)

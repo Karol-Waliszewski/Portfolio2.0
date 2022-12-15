@@ -111,14 +111,9 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-eslint',
       options: {
-        test: /\.js$|\.jsx$|\.ts$|\.tsx$/,
-        exclude: /(node_modules|.cache|public)/,
+        extensions: ['js', 'jsx', 'ts', 'tsx'],
+        exclude: ['node_modules', '.cache', 'public'],
         stages: ['develop'],
-        options: {
-          emitWarning: true,
-          // If we just want warnings instead of linting errors, set to false
-          failOnError: true,
-        },
       },
     },
     `gatsby-plugin-smoothscroll`,
