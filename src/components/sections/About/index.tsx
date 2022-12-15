@@ -35,15 +35,20 @@ const About: React.FC<AboutProps> = ({ image, id }) => {
                 <div>
                   <Heading as="h2">Trochę o mnie</Heading>
                   <Text>
-                    Nazywam się <Bold>Karol Waliszewski</Bold>. Jestem studentem
-                    Politechniki Wrocławskiej z zamiłowaniem do programowania i
-                    street workoutu.
+                    Jestem <Bold>Karol Waliszewski</Bold>, absolwent
+                    Politechniki Wrocławskiej z zamiłowaniem do tworzenia
+                    zaawansowanych aplikacji internetowych.
                   </Text>
                   <Text>
-                    Obecnie pracuję jako Web Deweloper i tworzę wiele
-                    zaawansowanych aplikacji internetowych. Jeśli mam trochę
-                    czasu, to pracuję też nad własnymi projektami pobocznymi,
-                    które możesz sprawdzić na moim{' '}
+                    Pracując od 3 lat jako Web Developer, miałem okazję brać
+                    udział w różnorodnych projektach. Dzięki temu zdobyłem
+                    szerokie doświadczenie i umiejętności, które chętnie
+                    wykorzystam w nowych wyzwaniach zawodowych. Poza pracą,
+                    jestem entuzjastą street workoutu i regularnie trenuję, aby
+                    zachować dobrą formę fizyczną i umysłową.{' '}
+                  </Text>
+                  <Text>
+                    Moje projekty poboczne można znaleźć na moim{' '}
                     <a
                       href="https://github.com/Karol-Waliszewski"
                       rel="noreferrer nofollow"
@@ -51,7 +56,7 @@ const About: React.FC<AboutProps> = ({ image, id }) => {
                     >
                       githubie
                     </a>
-                    !
+                    .
                   </Text>
                 </div>
               </Fade>
