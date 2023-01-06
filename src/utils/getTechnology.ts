@@ -18,6 +18,12 @@ import SocketLogo from 'assets/logos/socketio.svg'
 import MongoLogo from 'assets/logos/mongo.svg'
 import GulpLogo from 'assets/logos/gulp.svg'
 import FlameLinkLogo from 'assets/logos/flamelink.png'
+import ZodLogo from 'assets/logos/zod.svg'
+import IonicLogo from 'assets/logos/ionic.svg'
+import ViteLogo from 'assets/logos/vite.svg'
+import StorybookLogo from 'assets/logos/storybook.svg'
+import ReactQueryLogo from 'assets/logos/react-query.svg'
+import WindStitchLogo from 'assets/logos/windstitch.svg'
 
 import type TechnologyProps from 'types/technologies'
 
@@ -169,6 +175,51 @@ const getTechnology = (name: string): TechnologyProps => {
         link: 'https://www.mongodb.com/',
         logo: MongoLogo,
         name: 'MongoDB',
+      }
+
+    case 'ionic':
+      return {
+        link: 'https://ionicframework.com/',
+        logo: IonicLogo,
+        name: 'Ionic',
+      }
+
+    case 'vite':
+    case 'vitejs':
+      return {
+        link: '   https://vitejs.dev/',
+        logo: ViteLogo,
+        name: 'Vite',
+      }
+
+    case 'storybook':
+      return {
+        link: 'https://storybook.js.org/',
+        logo: StorybookLogo,
+        name: 'Storybook',
+      }
+
+    case 'react-query':
+    case 'reactquery':
+    case 'react query':
+      return {
+        link: 'https://react-query-v3.tanstack.com/',
+        logo: ReactQueryLogo,
+        name: 'React Query',
+      }
+
+    case 'zod':
+      return {
+        link: 'https://zod.dev/',
+        logo: ZodLogo,
+        name: 'Zod',
+      }
+
+    case 'windstitch':
+      return {
+        link: 'https://windstitch.vercel.app/',
+        logo: WindStitchLogo,
+        name: 'Windstitch',
       }
 
     default:

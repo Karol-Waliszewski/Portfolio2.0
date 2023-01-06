@@ -6,7 +6,7 @@ thumbnailAlt: 'Pictionary - przebieg gry'
 technology: ['Vue', 'Socket.io', 'Node.js', 'Express', 'Bulma']
 live: 'https://karol-waliszewski.github.io/pictionary.io/'
 github: 'https://github.com/Karol-Waliszewski/pictionary.io'
-order: 0
+order: 1
 ---
 
 Gra na podstawie kalambur polegająca na rysowaniu obrazków sugerujących hasło, które otrzymał gracz rysujący. Pozostali gracze próbują odgadnąć hasło, aby zdobyć jak najwięcej punktów. Gra jest dostępna do zabawy ze znajomymi przez internet, wystarczy stworzyć pokój lub dołączyć do istniejącego.
