@@ -42,12 +42,14 @@ const About: React.FC<AboutProps> = ({ image, id }) => {
                     zaawansowanych aplikacji internetowych.
                   </Text>
                   <Text>
-                    Pracując od 3 lat jako Web Developer, miałem okazję brać
-                    udział w różnorodnych projektach. Dzięki temu zdobyłem
-                    szerokie doświadczenie i umiejętności, które chętnie
-                    wykorzystam w nowych wyzwaniach zawodowych. Poza pracą,
-                    jestem entuzjastą street workoutu i regularnie trenuję, aby
-                    zachować dobrą formę fizyczną i umysłową.{' '}
+                    Pracując od{' '}
+                    {new Date().getFullYear() - new Date('2019').getFullYear()}{' '}
+                    lat jako Web Developer, miałem okazję brać udział w
+                    różnorodnych projektach. Dzięki temu zdobyłem szerokie
+                    doświadczenie i umiejętności, które chętnie wykorzystam w
+                    nowych wyzwaniach zawodowych. Poza pracą, jestem entuzjastą
+                    street workoutu i regularnie trenuję, aby zachować dobrą
+                    formę fizyczną i umysłową.{' '}
                   </Text>
                   <Text>
                     Moje projekty poboczne można znaleźć na moim{' '}
