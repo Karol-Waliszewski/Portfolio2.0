@@ -13,7 +13,7 @@ const NotFoundPage: React.FC<PageProps> = () => (
     <Seo title="404" />
     <Header
       title="Ups, taka strona nie istnieje"
-      subtext="Ale to nic! Zawsze mozna wrócić na stronę główną."
+      subtext="Ale to nic! Zawsze można wrócić na stronę główną."
       buttons={
         <>
           <Button as={Link} to="/" light>
